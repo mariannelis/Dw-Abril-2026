@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border border-box;
+}
+
+
+.div {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.div1 {
+    background-color: blueviolet;
+    /* display: none */
+}
+
+.div2 {
+    background-color: olivedrab;
+}
+
+.div3 {
+    background-color: pink;
+}
