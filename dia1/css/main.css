@@ -1,0 +1,27 @@
+h1 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue;
+    color: blueviolet;
+    background-color: blanchedalmond;
+    text-align: center;
+ }
+
+
+h2 {
+    color: aqua;
+}
+
+h3 {
+    color: blue;
+}
+
+h4 {
+    color:brown
+}
+
+h5 {
+    color: aquamarine;
+}
+
+h6 {
+color: chartreuse;
+}

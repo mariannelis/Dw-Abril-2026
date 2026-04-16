@@ -1,0 +1,44 @@
+.red {
+    color: red;
+}
+
+table,
+tr,
+td,
+th {
+    border: 3px solid black;
+    border-collapse: collapse;
+    border-color: blue;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+td,
+th {
+    width: 100px;
+    height: 100px;
+}
+
+.div1 {
+    background-color: aqua;
+}
+
+
+.div2 {
+    background-color: darkgrey;
+}
+
+
+.div3 {
+    background-color: cornflowerblue;
+}
+
+h1 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue;
+}

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.padre {
+    width: 250px;
+    height: 250px;
+    background-color: aqua;
+    border: 5px solid color(srgb red green blue);
+    margin: 10px;
+
+}
+
+
+.hijo {
+    width: 50%;
+    height: 50%;
+    background-color: blueviolet;
+    border: 5px dotted color(blue);
+    margin: 10px;
+    margin: 0 auto;
+    
+}
