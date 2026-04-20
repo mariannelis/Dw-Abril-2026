@@ -63,7 +63,7 @@ a:hover {
 
 main {
     padding: 30px 20px;
-    min-height: calc(100vh -149px);
+    min-height: calc(100vh - 149px);
     background-color: white;
     text-align: center;
     width: 90%;
