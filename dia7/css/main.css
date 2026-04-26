@@ -86,6 +86,19 @@ main {
     gap: 30px;
 }
 
+.alim-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 20px;
+    position: relative;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("../images/minimalista.png");
+    background-size: cover;
+    background-position: center;
+}
+
 
 .content1 {
     background: rgb(245, 249, 250);
@@ -118,21 +131,26 @@ main {
     background: white;
     max-width: 800px;
     width: 90%;
-    padding: 35px 30px;
+    padding: 25px;
     border-radius: 20px;
     text-align: center;
     margin: 40px auto;
-    border: 2px solid #e0e0e0;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
+    border: 1px solid #e0e0e0;
 }
 
+.info-section1 p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
 .info-section1 h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    font-weight: bold;
     color: #65ad0d;
-    -webkit-text-stroke: 1px rgb(54, 17, 102);
 }
 
 .animales-fuera {
@@ -187,12 +205,13 @@ main {
     margin: 20px auto;
     background: linear-gradient(90deg, #6d78b8, #21ddd9);
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 30px;
     display: flex;
     align-items: center;
     gap: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    margin-top: 10px;
 }
 
 
@@ -207,34 +226,61 @@ main {
 .info-section3,
 .info-section4:hover {
     transform: translateY(-5px);
+    padding: 25px 30px;
 }
 
-.info-section2,
-.info-section3,
-.info-section4 h3 {
+.info-section2 h3 .info-section3 h3 .info-section4 h3 {
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.info-section2,
-.info-section3,
-.info-section4,
-p {
+.info-section2 p,
+.info-section3 p,
+.info-section4 p {
     font-size: 17px;
     line-height: 1.6;
+    margin-top: 10px;
 }
 
 .info-section2 {
     flex-direction: column;
+    text-align: justify;
 }
 
 .info-section3 {
     flex-direction: row-reverse;
+    text-align: justify;
 }
 
 .info-section4 {
     flex-direction: column;
-    text-align: center;
+    text-align: justify;
+}
+
+.alim-section {
+    width: 90%;
+    max-width: 900px;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 2%, rgba(175, 224, 223, 1) 64%, rgba(155, 197, 230, 1) 90%, rgba(148, 187, 233, 1) 100%);
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.alim-section:hover {
+    transform: translateY(-5px);
+}
+
+.alim-section h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.alim-section p {
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .content {
