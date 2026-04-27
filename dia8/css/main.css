@@ -19,6 +19,17 @@ header {
     z-index: 1000;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 14%, rgba(194, 188, 178, 1) 66%);
+}
+
+
+
 .text-logo {
     display: flex;
     align-items: center;
@@ -34,6 +45,11 @@ h1 {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
+}
+
+.header__titulo1 {
+    color: rgb(11, 7, 104);
+    font-size: 24px;
 }
 
 nav ul {
