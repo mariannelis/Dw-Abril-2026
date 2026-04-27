@@ -59,9 +59,10 @@ nav ul li {
 nav ul li a {
     color: black;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
@@ -76,6 +77,12 @@ main {
     align-items: center;
     padding: 30px;
     gap: 25px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("../images/minimalista3.png");
+    background-size: cover;
+    background-position: center;
+    background-position: center top;
 }
 
 .info-main {
@@ -84,6 +91,12 @@ main {
     align-items: center;
     padding: 30px 20px;
     gap: 30px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url("../images/minimalista2.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .alim-main {
@@ -94,11 +107,32 @@ main {
     padding: 35px 20px;
     position: relative;
     background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-    url("../images/minimalista.png");
+        url("../images/minimalista.png");
     background-size: cover;
     background-position: center;
 }
 
+.edu-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url("../images/minimalista2.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.presentacion-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 25px;
+}
 
 .content1 {
     background: rgb(245, 249, 250);
@@ -151,6 +185,39 @@ main {
 
 .info-section1 h2 {
     color: #65ad0d;
+}
+
+.edu-intro {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.10);
+    border: 5px double rgb(55, 190, 84);
+}
+
+.edu-intro h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.edu-intro p {
+    line-height: 1.6;
+}
+
+.galeria-intro {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.galeria-intro h2,
+.galeria-intro p {
+    color: rgb(12, 2, 2);
 }
 
 .animales-fuera {
@@ -283,6 +350,56 @@ main {
     line-height: 1.7;
 }
 
+.edu-section {
+    width: 90%;
+    max-width: 900px;
+    background: linear-gradient(90deg, rgb(103, 114, 174) 35%, rgba(0, 255, 229, 1) 100%);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.edu-section:hover {
+    transform: translateY(-5px);
+}
+
+.edu-section h3 {
+    margin-bottom: 10px;
+}
+
+.edu-section p,
+.edu-section li {
+    line-height: 1.6;
+}
+
+.edu-section ul {
+    padding-left: 20px;
+}
+
+.presentacion-section {
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.presentacion-section h2 {
+    margin-bottom: 10px;
+}
+
+.presentacion-section p,
+.presentacion-section li {
+    line-height: 1.6;
+}
+
+.presentacion-section ul {
+    padding-left: 20px;
+}
+
+
 .content {
     background: #94cddf;
     background: linear-gradient(90deg, rgb(103, 114, 174) 35%, rgba(0, 255, 229, 1) 100%);
@@ -324,6 +441,59 @@ main {
     padding: 20px 25px;
     align-items: center;
 }
+
+.galeria-grid {
+    width: 90%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+galeria-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.galeria-card:hover {
+    transform: translateY(-5px);
+    color: rgb(245, 249, 250);
+    background: linear-gradient(90deg, rgb(103, 114, 174) 35%, rgba(0, 255, 229, 1) 100%);
+}
+
+.galeria-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.galeria-card h3 {
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+blockquote {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 30px;
+    color: #333;
+}
+
+.frase-final {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    margin: 40px 0;
+    color: #2c2c2c;
+}
+
 
 footer {
     background-color: gray;
