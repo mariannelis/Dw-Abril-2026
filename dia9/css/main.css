@@ -7,6 +7,11 @@
 body {
     font-size: 12px;
 }
+div {
+   
+    print-color-adjust: exact;
+    }
+    
 /*nivel 1*/
 .caja1 {
     width: 50vw;
