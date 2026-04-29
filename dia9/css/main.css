@@ -4,3 +4,105 @@
     border: 0;
     box-sizing: border border-box;
 }
+body {
+    font-size: 12px;
+}
+/*nivel 1*/
+.caja1 {
+    width: 50vw;
+    height: 50vh;
+    background: lightblue;
+    border: 3px solid black;
+}
+
+.caja2 {
+    width: 50vw;
+    height: 50vh;
+    background: lightcoral;
+    border: 3px solid black;
+}
+
+.caja3 {
+    width: 50vw;
+    height: 50vh;
+    background: lightgreen;
+    border: 3px solid black;
+}
+
+/*nivel 2*/
+.caja-responsive {
+    width: 300px;
+    height: 200px;
+    border: 4px solid black;
+    background-color: blue;
+}
+
+@media (max-width: 1200px) {
+    .caja-responsive {
+        background-color: green;
+    }
+}
+
+@media (max-width: 780px) {
+    .caja-responsive {
+        background-color: yellow;
+    }
+}
+
+@media (max-width: 480px) {
+    .caja-responsive {
+        background-color: red;
+    }
+}
+
+.caja-print {
+    width: 50vw;
+    height: 50vw;
+    background-color: red;
+    border: 4px solid black;
+}
+
+@media print {
+    .caja-print {
+        background-color: green;
+    }
+}
+
+/*nivel 3*/
+
+.contenedor {
+    width: 80%;
+    margin: 20px auto;
+    border: 3px solid black;
+    padding: 20px;
+
+    container-type: inline-size;
+}
+
+.card {
+    display: flex;
+    gap: 10px;
+    background: lightblue;
+    padding: 20px;
+}
+
+@container (max-width: 500px) {
+    .card {
+        flex-direction: column;
+        background: lightcoral;
+    }
+}
+
+
+.texto-clamp {
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+
+.caja-minmax {
+    width: min(80%, 500px);
+    height: 150px;
+    background: lightgreen;
+    border: 3px solid black;
+
+    margin: max(20px, 5vw) auto;
+}
