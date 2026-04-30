@@ -32,3 +32,10 @@ p {
     font-size: 16em;
     font-weight: normal;
 }
+
+.caja1 {
+    width: 50vw;
+    height: 50vh;
+    background: lightblue;
+    border: 3px solid black;
+}
