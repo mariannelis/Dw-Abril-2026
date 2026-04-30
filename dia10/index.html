@@ -8,14 +8,49 @@
     <link rel='stylesheet' href='css/main.css'>
     <script src="js/main.js"></script>
 </head>
+
 <body>
    <!-- Este es el nivel 1 del ejercicio 10-->
-  <h1 class="#">Ejercicio de prueba</h1>
+  <h1>Ejercicio de prueba</h1>
 <h2>Caja 1</h2>
 <div class="caja1"></div>
 <p>Este es un párrafo de prueba.</p>
-<h2>Caja 2</h2>
-<div class="caja2"></div>
+<button>Botón de prueba</button>
+<h2>Caja 2</h2>  <!-- este es em -->
+<div class="caja2">
+    <p>Texto dentro del div</p>
+</div>
+<h2>Caja 3</h2><!-- este es el calc -->
+<div class="caja3"></div>
 
+<!-- Nivel 2 del ejercicio 10 -->
+<section class="seccion-tipografia">
+  <h1 class="titulo-vw">Seguimos probando</h1>
+  <p class="parrafo-legible">
+    Este párrafo usa un ancho máximo relativo y un interlineado basado en em.
+    La idea es observar cómo cambia la lectura cuando modificamos el ancho,
+    el tamaño de fuente y el espacio entre líneas.
+  </p>
+  <p class="parrafo-vh">
+    Este párrafo usa font-size en vh para ver cómo responde según la altura
+    de la pantalla.
+  </p>
+</section>
+
+<!-- Nivel 3 del ejercicio 10 -->
+<section class="seccion-tipografia-personalizada">
+  <h1 class="titulo-personalizado">Tipografía personalizada</h1>
+
+  <p class="texto-personalizado">
+    Este párrafo utiliza una fuente importada con @font-face y permite observar
+    cómo cambia la apariencia del texto.
+  </p>
+
+  <h2 class="titulo-variable">Variable Font</h2>
+
+  <p class="texto-variable">
+    Este texto usa una fuente variable con ajustes de peso, ancho y estilo.
+  </p>
+</section>
 </body>
 </html>

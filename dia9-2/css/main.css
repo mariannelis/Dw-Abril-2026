@@ -499,7 +499,7 @@ main {
     gap: 25px;
 }
 
-galeria-card {
+.galeria-card {
     background: white;
     border-radius: 18px;
     overflow: hidden;
@@ -621,4 +621,155 @@ footer p {
     color: #e0e0e0;
     text-align: center;
     margin-top: 3px;
+}
+
+/*Diseño responsivo*/ /*
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-section2,
+    .info-section3,
+    .info-section4 {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .header,
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav__list,
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .content,
+    .info-section3 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content h3 {
+        min-width: auto;
+    }
+
+    .content img {
+        width: 80%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .text1,
+    .text2,
+    .text3 {
+        justify-content: center;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*media queris agregados para el ejercicio 9/ nivel 1 */
+@media (max-width: 480px) {
+
+    main,
+    .info-main,
+    .alim-main,
+    .edu-main,
+    .presentacion-main {
+        padding: 20px 10px;
+    }
+
+    .header__titulo1,
+    h1 {
+        font-size: 22px;
+    }
+
+    .nav__list,
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .content1 h2,
+    .info-section1 h2,
+    .edu-intro h2,
+    .galeria-intro h2 {
+        font-size: 24px;
+    }
+
+    .content1,
+    .content,
+    .info-section1,
+    .info-section2,
+    .info-section3,
+    .info-section4,
+    .alim-section,
+    .edu-section,
+    .presentacion-section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content p,
+    .content1 p,
+    .info-section1 p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-container iframe {
+        height: 280px;
+    }
 }
