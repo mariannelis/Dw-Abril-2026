@@ -5,32 +5,83 @@
     box-sizing: border border-box;
 }
 
-body {
-    font-size: 12px;
-}
-
-
 h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-div {
-    width: 20px;
-    font-size: 20px;
+    font-size: calc(2vw + 10px); /* responsive */
 }
 
 h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 2rem;
 }
 
 p {
-    margin: 0;
-    font-size: 16em;
+    font-size: 1em;
+}
+
+button {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.caja1 { /* CAJA 1 (vw/vh) */
+    width: 50vw;
+    height: 30vh;
+    background: lightblue;
+    border: 2px solid black;
+}
+.caja2 { /* CAJA 2 (em) *//*preguntar al profesor por qué no funciona el texto de la caja 2*/ /*esta afectando al texto*/
+    width: 20px;
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+.caja2 p {
+    font-size: 2em;
+}
+
+.caja3 { /* CAJA 3 (calc) */
+
+    width: 50vw;
+    padding: calc(2rem + 5px);
+    background: lightgreen;
+    border: 2px solid black;
+}
+
+/*nivel 2*/
+.seccion-tipografia {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 0.2rem solid black;
+    background-color: #f2f2f2;
+}
+.seccion-tipografia h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+ .titulo-vw {
+    font-size: 5vw;
+    margin-bottom: 1rem;
+}
+
+.parrafo-legible {
+    max-width: 60vh;
+    line-height: 1.6em;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.parrafo-vh {
+    font-size: 2vh;
+    line-height: 1.6em;
+}
+
+/* nivel 3 */
+@font-face {
+    font-family: "MiFuente";
+    src: url("../fonts/mi-fuente.woff2") format("woff2"); /*debo colocar la ruta correcta de la fuente*/ 
+    /*crear una carpeta llamada fonts y colocar la fuente dentro de esa carpeta*/
     font-weight: normal;
+<<<<<<< HEAD
 }
 
 .caja1 {
@@ -39,3 +90,11 @@ p {
     background: lightblue;
     border: 3px solid black;
 }
+=======
+    font-style: normal;
+}
+.titulo-personalizado,
+.texto-personalizado {
+    font-family: "MiFuente", Arial, sans-serif;
+}
+>>>>>>> 7b9b9cf01fbcf62f606fe300fb935e298fc37672
