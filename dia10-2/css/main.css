@@ -10,7 +10,7 @@ header {
     background: linear-gradient(273deg, #65ad0d, #7ddaff);
     color: black;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px 40px;
+    padding: 1rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +38,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 6rem;
 }
 
 h1 {
@@ -49,13 +49,13 @@ h1 {
 
 .header__titulo1 {
     color: rgb(11, 7, 104);
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 2rem;
     margin: 0;
     padding: 0;
 }
@@ -75,7 +75,7 @@ nav ul li {
 nav ul li a {
     color: black;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
     font-weight: bold;
@@ -91,8 +91,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    gap: 25px;
+    padding: 2rem;
+    gap: 1.5rem;
     background:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("../images/minimalista3.png");
@@ -152,28 +152,28 @@ main {
 
 .content1 {
     background: rgb(245, 249, 250);
-    padding: 30px 40px;
-    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    border-radius: 1.25rem;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
     text-align: center;
-    max-width: 1000px;
+    max-width: 62.5rem;
     width: 90%;
     margin: 30px auto;
     border: 4px double blue;
 }
 
 .content1 p {
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: #444;
-    max-width: 700px;
+    max-width: 44rem;
     margin: 0 auto;
 }
 
 .content1 h2 {
     color: #151317;
     margin-bottom: 15px;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -452,15 +452,16 @@ main {
 .content {
     background: #94cddf;
     background: linear-gradient(90deg, rgb(103, 114, 174) 35%, rgba(0, 255, 229, 1) 100%);
-    width: 900px;
-    max-width: 95%;
-    padding: 20px 25px;
-    border-radius: 16px;
+    width: 90%;
+    max-width: 56rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 1.5rem;
     border: 1px solid black;
+    transition: transform 0.3s ease;
 }
 
 .content h3 {
@@ -471,15 +472,16 @@ main {
 
 .content p {
     flex: 1;
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
 .content img {
-    width: 220px;
-    height: 140px;
+    width: 14rem;
+    height: 9rem;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 1rem;
+    border: 2px solid black;
 }
 
 .content-info {
@@ -555,7 +557,7 @@ strong {
     width: 100%;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .mapa-container iframe {
@@ -567,11 +569,12 @@ strong {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
+    /* 16:9 */
     height: 0;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .video-container iframe {
@@ -623,85 +626,10 @@ footer p {
     margin-top: 3px;
 }
 
-/*Diseño responsivo*/ /*
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .content img {
-        width: 100%;
-        height: auto;
-    }
-
-    .galeria-grid {
-        grid-template-columns: 1fr;
-    }
-    .info-section2,
-    .info-section3,
-    .info-section4 {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 780px) {
-
-    .header,
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .nav__list,
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .logo {
-        width: 80px;
-    }
-
-    .content,
-    .info-section3 {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .content h3 {
-        min-width: auto;
-    }
-
-    .content img {
-        width: 80%;
-        height: auto;
-        max-width: 300px;
-    }
-
-    .text1,
-    .text2,
-    .text3 {
-        justify-content: center;
-    }
-
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/*Se revisó la web realizaday se reemplazaron varias unidades fijas en píxeles por unidades 
+relativas como %, rem, em, vw y vh. Esto permite que los elementos se adapten mejor a distintos tamaños de pantalla. 
+Se dejaron algunas unidades fijas solo en bordes pequeños, pero la mayoría de tamaños, espacios y
+textos ahora utilizan medidas relativas.*/
 
 /*media queris agregados para el ejercicio 9/ nivel 1 */
 @media (max-width: 480px) {
