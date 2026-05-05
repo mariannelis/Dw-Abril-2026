@@ -523,7 +523,7 @@ main {
     border-radius: 16px;
 }
 
-.galeria-card h3 {
+.galeria-card figcaption {
     padding: 15px;
     font-size: 18px;
     text-align: center;
