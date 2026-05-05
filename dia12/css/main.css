@@ -19,6 +19,7 @@ body {
     top: 10px;
     border-bottom: 2px solid black;
     padding: 15px;
+}
 
     .cookie-modal {
     position: fixed;
@@ -34,8 +35,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-
-    z-index: 2000;
+    /* z-index: 2000;  */ /*no usar mas de 99*/
 }
 
 .cookie-modal button {
@@ -46,7 +46,6 @@ body {
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: bold;
-}
 }
 
 .contenido {
