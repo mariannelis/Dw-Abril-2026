@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 300vh;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+header {
+    background: #3F5EFB;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.contenido {
+    /* max-width: 800px; */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contenido p {
+    width: 50vw;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contenido:nth-of-type(1) p {
+    position: relative;
+    left: -25vw;
+    top: -50px;
+     padding: 50px 0;
+}
+
+.contenido:nth-of-type(2) p {
+    position: relative;
+    left: 25vw;
+    top: 50px;
+}
+
+.titulo-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+    z-index: 1000;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.text-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.text-logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Estilo general de las cajas */
+.caja {
+    width: 60px;
+    height: 60px;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+}
+
+/* Esquinas */
+.caja1 {
+    top: 0;
+    left: 0;
+}
+
+.caja2 {
+    top: 0;
+    right: 0;
+}
+
+.caja3 {
+    bottom: 0;
+    left: 0;
+}
+
+.caja4 {
+    bottom: 0;
+    right: 0;
+}
+
+/* Centro (absolute primero) */
+.caja5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
