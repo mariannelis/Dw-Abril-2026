@@ -20,6 +20,33 @@ body {
     border-bottom: 2px solid black;
     padding: 15px;
 
+    .cookie-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    background: #222;
+    color: white;
+    padding: 1rem 2rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    z-index: 2000;
+}
+
+.cookie-modal button {
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
 }
 
 .contenido {
@@ -42,13 +69,13 @@ p {
 .elemento-relative {
     position: relative;
     background-color: #673d0a;
-    right: 20px;
+    left: 20px;
     top: 10px;
 }
 
 .contenedor {
     position: relative;
-    width: 300%;
+    width: 300px;
     height: 200px;
     background-color: #b95a99;
     border: 1px solid black;
@@ -62,4 +89,41 @@ p {
     right: 0;
     top: 0;
     border: black solid 1px;
+}
+
+/*nivel 3*/
+.contenedor-centro {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+/* 1. top 50% left 50% */
+.centro-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+/* 2. top 50% left 50% + transform */
+.centro-transform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightpink;
+    padding: 10px;
+}
+
+/* 3. margin auto */
+.centro-margin {
+    width: 250px;
+    background-color: lightgreen;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
 }
