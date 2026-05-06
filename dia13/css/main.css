@@ -6,144 +6,156 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    height: 300vh;
+    height: 300vh; /* para que haya scroll */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: repeating-conic-gradient(
+  #333 20deg, #333 30deg, #871e9c 35deg, #6c356e 70deg); 
+  transition: .3s ease;
+}
+
+.menu-fijo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    min-height: 100px;
+    /* en vez de height: 50px */
+    background: radial-gradient(circle, rgb(67, 45, 119) 2%, rgb(196, 175, 224) 64%, rgb(4, 50, 85) 90%, rgba(148, 187, 233, 1) 100%);
+    border-bottom: 2px solid black;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.titulo1 {
+    font-family: Georgia, serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.menu-fijo nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-fijo nav li {
+    list-style: none;
+}
+
+.menu-fijo nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-fijo nav a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.header {
+    padding: 1rem;
+    text-align: center;
+}
+
+.text-logo {
+    text-decoration: none;
+}
+
+.logo {
+    width: 5rem;
 }
 
 .sticky {
     position: sticky;
     top: 0;
-    background: black;
     color: white;
-    padding: 10px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Gillies Gothic Light", cursive;
+    text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
+        0 0 25px blue, 0 0 30px blue;
 }
 
-header {
-    background: #3F5EFB;
-    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
-    color: #fff;
-    padding: 20px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.contenido {
-    /* max-width: 800px; */
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* Párrafos */
 .contenido p {
     width: 50vw;
-    margin: 40px auto;
-    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #f3d6ff;
+    border: 2px solid white;
 }
-
-.contenido:nth-of-type(1) p {
+/* Relative */
+.p1 {
     position: relative;
     left: -25vw;
     top: -50px;
-     padding: 50px 0;
 }
 
-.contenido:nth-of-type(2) p {
+.p2 {
     position: relative;
     left: 25vw;
     top: 50px;
 }
-
-.titulo-sticky {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    padding: 10px;
-    border-bottom: 2px solid #333;
-    z-index: 1000;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.text-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-}
-
-.text-logo h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* Estilo general de las cajas */
-.caja {
-    width: 60px;
-    height: 60px;
-    background-color: crimson;
+.header__titulo1 {
+    position: relative;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 
+        0 0 5px blue,
+        0 0 10px blue,
+        0 0 15px blue,
+        0 0 20px blue;
+}
+
+h1 {
+    position: relative;
+    color: white;
+
+    font-family: "Gillies Gothic Light", cursive;
+    font-size: 6rem;
+
+    text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
+        0 0 25px blue, 0 0 30px blue;
+}
+
+h1::before {
     position: absolute;
+    top: -16%;
+    left: 20%;
+
+    display: inline-block;
+    content: "";
+
+    border-radius: 50%;
+    width: 70%;
+    aspect-ratio: 1/1;
+    z-index: -1;
+
+    border: 4px solid hsla(300, 97%, 95%);
+
+    /* also can use filter: none; */
+    filter: drop-shadow(0 0 0 hsla(300, 97%, 60%)) drop-shadow(0 0 0 hsla(300, 97%, 60%)) drop-shadow(0 0 0 hsla(300, 97%, 60%));
+
+    animation: flicker-ring 2s infinite ease-in-out;
 }
 
-/* Esquinas */
-.caja1 {
-    top: 0;
-    left: 0;
-}
-
-.caja2 {
-    top: 0;
-    right: 0;
-}
-
-.caja3 {
-    bottom: 0;
-    left: 0;
-}
-
-.caja4 {
-    bottom: 0;
-    right: 0;
-}
-
-/* Centro (absolute primero) */
-.caja5 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
+@keyframes flicker-ring {
+    to {
+        filter: drop-shadow(0 0 10px hsla(300, 97%, 60%)) drop-shadow(0 0 20px hsla(300, 97%, 60%)) drop-shadow(0 0 30px hsla(300, 97%, 60%));
+    }
 }
