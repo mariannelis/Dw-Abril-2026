@@ -2,5 +2,75 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 300vh;
+    /* para que haya scroll */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: yellowgreen radial-gradient(#b18b8b 20deg, #333 30deg, #8d9958 35deg, #e9dee9 70deg);
+    transition: .3s ease;
+}
+
+.menu-fijo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    min-height: 100px;
+    /* en vez de height: 50px */
+    background: radial-gradient(circle, rgb(67, 45, 119) 2%, rgb(196, 175, 224) 64%, rgb(4, 50, 85) 90%, rgba(148, 187, 233, 1) 100%);
+    border-bottom: 2px solid black;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+
+.menu-fijo nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-fijo nav li {
+    list-style: none;
+}
+
+.menu-fijo nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-fijo nav a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.text-logo {
+    text-decoration: none;
+}
+
+.logo {
+    width: 5rem;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Gillies Gothic Light", cursive;
+    text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
+    0 0 25px blue, 0 0 30px blue;
 }
