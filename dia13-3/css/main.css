@@ -5,19 +5,13 @@
     box-sizing: border-box;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
 body {
     height: 300vh;
     /* para que haya scroll */
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: white;
+    background: repeating-conic-gradient(#333 20deg, #333 30deg, #871e9c 35deg, #6c356e 70deg);
+    transition: .3s ease;
 }
 
 .menu-fijo {
@@ -36,15 +30,6 @@ body {
     z-index: 99;
 }
 
-.titulo1 {
-    font-family: Georgia, serif;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.08rem;
-    text-align: left;
-    margin-bottom: 10px;
-    font-size: 2rem;
-}
 
 .menu-fijo nav ul {
     list-style: none;
@@ -70,11 +55,6 @@ body {
     transform: scale(1.1);
 }
 
-.header {
-    padding: 1rem;
-    text-align: center;
-}
-
 .text-logo {
     text-decoration: none;
 }
@@ -92,7 +72,7 @@ body {
     font-size: 2rem;
     font-family: "Gillies Gothic Light", cursive;
     text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
-        0 0 25px blue, 0 0 30px blue;
+    0 0 25px blue, 0 0 30px blue;
 }
 
 /* Párrafos */
@@ -130,46 +110,36 @@ body {
         0 0 20px blue;
 }
 
-.caja {
-    width: 100px;
-    height: 100px;
-    background: #6c356e;
+h1 {
+    position: relative;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
-    border-radius: 10px;
+
+    font-family: "Gillies Gothic Light", cursive;
+    font-size: 6rem;
+
+    text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
+        0 0 25px blue, 0 0 30px blue;
 }
 
-.caja1 {
+h1::before {
     position: absolute;
-    left: 0;
-    top: 0;
+    top: -16%;
+    left: 20%;
+    display: inline-block;
+    content: "";
+    border-radius: 50%;
+    width: 70%;
+    aspect-ratio: 1/1;
+    z-index: -1;
+    border: 4px solid hsla(300, 97%, 95%);
+    /* also can use filter: none; */
+    filter: drop-shadow(0 0 0 hsla(300, 97%, 60%)) drop-shadow(0 0 0 hsla(300, 97%, 60%)) drop-shadow(0 0 0 hsla(300, 97%, 60%));
+    animation: flicker-ring 2s infinite ease-in-out;
+
 }
 
-.caja2 {
-    position: absolute;
-    right: 0px;
-    top: 0;
-}
-
-.caja3 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.caja4 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.caja5 {
-    position: fixed;
-    top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@keyframes flicker-ring {
+    to {
+        filter: drop-shadow(0 0 10px hsla(300, 97%, 60%)) drop-shadow(0 0 20px hsla(300, 97%, 60%)) drop-shadow(0 0 30px hsla(300, 97%, 60%));
+    }
 }
