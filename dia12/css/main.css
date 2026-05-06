@@ -8,11 +8,12 @@
 /*creando elementos para mostrar el posicionamiento*/
 body {
     padding-top: 100px;
-    }
+}
 
 .menu-fijo {
     position: sticky;
-    background-color: #5100ff;
+    background: #331e27;
+    background: radial-gradient(circle, rgba(51, 30, 39, 1) 2%, rgba(175, 224, 223, 1) 64%, rgba(155, 197, 230, 1) 90%, rgba(148, 187, 233, 1) 100%);
     width: 100%;
     height: 50px;
     right: 0;
@@ -21,30 +22,63 @@ body {
     padding: 15px;
 }
 
-    .cookie-modal {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    
-    background: #222;
-    color: white;
-    padding: 1rem 2rem;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    /* z-index: 2000;  */ /*no usar mas de 99*/
+.titulo1 {
+    font-family: Georgia, serif;
+    color: #4a2c2a;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    text-align: center;
+    font-size: 20px;
 }
-.cookie-modal button {
-    background: #ffcc00;
-    color: black;
-    border: none;
-    padding: 0.7rem 1.2rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
+
+nav ul {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-size: 10px;
+}
+
+.cultura-main {
+    background: #f6f1e8;
+}
+
+.cultura-hero {
+    border-top: 0.4rem solid #4a2c2a;
+    border-bottom: 0.4rem solid #4a2c2a;
+}
+
+.cultura-hero h2 {
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+.cultura-card {
+    border-left: 0.3rem solid #4a2c2a;
+}
+
+.cultura-card h3 {
+    font-family: Georgia, serif;
+}
+
+.video-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.10);
 }
 
 .contenido {
@@ -124,4 +158,42 @@ p {
     padding: 15px;
     margin: 0 auto;
     text-align: center;
+}
+
+.reflexion {
+    margin-top: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #4a2c2a;
+}
+
+.frase-cultura {
+    font-family: Georgia, serif;
+}
+
+.cookie-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    /* z-index: 2000;  */
+    /*no usar mas de 99*/
+
+}
+
+.cookie-modal button {
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
 }
