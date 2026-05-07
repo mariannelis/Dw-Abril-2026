@@ -24,8 +24,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background: #2A7B9B;
-    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 14%, rgba(194, 188, 178, 1) 66%);
+    background: #2ab0e4;
+    background: linear-gradient(90deg, rgb(18, 152, 205) 14%, rgb(129, 122, 110) 66%);
 }
 
 
