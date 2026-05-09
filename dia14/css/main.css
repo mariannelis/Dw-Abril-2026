@@ -30,7 +30,6 @@ body {
     z-index: 99;
 }
 
-
 .menu-fijo nav ul {
     list-style: none;
     display: flex;
@@ -55,12 +54,27 @@ body {
     transform: scale(1.1);
 }
 
+.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
 .text-logo {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
 }
 
 .logo {
-    width: 5rem;
+    width: 6rem;
+    mix-blend-mode: multiply;
+}
+
+.logo1 {
+    width: 6rem;
+    mix-blend-mode: multiply;
 }
 
 .sticky {
@@ -72,5 +86,81 @@ body {
     font-size: 2rem;
     font-family: "Gillies Gothic Light", cursive;
     text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue, 0 0 20px blue,
-    0 0 25px blue, 0 0 30px blue;
+        0 0 25px blue, 0 0 30px blue;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #b7db16;
+}
+
+.contenido {
+    padding: 1rem;
+    background: rgba(239, 237, 239, 0.8);
+    margin: 1rem auto;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #170e79;
+}
+
+.h2 a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.texto {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    hyphens: auto;
+}
+
+/* footer de la pagina */
+footer {
+    background-color: gray;
+    padding: 18px 10px;
+    width: 100%;
+    border-top: 2px solid #470b5b;
+}
+
+.contenido_footer {
+    text-align: center;
+}
+
+.titulo_footer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.redes {
+    margin-bottom: 10px;
+}
+
+.redes a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes a:hover {
+    color: rgb(130, 238, 184);
+}
+
+footer p {
+    font-size: 17px;
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 3px;
 }
