@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 40px;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* CONTENEDOR DE LOS 3 DIV */
+.contenedor {
+    display: flex;
+    gap: 20px;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    transition: all 0.5s ease;
+}
+
+.caja1 {
+    background-color: red;
+}
+
+.caja1:hover {
+    width: 200px;
+}
+
+.caja2 {
+    background-color: blue;
+}
+
+.caja2:hover {
+    height: 200px;
+}
+
+.caja3 {
+    background-color: green;
+}
+
+.caja3:hover {
+    width: 200px;
+    height: 200px;
+}
+
+/* CUADRADO QUE CAMBIA COLOR Y TAMAÑO */
+.efecto {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    transition: all 0.5s ease;
+}
+
+.efecto:hover {
+    background-color: orange;
+    width: 150px;
+    height: 150px;
+}
+
+/* CUADRADO CON TEXTO OCULTO */
+.texto-hover {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.texto-hover img {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+}
+
+.bocadillo {
+    position: relative;
+    top: -35px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 200px;
+    border-color: rgb(14, 15, 14);
+}
+
+/* Flecha del bocadillo */
+.bocadillo::after {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    /* Ajustar posición */
+    left: 20px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #ffffff transparent;
+}
+
+
+.texto-hover>* {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.texto-hover:hover>* {
+    opacity: 1;
+}
+
+/* otros 
+.transition {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 20px;
+    gap: .625rem;
+}
+
+.rojo {
+    background: red;
+    border-radius: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+    padding: 20px;
+    border: 2px solid rgb(17, 17, 17);
+}
+
+.rojo :hover {
+    width: 200px;
+    color: aqua;
+}
+.verde {
+   background: green;
+    border-radius: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+    padding: 20px;
+    border: 2px solid rgb(17, 17, 17);
+}
+
+.verde :hover {
+    width: 200px;
+    color: aqua;
+}
+.azul {
+    background: blue;
+    border-radius: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+    padding: 20px;
+    border: 2px solid rgb(17, 17, 17);
+    
+    }  */
