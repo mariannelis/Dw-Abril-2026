@@ -112,7 +112,6 @@ body {
     border-color: #ffffff transparent;
 }
 
-
 .texto-hover>* {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -120,6 +119,197 @@ body {
 
 .texto-hover:hover>* {
     opacity: 1;
+}
+
+ /* Nivel 2 */
+ .contenedor-animaciones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.caja-animada {
+  width: 100px;
+  height: 100px;
+}
+
+.ancho {
+  background-color: tomato;
+  animation: cambiarAncho 2s infinite alternate;
+}
+
+@keyframes cambiarAncho {
+  from {
+    width: 100px;
+  }
+  to {
+    width: 180px;
+  }
+}
+
+.rotacion {
+  background-color: royalblue;
+  animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.color {
+  background-color: seagreen;
+  animation: cambiarColor 3s infinite;
+}
+
+@keyframes cambiarColor {
+  0% {
+    background-color: seagreen;
+  }
+  33% {
+    background-color: orange;
+  }
+  66% {
+    background-color: purple;
+  }
+  100% {
+    background-color: seagreen;
+  }
+}
+
+.texto-parpadeante {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(27, 120, 92);
+  animation: parpadear 1s infinite;
+}
+
+.img-parpadea {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    animation: parpadear cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+.img-parpadea img {
+  width: 80px;
+  height: auto;
+  
+}
+
+@keyframes parpadear {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.zona-movimiento {
+  width: 400px;
+  height: 120px;
+  border: 2px dashed #555;
+  margin: 40px auto;
+  position: relative;
+  background-color: white;
+}
+
+.cuadro-movil {
+  width: 80px;
+  height: 80px;
+  background-color: gold;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  animation: moverLados 3s infinite alternate ease-in-out;
+}
+
+@keyframes moverLados {
+  from {
+    left: 0;
+  }
+  to {
+    left: 320px;
+  }
+}
+
+
+/* NIVEL 3 */
+.nivel3-scroll,
+.nivel3-fill,
+.nivel3-bezier {
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* 1. scroll-timeline */
+.barra-scroll {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    margin: 50px auto;
+    animation: crecerScroll linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes crecerScroll {
+    from {
+        transform: scale(0.5);
+        opacity: 0.3;
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* 2. animation-fill-mode */
+.caja-fill {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    margin: 50px auto;
+    animation: moverFinal 3s forwards;
+}
+
+@keyframes moverFinal {
+    from {
+        transform: translateX(0);
+        background-color: coral;
+    }
+
+    to {
+        transform: translateX(200px);
+        background-color: purple;
+    }
+}
+
+/* 3. cubic-bezier() */
+.caja-bezier {
+    width: 100px;
+    height: 100px;
+    background-color: dodgerblue;
+    margin: 50px auto;
+    animation: movimientoRealista 2s infinite alternate cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes movimientoRealista {
+    from {
+        transform: translateX(-150px);
+    }
+
+    to {
+        transform: translateX(150px);
+    }
 }
 
 /* otros 
