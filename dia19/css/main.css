@@ -194,12 +194,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    animation: parpadear cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+    
 }
 
 .img-parpadea img {
   width: 80px;
   height: auto;
+  animation: parpadear 3s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
   
 }
 
