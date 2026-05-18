@@ -26,6 +26,32 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.text-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 9%;
+    width: 140px;
+  filter:
+    drop-shadow(0 0 8px rgba(237, 233, 233, 0.4))
+    drop-shadow(0 0 15px rgba(240, 238, 236, 0.5));
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+.header__titulo1 {
+    color: rgb(222, 222, 231);
+    font-size: 1.5rem;
+}
+
 .menu {
   position: sticky;
   top: 0;
@@ -66,7 +92,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(58, 35, 24, 0.85);
+  background: rgba(43, 15, 2, 0.85);
   backdrop-filter: blur(8px);
 }
 
@@ -111,10 +137,55 @@ body {
   margin-bottom: 30px;
 }
 
+.galeria {
+  padding: 100px 80px;
+  background: #f8f5f0;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-size: 55px;
+  color: #3b2f2f;
+  margin-bottom: 15px;
+}
+
+.subtitulo-galeria {
+  color: #7c5f46;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: 0.4s;
+}
+
+.grid-galeria img:hover {
+  transform: scale(1.04);
+  filter: brightness(1.12);
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.cards-ruta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 35px;
+  
 }
 
 .card {
