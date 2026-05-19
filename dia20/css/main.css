@@ -124,3 +124,60 @@ button {
     text-decoration: none;
     color: #11998e;
 }
+
+ /* Nivel 2 */
+ .campo{
+    margin-top:15px;
+    padding:10px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+/* Resalta el grupo que se está editando */
+.campo:focus-within{
+    border-color:#4A90E2;
+    background:#f0f7ff;
+    box-shadow:0 0 10px rgba(74,144,226,0.3);
+}
+
+/* Label normal */
+.campo label{
+    display:block;
+    font-size:14px;
+    color:#555;
+    margin-bottom:6px;
+}
+
+/* Campo vacío */
+.campo input:placeholder-shown,
+.campo textarea:placeholder-shown{
+    background:#fafafa;
+    border-color:#ddd;
+}
+
+/* Campo con texto */
+.campo input:not(:placeholder-shown),
+.campo textarea:not(:placeholder-shown){
+    background:#eefaf1;
+    border-color:#38b000;
+}
+
+.campo input,
+.campo textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+input:valid,
+textarea:valid{
+    border-color:#38b000;
+}
+
+input:invalid,
+textarea:invalid{
+    border-color:#e63946;
+}
