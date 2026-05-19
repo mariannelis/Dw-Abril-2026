@@ -4,3 +4,123 @@
     border: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.contenedor {
+   display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    margin-top:auto;
+}
+
+.formulario {
+    width:400px;
+    height:400px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    background:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+.registro {
+    background: white;
+    padding: 30px;
+    width: 370px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.formulario h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* botones distintos */
+.contacto button {
+    background: #4A90E2;
+}
+
+.contacto button:hover {
+    background: #357ABD;
+}
+
+.registro button {
+    background: #ff5e62;
+}
+
+.registro button:hover {
+    background: #e0484d;
+}
+
+.login button {
+    background: #11998e;
+}
+
+.login button:hover {
+    background: #0f7f76;
+}
+
+.extra {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.extra a {
+    text-decoration: none;
+    color: #11998e;
+}
