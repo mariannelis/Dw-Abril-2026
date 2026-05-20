@@ -283,13 +283,12 @@ footer {
 }
 
 .imagen-noticia img{
-  width: 90%;
+  width: 100%;
   height: 400px;
   object-fit: cover;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  text-align: center;
-  
+
 }
 
 .contenido-noticia{
