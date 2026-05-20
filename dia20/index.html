@@ -10,56 +10,36 @@
 </head>
 
 <body>
-
   <div class="contenedor">
 
     <!-- FORMULARIO CONTACTO -->
     <div class="formulario contacto">
-
       <h2>Contacto</h2>
-
       <form>
-
         <input type="text" placeholder="Nombre" required>
-
         <input type="email" placeholder="Correo electrónico" required>
-
         <input type="tel" placeholder="Teléfono" required pattern="[0-9]{8,15}"
           title="Solo números entre 8 y 15 dígitos">
-
         <textarea placeholder="Escribe tu mensaje"></textarea>
-
         <button type="submit">Enviar</button>
-
       </form>
-
     </div>
 
     <!-- FORMULARIO REGISTRO -->
     <div class="formulario registro">
-
       <h2>Registro</h2>
-
       <form>
-
         <input type="text" placeholder="Nombre completo" required minlength="3">
-
         <input type="text" placeholder="Nombre de usuario" required minlength="4" pattern="[A-Za-z0-9_]+"
           title="Solo letras, números y guion bajo">
-
         <input type="email" placeholder="Correo electrónico" required>
-
         <input type="email" placeholder="Repetir correo electrónico" required>
-
         <input type="date" required min="1900-01-01" max="2026-12-31">
 
-        <!-- DATALIST -->
+        <!-- lista de datos con paises -->
         <div class="campo">
-
           <label>País</label>
-
           <input list="paises" placeholder="Escribe o selecciona tu país" required>
-
           <datalist id="paises">
             <option value="Venezuela">
             <option value="Turquía">
@@ -68,13 +48,9 @@
             <option value="Argentina">
             <option value="México">
           </datalist>
-
         </div>
-
         <button type="submit">Registrarse</button>
-
       </form>
-
     </div>
 
     <!-- FORMULARIO LOGIN -->
