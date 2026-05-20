@@ -283,12 +283,13 @@ footer {
 }
 
 .imagen-noticia img{
-  width: 100%;
-  height: 480px;
+  width: 90%;
+  height: 400px;
   object-fit: cover;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  margin-bottom: 40px;
+  text-align: center;
+  
 }
 
 .contenido-noticia{
@@ -296,6 +297,7 @@ footer {
   padding: 40px;
   border-radius: 22px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 50px;
 }
 
 .contenido-noticia p{
