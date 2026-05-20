@@ -1,114 +1,158 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Dia 20: Formularios y repaso HTML </title>
-  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-  <link rel='stylesheet' href='css/main.css'>
-  <script src="js/main.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Día 20: Formularios y repaso HTML</title>
+
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+
   <div class="contenedor">
+
+    <!-- FORMULARIO CONTACTO -->
     <div class="formulario contacto">
+
       <h2>Contacto</h2>
 
       <form>
+
         <input type="text" placeholder="Nombre" required>
 
         <input type="email" placeholder="Correo electrónico" required>
 
-        <input type="tel" placeholder="Teléfono" required>
+        <input type="tel" placeholder="Teléfono" required pattern="[0-9]{8,15}"
+          title="Solo números entre 8 y 15 dígitos">
 
         <textarea placeholder="Escribe tu mensaje"></textarea>
 
         <button type="submit">Enviar</button>
+
       </form>
+
     </div>
 
+    <!-- FORMULARIO REGISTRO -->
     <div class="formulario registro">
+
       <h2>Registro</h2>
+
       <form>
-        <type="text" placeholder="Nombre completo" required minlength="3">
 
-          <input type="text" placeholder="Nombre de usuario" required minlength="4" pattern="[A-Za-z0-9_]+"
-            title="Solo se permiten letras, números y guion bajo">
+        <input type="text" placeholder="Nombre completo" required minlength="3">
 
-          <input type="email" placeholder="Correo electrónico" required>
+        <input type="text" placeholder="Nombre de usuario" required minlength="4" pattern="[A-Za-z0-9_]+"
+          title="Solo letras, números y guion bajo">
 
-          <input type="email" placeholder="Repetir correo electrónico" required>
+        <input type="email" placeholder="Correo electrónico" required>
 
-          <input type="date" required min="1900-01-01" max="2026-12-31">
-          <div class="campo">
-            <label>País</label>
-            <input list="paises" placeholder="Escribe o selecciona tu país" required>
+        <input type="email" placeholder="Repetir correo electrónico" required>
 
-            <datalist id="paises">
-              <option value="Venezuela">
-              <option value="Turquía">
-              <option value="España">
-              <option value="Colombia">
-              <option value="Argentina">
-              <option value="México">
-            </datalist>
-          </div>
+        <input type="date" required min="1900-01-01" max="2026-12-31">
 
-          <button type="submit">Registrarse</button>
+        <!-- DATALIST -->
+        <div class="campo">
+
+          <label>País</label>
+
+          <input list="paises" placeholder="Escribe o selecciona tu país" required>
+
+          <datalist id="paises">
+            <option value="Venezuela">
+            <option value="Turquía">
+            <option value="España">
+            <option value="Colombia">
+            <option value="Argentina">
+            <option value="México">
+          </datalist>
+
+        </div>
+
+        <button type="submit">Registrarse</button>
+
       </form>
+
     </div>
 
+    <!-- FORMULARIO LOGIN -->
     <div class="formulario login">
+
       <h2>Iniciar Sesión</h2>
 
       <form>
+
         <input type="text" placeholder="Usuario o Email" required>
 
         <input type="password" placeholder="Contraseña" required minlength="6">
 
         <button type="submit">Entrar</button>
+
       </form>
 
       <div class="extra">
         <p>¿Olvidaste tu contraseña?</p>
         <a href="#">Recuperarla</a>
       </div>
+
     </div>
-    <!-- Nivel 2 -->
-    <form>
-      <div class="campo">
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre completo" required minlength="3">
-      </div>
 
-      <div class="campo">
-        <label>Email</label>
-        <input type="email" placeholder="Escribe tu email" required>
-      </div>
+    <!-- NIVEL 2 -->
+    <div class="formulario">
 
-      <div class="campo">
-        <label>Mensaje</label>
-        <textarea placeholder="Escribe tu mensaje"></textarea>
-      </div>
-      <div class="campo">
-        <label>Ciudad</label>
-        <input list="ciudades" placeholder="Selecciona o escribe tu ciudad" required>
+      <h2>Nivel 2</h2>
 
-        <datalist id="ciudades">
-          <option value="Estambul">
-          <option value="Madrid">
-          <option value="Caracas">
-          <option value="Bogotá">
-          <option value="Buenos Aires">
-        </datalist>
+      <form>
+
+        <div class="campo">
+
+          <label>Nombre</label>
+
+          <input type="text" placeholder="Nombre completo" required minlength="3">
+
+        </div>
+
+        <div class="campo">
+
+          <label>Email</label>
+
+          <input type="email" placeholder="Escribe tu email" required>
+
+        </div>
+
+        <div class="campo">
+
+          <label>Mensaje</label>
+
+          <textarea placeholder="Escribe tu mensaje"></textarea>
+
+        </div>
+
+        <!-- DATALIST -->
+        <div class="campo">
+
+          <label>Ciudad</label>
+
+          <input list="ciudades" placeholder="Selecciona o escribe tu ciudad" required>
+
+          <datalist id="ciudades">
+            <option value="Estambul">
+            <option value="Madrid">
+            <option value="Caracas">
+            <option value="Bogotá">
+            <option value="Buenos Aires">
+          </datalist>
+
+        </div>
+
         <button type="submit">Enviar</button>
 
-    </form>
+      </form>
 
+    </div>
 
-
-  </div>
   </div>
 
 </body>
