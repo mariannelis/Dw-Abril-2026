@@ -2,5 +2,56 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border border-box;
+    box-sizing: border-box;
 }
+
+body {
+    scroll-behavior: smooth;
+}
+
+.header-index {
+    
+    background: #1d3b34;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.menu {
+  position: sticky;
+  top: 0;
+  min-height: 100px;
+  width: 100%;
+  z-index: 99;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    color: #d4a373;
+}
+
+.logo {
+    width: 200px;
+    filter:
+        drop-shadow(0 0 8px rgba(237, 233, 233, 0.4)) drop-shadow(0 0 15px rgba(240, 238, 236, 0.5));
+}
+
