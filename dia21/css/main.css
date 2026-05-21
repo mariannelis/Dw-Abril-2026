@@ -84,14 +84,14 @@ body {
 }
 
 
-.dropdown-menu a{
+.dropdown-menu a {
   display: block;
   color: #183039;
   padding: 12px 18px;
   font-size: 14px;
 }
 
-.dropdown-menu a:hover{
+.dropdown-menu a:hover {
   background: #f4f6f3;
   color: #49d49d;
 }
