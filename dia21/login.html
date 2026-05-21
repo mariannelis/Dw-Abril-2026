@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 21: Hablemos de Tecnologia verde</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <header class="header-index">
+    <nav class="menu">
+      <a class="text-logo" href="index.html">
+        <img class="logo" src="images/logo-header.png" alt="logo principal" title="Tecnologia Verde">
+      </a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ultimasnoticias.html">Ultimas Noticias</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+        <li><a href="registro.html">Suscribete</a></li>
+      </ul>
+      <form class="buscador">
+        <input type="text" placeholder="Buscar Noticias">
+        <button>Buscar</button>
+      </form>
+    </nav>
+  </header>
+
+  <main class="login-page">
+    <section class="login-card">
+      <div class="login-info">
+        <span class="etiqueta-login">Bienvenido</span>
+        <h1>Inicia sesión</h1>
+        <p>
+          Accede a las últimas noticias sobre tecnología verde, sostenibilidad e innovación.
+        </p>
+      </div>
+
+      <form class="formulario-login">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="Ingresa tu correo" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Ingresa tu contraseña" required minlength="8"
+          pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+          title="La contraseña debe tener al menos 8 caracteres, incluyendo letras y números">
+
+        <div class="login-opciones">
+          <label>
+            <input type="checkbox"> Recordarme
+          </label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button class="btn-entrar" type="submit">Entrar</button>
+
+        <p class="texto-registro">
+          ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenido_footer">
+      <p class="titulo_footer">
+        Síguenos en nuestras redes
+      </p>
+      <div class="redes">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+      <p class="copyright"> © 2026 The Marianne voice in the word since 1993· Todos los derechos reservados
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
