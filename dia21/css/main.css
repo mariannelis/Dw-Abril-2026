@@ -22,7 +22,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .menu {
@@ -38,9 +38,12 @@ body {
     gap: 25px;
 }
 
+.menu>ul {
+    display: flex;
+}
+
 .menu ul {
     list-style: none;
-    display: flex;
     gap: 20px;
 }
 
@@ -70,34 +73,38 @@ body {
 
 }
 
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
-  display:none;
-  position:static;
-  top: 80%;
-  left: 0;
-  background: white;
-  width: 230px;
-  padding: 10px 0;
-  border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-  z-index: 999;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 230px;
+    padding: 10px 0;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    z-index: 999;
 }
 
 
 .dropdown-menu a {
-  display: block;
-  color: #183039;
-  padding: 12px 18px;
-  font-size: 14px;
+    display: block;
+    color: #183039;
+    padding: 12px 18px;
+    font-size: 14px;
 }
 
 .dropdown-menu a:hover {
-  background: #f4f6f3;
-  color: #49d49d;
+    background: #f4f6f3;
+    color: #49d49d;
 }
 
-.dropdown:hover .dropdown-menu{
-  display: block;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 
