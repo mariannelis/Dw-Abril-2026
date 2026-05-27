@@ -11,13 +11,15 @@ body {
 
 /* clases pertenecientes al header */
 .header-index {
+    display: flex;
+    align-items: center;
     background:
         linear-gradient(rgba(124, 162, 176, 0.75), rgba(24, 48, 57, 0.85)),
         url("../images/5759.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
@@ -36,6 +38,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 25px;
+
 }
 
 .menu>ul {
@@ -48,18 +51,27 @@ body {
 }
 
 .menu a {
-    color: white;
+    display: inline-block;
+    padding: 12px 18px;
+    color: #f4fffb;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 999px;
+    transition: 0.3s ease;
 }
 
-.menu a:hover {
-    color: #d4a373;
+.menu a:hover,
+.active a:hover {
+    background: linear-gradient(135deg, #49d49d, #2f9f71);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(73, 212, 157, 0.25);
+    transform: translateY(-2px);
 }
 
 .logo {
-    width: 250px;
+    width: 200px;
+    display: block;
     filter: drop-shadow(0 0 8px rgba(237, 233, 233, 0.4)) drop-shadow(0 0 15px rgba(240, 238, 236, 0.5));
 }
 
@@ -111,25 +123,37 @@ body {
 /* boton buscador en el header */
 .buscador {
     display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 5px;
+}
+
+.buscador input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .buscador input {
-    padding: 10px 12px;
+    width: 170px;
     border: none;
-    border-radius: 20px 0 0 20px;
     outline: none;
+    background: transparent;
+    color: white;
+    padding: 10px 12px;
 }
 
 .buscador button {
-    padding: 10px 15px;
     border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
     color: #10251d;
-    font-weight: bold;
-    border-radius: 0 20px 20px 0;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    ;
-    background-image: linear-gradient(to right, #43a47d, #4ab2e2);
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background: #ffffff;
 }
 
 /* Main */
