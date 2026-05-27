@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border border-box;
+}
+
+header {
+ background-color: pink;
+ margin: auto;
+ padding: 18px;
+ text-align: center;
+ color: rgb(79, 48, 108);
+ top: 10px;
+}
+section {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    padding: 1px;
+    width: 100%;
+ }
+ .animal {
+    border-bottom: 1px;
+ }
