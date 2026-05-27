@@ -58,12 +58,14 @@ const copiaAlumno = { ...alumno };
     const botonColor = document.getElementById("cambiarColor");
 
     botonColor.addEventListener("click", function() {
+        console.log("funciona");
       parrafo.style.color = "red";
     });
 
     const botonEliminar = document.getElementById("eliminar");
 
     botonEliminar.addEventListener("click", function() {
+        console.log("funciona");
       parrafo.remove();
     });
 
