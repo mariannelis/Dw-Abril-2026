@@ -84,4 +84,18 @@ console.log("Variable c:", c);
 let nombres = ["Marianne", "Mirian", "Ana", "Carlos"];
 
 // Crear lista HTML con map
-document.getElementById("lista").innerHTML = listaHTML;
+let lista = document.getElementById("lista");
+const elementos = nombres.map(nombre => {
+    const li = document.createElement("li");
+    li.textContent = nombre;
+    return li;
+});
+
+elementos.forEach(elemento => lista.appendChild(elemento));
+
+const nicolacito = nombres.map((nombre, index) => {
+    // return { nombre: nombre, numero: index + 1, nota: 4.9}; 
+    return nombre.toUpperCase();
+});
+console.log(nombres);
+console.log(nicolacito);
