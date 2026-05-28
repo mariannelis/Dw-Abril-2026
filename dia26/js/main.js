@@ -72,8 +72,7 @@ array1.forEach((element) => console.log(element));
 const animals = [
     {
     name: 'perro',
-    image: 'https://www.google.com/search?sca_esv=0716f69066676062&sxsrf=ANbL-n6ujeV9QfuCtUBcGpm8K4tqgKnXYg:1779813636687&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaMb_WtLz8zQ41bNqiqMK_0GCDA2eBSrpJajLJh54y7KhefI_dvRXyUnknSrVPAkUiebdeZMsnQIiDvY2RbGM467VORe-GZB7s0qVo2EbQCqu6z19XftDKvJxKS8mznUYmUGsXlAgy55KuDFeqKt0pkAy4uo&q=perro&sa=X&ved=2ahUKEwis3tK8steUAxVTh_0HHcRuFtgQtKgLegQIFBAB&biw=708&bih=708&dpr=1.25#sv=CAMSVhoyKhBlLVd1bVpSSlQ4azdiRjVNMg5XdW1aUkpUOGs3YkY1TToON3JGY3FwWGllYnhmUk0gBCocCgZtb3NhaWMSEGUtV3VtWlJKVDhrN2JGNU0YADABGAcg5u6qmApKCBABGAEgASgB'
-},
+    image: 'images/perro.jpg' },
 ];
 const extra1 = document.getElementById('extra1');
 animals.forEach(animal => {

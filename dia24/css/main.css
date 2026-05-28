@@ -4,3 +4,25 @@
     border: 0;
     box-sizing: border border-box;
 }
+
+header {
+    background-color: aquamarine;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+    margin: 10px;
+}
+
+button {
+    border-radius: 10%;
+    background-color: aqua;
+    color: black;
+    padding: 10px;
+   font-size: 15px;
+   font-weight: bold;
+
+}
