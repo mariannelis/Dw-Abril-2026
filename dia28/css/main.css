@@ -5,28 +5,57 @@
     box-sizing: border border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    color: #333;
+}
+
 header {
     padding: 20px;
     background-color: purple;
     color: #f4f6f8;
     margin: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 40px;
     text-align: center;
 }
 
+.eventos {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+}
+ul {
+    padding-left: 30px;
+}
+
+li {
+    text-align: left;
+    margin-bottom: 10px;
+}
+li :hover {
+    background-color: #e9c4e3;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     color: #252323;
-    padding: 15px;
     border-radius: 8px;
     font-weight: bold;
+    margin: 10px;
 }
 
 button {
@@ -47,4 +76,42 @@ button:hover {
 
 h2 {
     color: #70085f;
+    margin: 10px;
 }
+
+.caja {
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      display: inline-block;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    #zonaMouse {
+      width: 250px;
+      height: 150px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    #padre {
+      background: #93c5fd;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    #hijo {
+      background: #fca5a5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+ input {
+      padding: 8px;
+      margin: 5px;
+    }

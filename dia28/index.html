@@ -1,33 +1,124 @@
 <!DOCTYPE html>
 <html lang='es'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 28 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <header>
-      <h1>Funciones y Listeners + parámetro e</h1>
-    </header>
-    <main>
 
-      <!-- Nivel 1: Eventos básicos y descripción -->
-      <section>
-        <h2>Lista de Eventos</h2>
-      <p>A continuacion veras como al hacer click en cada uno de los botones mostraran un evento</p>
-       </section>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 28 </title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Dia 28-Funciones y Listeners + parámetro e</h1>
+  </header>
+  <main>
+
+    <!-- Nivel 1: Eventos básicos y descripción -->
+    <section class="eventos">
+      <h2>Lista de Eventos</h2>
+      <p>A continuacion una lista definida con el conceptop de cada evento</p>
+      <ul>
+        <li><b>click:</b> ocurre cuando se hace clic en un elemento.</li>
+        <li><b>dblclick:</b> ocurre al hacer doble clic.</li>
+        <li><b>mouseover:</b> cuando el mouse entra sobre un elemento.</li>
+        <li><b>mouseout:</b> cuando el mouse sale de un elemento.</li>
+        <li><b>mousemove:</b> cuando el mouse se mueve.</li>
+        <li><b>mousedown:</b> cuando se presiona un botón del mouse.</li>
+        <li><b>mouseup:</b> cuando se suelta un botón del mouse.</li>
+        <li><b>keydown:</b> cuando se presiona una tecla.</li>
+        <li><b>keyup:</b> cuando se suelta una tecla.</li>
+        <li><b>keypress:</b> cuando se mantiene presionada una tecla.</li>
+        <li><b>submit:</b> cuando se envía un formulario.</li>
+        <li><b>change:</b> cuando cambia el valor de un input.</li>
+        <li><b>input:</b> cuando se escribe dentro de un campo.</li>
+        <li><b>focus:</b> cuando un elemento recibe el foco.</li>
+        <li><b>blur:</b> cuando un elemento pierde el foco.</li>
+        <li><b>load:</b> cuando la página termina de cargar.</li>
+        <li><b>resize:</b> cuando cambia el tamaño de la ventana.</li>
+        <li><b>scroll:</b> cuando se hace scroll.</li>
+        <li><b>contextmenu:</b> cuando se abre el menú con clic derecho.</li>
+        <li><b>copy:</b> cuando se copia contenido.</li>
+      </ul>
+    </section>
 
     <!-- Nivel 2: Eventos con interacción visual-creando 5 botones -->
-<section>
+    <section>
       <button class="color">Boton 1</button>
       <button class="color">Boton 2</button>
       <button class="color">Boton 3</button>
       <button class="color">Boton 4</button>
       <button class="color">Boton 5</button>
-      </section>
-    </main>
+    </section>
+
+    <!-- 5 divs y un boton -->
+     <section>
+    <h2>5 div que cambian de color</h2>
+    <div class="caja"></div>
+    <div class="caja"></div>
+    <div class="caja"></div>
+    <div class="caja"></div>
+    <div class="caja"></div>
+    <br>
+    <button id="cambiarDivs">Cambiar colores</button>
+  </section>
+
+  <!-- movimiento del raton -->
+    <section>
+    <h2>Movimiento del ratón</h2>
+    <p>Mueve el ratón por la página y mira la consola.</p>
+  </section>
+
+<!-- Entrada y salida del raton-cambio de color -->
+  <section>
+    <h2>Entrar y salir del div</h2>
+    <div id="zonaMouse">Pasa el mouse aquí</div>
+  </section>
+
+  <!--Nivel 3: Eventos avanzados y propiedades especiales  -->
+  <section>
+    <h2>Nivel 3: eventos usados</h2>
+    <button id="eventoClick">Evento click</button>
+    <input id="eventoInput" type="text" placeholder="Escribe algo">
+    <select id="eventoChange">
+      <option>Selecciona una opción</option>
+      <option>Opción 1</option>
+      <option>Opción 2</option>
+    </select>
+  </section>
+
+  <!-- preventDefault, stopPropagation y once -->
+   <section>
+    <h2>preventDefault, stopPropagation y once</h2>
+
+    <form id="formulario">
+      <input type="text" placeholder="Nombre">
+      <button type="submit">Enviar formulario</button>
+    </form>
+
+    <br>
+
+    <div id="padre">
+      Div padre
+      <div id="hijo">Div hijo</div>
+    </div>
+
+    <br>
+
+    <button id="soloUnaVez">Solo funciona una vez</button>
+  </section>
+
+  <!--THIS  -->
+<section>
+    <h2>Uso de this</h2>
+    <button class="botonThis">Cambiarme</button>
+    <button class="botonThis">Cambiarme</button>
+    <button class="botonThis">Cambiarme</button>
+  </section>
+
+  </main>
 </body>
+
 </html>
