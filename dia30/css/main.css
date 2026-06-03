@@ -20,17 +20,18 @@ body {
     text-align: center;
 }
 
-main{
+main {
     width: 90%;
     margin: auto;
 }
-.container{
+
+.container {
     margin-top: 80px;
     padding: 20px;
 }
 
-.botones{
-     display: flex;
+.botones {
+    display: flex;
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
@@ -45,6 +46,7 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 #btnLocation {
@@ -57,17 +59,17 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #9bda48;
 }
 
 h1 {
     color: white;
     text-align: center;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
     font-size: 28px;
 }
 
-.contenedor-cajas{
+.contenedor-cajas {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -86,6 +88,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
 #btnRandom {
     background-color: #ffc107;
     color: white;
@@ -94,6 +97,7 @@ h1 {
     border-radius: 10px;
     margin-top: 20px;
 }
+
 h2 {
     color: #333;
     margin-bottom: 20px;
@@ -102,24 +106,25 @@ h2 {
 }
 
 .calculadora {
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     margin-top: 30px;
-    
+
     border-radius: 12px;
 }
 
-input, select{
+input,
+select {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
 }
 
-#resultado{
+#resultado {
     margin-top: 20px;
     color: #333;
 }
@@ -132,4 +137,32 @@ input, select{
     border-radius: 10px;
     padding: 12px 20px;
     margin-top: 20px;
+}
+
+.divResultado {
+    width: 100px;
+    height: 100px;
+    background-color: #0d86ff;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+.containerfinal {
+    margin-top: 80px;
+    padding: 20px;
+}
+.btnNivel4 {
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;   
+    cursor: pointer;
+    margin: 10px;
 }

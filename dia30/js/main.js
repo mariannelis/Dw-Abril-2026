@@ -65,9 +65,22 @@ btnCalcular.addEventListener("click", function () {
             res = num1 / num2;
             break;
     }
-
    resultado.innerHTML = `Resultado: ${res}`;
 });
 
- 
-
+// ejercicios con querySelectorAll
+ // 1. Cambiar color de todos los DIV
+const divs = document.querySelectorAll(".divResultado");
+divs.forEach(div => {
+    div.style.backgroundColor = "#f0a500";
+});
+const parrafos = document.querySelectorAll(".containerfinal p");
+parrafos.forEach(function(p){
+    p.innerHTML += " Texto agregado.";
+});
+const botonesExtra = document.querySelectorAll(".btnNivel4");
+botonesExtra.forEach(function(botoncito){
+    botoncito.addEventListener("click", function(){
+        botoncito.innerHTML = "¡Hiciste click!";
+    });
+});
