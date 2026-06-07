@@ -86,22 +86,16 @@ setInterval(() => {
 
 // Contaddor con setInterval
 let contador = 0;
+
+const contadorDOM = document.getElementById('contador');
+
 const intervalo = setInterval(() => {
-    const contadorDOM = document.getElementById('contador');
-    const botonDisminuir = document.getElementById('disminuir');
-    const botonReiniciar = document.getElementById('reiniciar');
-    const botonAumentar = document.getElementById('aumentar');
-    botonAumentar.addEventListener('click', () => {
-    valorContador++; // Suma 1
-    contadorDOM.textContent = valorContador;
-});
+    contador++;
 
-botonDisminuir.addEventListener('click', () => {
-    valorContador--; // Resta 1
-    contadorDOM.textContent = valorContador;
-});
+    contadorDOM.textContent = contador;
 
-botonReiniciar.addEventListener('click', () => {
-    valorContador = 0; // Reinicia a 0
-    contadorDOM.textContent = valorContador;
-});
+    if (contador === 10) {
+        clearInterval(intervalo);
+        console.log('Contador detenido');
+    }
+}, 1000);
