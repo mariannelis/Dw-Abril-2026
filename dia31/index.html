@@ -1,14 +1,95 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 0 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js"></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 31</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
-    
+  <header>
+    <h1>DOM querySelector + prácticas con style</h1>
+  </header>
+  <main>
+    <section class="nivel1">
+      <h2>Nivel 1:Acceso y modificación básica del DOM</h2>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+      </ul>
+      <div class="parrafos">
+        <h3>Conceptos básicos</h3>
+        <p>HTML (HyperText Markup Language) es el lenguaje estándar utilizado para estructurar y crear el contenido de
+          las páginas web.</p>
+        <p>CSS (Cascading Style Sheets) es el lenguaje que se utiliza para diseñar y dar estilo visual a las páginas web
+          creadas con HTML.</p>
+        <p>JavaScript es un lenguaje de programación que se utiliza para agregar interactividad y dinamismo a las
+          páginas web, permitiendo a los desarrolladores crear experiencias más ricas y atractivas para los usuarios.
+        </p>
+      </div>
+      <div class="botonecitos">
+        <button>Aceptar</button>
+        <button>Cancelar</button>
+        <button>Reintentar</button>
+      </div>
+    </section>
+
+    <section class="nivel2">
+      <h2>Nivel 2: Eventos y manipulación dinámica</h2>
+      <h3>Tachar tareas terminadas</h3>
+      <ul id="tareas">
+        <li>Estudiar JavaScript</li>
+        <li>Practicar DOM</li>
+        <li>Hacer ejercicios pendientes</li>
+      </ul>
+      </div>
+      <h3>Productos y precios</h3>
+      <div class="productos-precios">
+        <div class="producto" data-precio="1550">Laptop - $1550</div>
+        <div class="producto" data-precio="750">Monitor - $750</div>
+        <div class="producto" data-precio="1250">Impresora - $1250</div>
+      </div>
+      <h3>Eliminando botones del DOM</h3>
+      <div class="bloquesitos">
+        <div class="bloque">Contenido 1</div>
+        <div class="bloque">Contenido 2</div>
+        <div class="bloque">Contenido 3</div>
+      </div>
+    </section>
+
+    <section class="nivel3">
+      <h2>Nivel 3: Generación dinámica y estructuras más complejas</h2>
+      
+      <h3>Listado de personas</h3>
+      <div id="personas"></div>
+
+      <h3>Galería de imágenes</h3>
+      <div id="galeria"></div>
+
+      <h3>Tabla de usuarios</h3>
+      <div id="usuarios">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+            </tr>
+          </thead>
+          <tbody id="tablaUsuarios">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
 </body>
+
 </html>
