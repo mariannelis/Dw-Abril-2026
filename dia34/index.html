@@ -1,59 +1,123 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 34 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js" defer></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 34 </title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
-  <header>
- <nav class="menu">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li>
-        <a href="#">Servicios</a>
-        <ul class="submenu">
-          <li><a href="#">Diseño Web</a></li>
-          <li><a href="#">Programación</a></li>
-          <li><a href="#">Marketing</a></li>
-        </ul>
-      </li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-  <h1>Galería con Lightbox</h1>
+  <header class="header">
+    <h1>Día 34: Práctica Menú y Lightbox</h1>
+    <p>Menú interactivo, lightbox, JavaScript, accesibilidad y lazy loading.</p>
   </header>
-  <main> 
-   <section class="galeria">
-    <a href="https://picsum.photos/id/1015/800/500" class="glightbox">
-      <img src="https://picsum.photos/id/1015/300/200" alt="Imagen 1">
-    </a>
 
-    <a href="https://picsum.photos/id/1025/800/500" class="glightbox">
-      <img src="https://picsum.photos/id/1025/300/200" alt="Imagen 2">
-    </a>
+  <!-- NIVEL 1 -->
+  <main>
+    <section class="nivel">
+      <h2>Menú y Lightbox básico</h2>
+      <nav class="menu-css">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li>
+            <a href="#">Servicios</a>
+            <ul class="submenu">
+              <li><a href="#">Diseño Web</a></li>
+              <li><a href="#">Programación</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Galería</a></li>
+          <li>
+            <a href="#">Acerca de</a>
+            <ul class="submenu">
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="#">Equipo</a></li>
+              <li><a href="#">Misión</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <h3>Lightbox con librería externa</h3>
+      <div class="galeria">
+        <a href="https://picsum.photos/id/1015/900/600" class="glightbox">
+          <img src="https://picsum.photos/id/1015/300/200" alt="Imagen 1">
+        </a>
+        <a href="https://picsum.photos/id/1025/900/600" class="glightbox">
+          <img src="https://picsum.photos/id/1025/300/200" alt="Imagen 2">
+        </a>
+        <a href="https://picsum.photos/id/1035/900/600" class="glightbox">
+          <img src="https://picsum.photos/id/1035/300/200" alt="Imagen 3">
+        </a>
+        <a href="https://picsum.photos/id/1045/900/600" class="glightbox">
+          <img src="https://picsum.photos/id/1045/300/200" alt="Imagen 4">
+        </a>
+        <a href="https://picsum.photos/id/1055/900/600" class="glightbox">
+          <img src="https://picsum.photos/id/1055/300/200" alt="Imagen 5">
+        </a>
+      </div>
+    </section>
 
-    <a href="https://picsum.photos/id/1035/800/500" class="glightbox">
-      <img src="https://picsum.photos/id/1035/300/200" alt="Imagen 3">
-    </a>
+    <!-- NIVEL 2 -->
+    <section class="nivel">
+      <h2>Menú con JS y Lightbox propio</h2>
 
-    <a href="https://picsum.photos/id/1045/800/500" class="glightbox">
-      <img src="https://picsum.photos/id/1045/300/200" alt="Imagen 4">
-    </a>
+      <nav class="menu-js">
+        <button class="menu-btn">Inicio</button>
+        <button class="menu-btn">Galería</button>
+        <button class="menu-btn">Servicios</button>
+        <button class="menu-btn">Contacto</button>
+      </nav>
 
-    <a href="https://picsum.photos/id/1055/800/500" class="glightbox">
-      <img src="https://picsum.photos/id/1055/300/200" alt="Imagen 5">
-    </a>
-  </section>
+      <span id="tituloMenu">Selecciona una opción del menú</span>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="close" id="closeBtn" aria-label="Cerrar imagen">&times;</button>
-    <img id="lightboxImg" src="" alt="Imagen ampliada">
-  </div>
+      <h3>Lightbox propio sin librerías</h3>
+
+      <div class="galeria">
+        <img onclick="open_img(this.src)" src="https://picsum.photos/id/1015/300/200" alt="Imagen 1">
+        <img onclick="open_img(this.src)" src="https://picsum.photos/id/1025/300/200" alt="Imagen 2">
+        <img onclick="open_img(this.src)" src="https://picsum.photos/id/1035/300/200" alt="Imagen 3">
+      </div>
+    </section>
+
+    <!-- Lightbox propio Nivel 2 -->
+    <div id="lightbox">
+      <div id="background" onclick="close_img()"></div>
+      <button id="cerrar" onclick="close_img()">X</button>
+      <img src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- NIVEL 3 -->
+    <section class="nivel">
+      <h2>Accesibilidad y optimización</h2>
+      <button id="botonInfo" aria-expanded="false">Mostrar información</button>
+
+      <div id="cajaInfo" aria-hidden="true">
+        <p>Esta sección usa aria-expanded y aria-hidden. Los atributos se actualizan con JavaScript.</p>
+      </div>
+
+      <h3>Galería con IntersectionObserver</h3>
+      <div class="galeria lazy">
+        <img data-src="https://picsum.photos/id/1015/600/400" alt="Imagen lazy 1">
+        <img data-src="https://picsum.photos/id/1025/600/400" alt="Imagen lazy 2">
+        <img data-src="https://picsum.photos/id/1035/600/400" alt="Imagen lazy 3">
+        <img data-src="https://picsum.photos/id/1045/600/400" alt="Imagen lazy 4">
+        <img data-src="https://picsum.photos/id/1055/600/400" alt="Imagen lazy 5">
+        <img data-src="https://picsum.photos/id/1065/600/400" alt="Imagen lazy 6">
+        <img data-src="https://picsum.photos/id/1075/600/400" alt="Imagen lazy 7">
+        <img data-src="https://picsum.photos/id/1074/600/400" alt="Imagen lazy 8">
+        <img data-src="https://picsum.photos/id/1015/600/400" alt="">
+        <img data-src="https://picsum.photos/id/1025/600/400" alt="">
+      </div>
+    </section>
   </main>
 </body>
+
 </html>

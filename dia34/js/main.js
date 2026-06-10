@@ -1,51 +1,76 @@
-const lightbox = GLightbox({
+const lightboxLibreria = GLightbox({
   selector: ".glightbox"
 });
 
-// nivel 2
-// Menú con JavaScript
-const botones = document.querySelectorAll(".menu-btn");
-const titulo = document.getElementById("titulo");
+// NIVEL 2 - Menú con JavaScript
 
-// Recupera el valor guardado en localStorage
+const botonesMenu = document.querySelectorAll(".menu-btn");
+const tituloMenu = document.getElementById("tituloMenu");
+
 const opcionGuardada = localStorage.getItem("opcionMenu");
 
 if (opcionGuardada) {
-  titulo.textContent = "Opción seleccionada: " + opcionGuardada;
+  tituloMenu.textContent = "Opción seleccionada: " + opcionGuardada;
 }
 
-botones.forEach((boton) => {
+botonesMenu.forEach((boton) => {
   boton.addEventListener("click", () => {
-    const texto = boton.textContent;
+    const textoBoton = boton.textContent;
 
-    titulo.textContent = "Opción seleccionada: " + texto;
+    tituloMenu.textContent = "Opción seleccionada: " + textoBoton;
 
-    localStorage.setItem("opcionMenu", texto);
+    localStorage.setItem("opcionMenu", textoBoton);
   });
 });
 
-// Lightbox propio
-const imagenes = document.querySelectorAll(".galeria img");
-const lightbox = document.getElementById("lightbox");
-const imagenGrande = document.getElementById("imagenGrande");
-const cerrar = document.getElementById("cerrar");
+// NIVEL 2 - Lightbox propio
 
-imagenes.forEach((imagen) => {
-  imagen.addEventListener("click", () => {
-    lightbox.classList.add("activo");
-    imagenGrande.src = imagen.src;
-    imagenGrande.alt = imagen.alt;
+function open_img(url) {
+  document.querySelector("#lightbox img").setAttribute("src", url);
+
+  document.querySelector("#lightbox").classList.add("active");
+}
+
+function close_img() {
+  document.querySelector("#lightbox").classList.remove("active");
+
+  document.querySelector("#lightbox img").setAttribute("src", "");
+}
+
+// NIVEL 3 - IntersectionObserver
+
+const imagenesLazy = document.querySelectorAll(".lazy img[data-src]");
+
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if (entrada.isIntersecting) {
+      const imagen = entrada.target;
+
+      imagen.src = imagen.dataset.src;
+
+      observador.unobserve(imagen);
+    }
   });
 });
 
-cerrar.addEventListener("click", () => {
-  lightbox.classList.remove("activo");
-  imagenGrande.src = "";
+imagenesLazy.forEach((imagen) => {
+  observador.observe(imagen);
 });
 
-lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    lightbox.classList.remove("activo");
-    imagenGrande.src = "";
-  }
+// NIVEL 3 - aria-expanded y aria-hidden
+
+const botonInfo = document.getElementById("botonInfo");
+const cajaInfo = document.getElementById("cajaInfo");
+
+botonInfo.addEventListener("click", () => {
+  const estaAbierto = botonInfo.getAttribute("aria-expanded") === "true";
+
+  botonInfo.setAttribute("aria-expanded", String(!estaAbierto));
+  cajaInfo.setAttribute("aria-hidden", String(estaAbierto));
+
+  cajaInfo.style.display = estaAbierto ? "none" : "block";
+
+  botonInfo.textContent = estaAbierto
+    ? "Mostrar información"
+    : "Ocultar información";
 });
