@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 33 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js"></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 33 </title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-    
+  <header>
+    <h1>DOM + classList</h1>
+  </header>
+  <main>
+    <section>
+    <h2>Ejercicio 1</h2>
+    <div id="divAnimado" class="box"></div>
+    <button onclick="animarDiv()">Animar div</button>
+  </section>
+
+  <section>
+    <h2>Ejercicio 2</h2>
+    <p id="parrafo" class="texto-activo">Este párrafo tiene una clase aplicada.</p>
+    <button onclick="eliminarClase()">Eliminar clase</button>
+  </section>
+
+  <section>
+    <h2>Ejercicio 3</h2>
+    <div id="divBorde" class="caja-borde"></div>
+    <button onclick="cambiarTamano()">Cambiar tamaño</button>
+  </section>
+
+  <section>
+    <h2>Ejercicio 4</h2>
+    <button onclick="crearDiv()">Crear nuevo div</button>
+    <div id="contenedorDivs"></div>
+  </section>
+  </main>
 </body>
 </html>
