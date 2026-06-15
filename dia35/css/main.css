@@ -39,17 +39,16 @@ header h1 {
 }
 
 main {
-       background:
-        linear-gradient(
-            135deg,
+    background:
+        linear-gradient(135deg,
             #f4fff4 0%,
             #d8f3dc 30%,
             #deebe3 60%,
-            #c9e2d5 100%
-        );
+            #c9e2d5 100%);
 
     padding: 40px 0;
 }
+
 .galeria {
     width: 90%;
     max-width: 900px;
@@ -364,48 +363,79 @@ img {
 
 /* Nivel 3 carrusel atomatico */
 .nivel3-section {
-  width: 90%;
-  max-width: 1000px;
-  margin: 80px auto;
-  text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
 }
 
 .nivel3-scene {
-  width: 100%;
-  height: 420px;
-  position: relative;
-  perspective: 1200px;
-  overflow: hidden;
+    width: 100%;
+    height: 420px;
+    position: relative;
+    perspective: 1200px;
+    overflow: hidden;
 }
 
 .nivel3-carousel {
-  width: 320px;
-  height: 220px;
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  margin-left: -160px;
-  transform-style: preserve-3d;
-  transform-origin: center center;
-  transition: transform 0.5s ease;
+    width: 320px;
+    height: 220px;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    margin-left: -160px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform 0.5s ease;
 }
 
 .nivel3-item {
-  position: absolute;
-  width: 320px;
-  height: 220px;
-  left: 0;
-  top: 0;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
-  backface-visibility: hidden;
+    position: absolute;
+    width: 320px;
+    height: 220px;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    backface-visibility: hidden;
 }
 
 .nivel3-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background: linear-gradient(135deg,
+            #1b4332,
+            #2d6a4f,
+            #40916c);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: auto;
+    border-top: 2px solid rgba(29, 27, 27, 0.3);
+    box-shadow: 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.footer-line {
+    width: 30%;
+    max-width: 100px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 5px auto;
 }
 
 /* para hacer girar al carrusel automaticamente */
