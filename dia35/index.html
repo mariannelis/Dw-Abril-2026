@@ -1,32 +1,193 @@
 <!DOCTYPE html>
 <html lang='es'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 35</title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <link rel="stylesheet" href="swiper.css">
-  <script src="swiper.min.js"></script>
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <header>
-      <h1>Práctica Slider y Carrousel</h1>
-    </header>
-    <main>
-      <section class="nivel1">
-<h2>Uso de librerias externas</h2>
-<div class="splide" aria-label="Mi carrusel">
-  <div class="splide__track">
-    <ul class="splide__list">
-      <li class="splide__slide">Slide 1</li>
-      <li class="splide__slide">Slide 2</li>
-    </ul>
-  </div>
-</div>
-      </section>
 
-    </main>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 35</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Práctica Slider y Carrousel</h1>
+  </header>
+  <main>
+    <section class="galeria">
+      <h2 class="titulo-p">Galería de Viajes</h2>
+      <div class="swiper miSlider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Playa">
+            <h2>Playa</h2>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Montaña">
+            <h2>Montaña</h2>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Ciudad">
+            <h2>Ciudad</h2>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Naturaleza">
+            <h2>Naturaleza</h2>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- nivel 1.1 -->
+    <section class="galeria">
+      <h2 class="titulo-p">Mi Slider Personalizado</h2>
+      <div class="slideshow-container">
+
+        <div class="my-slides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+
+        <div class="my-slides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="my-slides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+    <!-- Nivel 2 carrusel -->
+
+    <section class="carousel-3d-section">
+      <h2 class="titulo-p">Carrusel 3D de Naturaleza</h2>
+
+      <div class="carousel-3d-container">
+        <button class="btn-3d prev-3d">❮</button>
+
+        <div class="carousel-3d">
+          <div class="card-3d">
+            <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="Naturaleza">
+          </div>
+
+          <div class="card-3d">
+            <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="Nieve">
+          </div>
+
+          <div class="card-3d">
+            <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="Montañas">
+          </div>
+
+          <div class="card-3d">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" alt="Lago">
+          </div>
+
+          <div class="card-3d">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200" alt="Bosque">
+          </div>
+        </div>
+        <button class="btn-3d next-3d">❯</button>
+      </div>
+    </section>
+    <!-- Nivel 2.2 -->
+    <!-- Nivel 2.2 -->
+    <section class="carousel-custom-section">
+      <h2 class="titulo-p">Carrousel personalizado JS</h2>
+
+      <div id="customContainer" class="custom-container">
+        <div id="customCarousel" class="custom-carousel">
+
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200" alt="Bosque">
+            <h3>Bosque Tropical</h3>
+          </div>
+
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1200" alt="Selva">
+            <h3>Selva Verde</h3>
+          </div>
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200" alt="Cascada">
+            <h3>Cascada Natural</h3>
+          </div>
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" alt="Lago">
+            <h3>Lago en el Bosque</h3>
+          </div>
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200" alt="Montañas y bosque">
+            <h3>Montañas y Bosque</h3>
+          </div>
+          <div class="custom-carousel-item">
+            <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200" alt="Bosque verde">
+            <h3>Bosque Verde</h3>
+          </div>
+        </div>
+      </div>
+      <div class="custom-controls">
+        <button class="custom-btn" onclick="customCarouselLeft()">❮</button>
+        <button class="custom-btn" onclick="customCarouselRight()">❯</button>
+      </div>
+      <div class="custom-indicators">
+        <span class="custom-dot custom-dot-active"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+      </div>
+    </section>
+    
+    <!-- Nivel 3 -->
+<section class="nivel3-section">
+  <h2 class="titulo-p">Carrusel 3D Dinámico</h2>
+  <div class="nivel3-scene">
+    <div class="nivel3-carousel">
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200" alt="Bosque">
+      </div>
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1200" alt="Selva">
+      </div>
+
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200" alt="Cascada">
+      </div>
+
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" alt="Lago">
+      </div>
+
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200" alt="Montañas">
+      </div>
+      <div class="nivel3-item">
+        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200" alt="Bosque verde">
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2026</p>
+  </footer>
 </body>
+
 </html>
