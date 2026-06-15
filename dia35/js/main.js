@@ -164,7 +164,7 @@ if (nivel3Carousel && nivel3Items.length > 0) {
   });
 
   setInterval(() => {
-    nivel3CurrentRotation -= 2;
+    nivel3CurrentRotation -= 1;
 
     nivel3Carousel.style.transform = `
       rotateY(${nivel3CurrentRotation}deg)
