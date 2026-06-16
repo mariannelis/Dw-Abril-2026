@@ -4,3 +4,491 @@
     border: 0;
     box-sizing: border border-box;
 }
+
+header {
+    background: linear-gradient(135deg,
+            #ffb3d9,
+            #ffd6e8,
+            #ffe8f3);
+
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #8b2252;
+    font-size: 3rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ffd6e0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.active-tab {
+    background: #ff69b4;
+    color: white;
+}
+
+/* Contenido */
+
+.tab-content {
+    display: none;
+    text-align: center;
+}
+
+.active-content {
+    display: block;
+}
+
+/* Tarjetas 3D */
+#tab1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    width: 220px;
+    height: 220px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background: #ff69b4;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h3 {
+    text-align: center;
+    font-size: 32px;
+    color: #ff69b4;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #ffd6e0;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Nivel 2 */
+/* The ocean container */
+.ocean, .ice-video {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(to bottom,
+            #0077be 0%,
+            #005a8c 30%,
+            #004070 60%,
+            #002a50 100%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: none;
+    /* hide default cursor inside ocean */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Animated waves at the top */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    top: -30px;
+    left: -50%;
+}
+
+.wave1 {
+    animation: wave 4s linear infinite;
+}
+
+.wave2 {
+    top: -20px;
+    animation: wave 6s linear infinite reverse;
+    opacity: 0.6;
+}
+
+.wave3 {
+    top: -10px;
+    animation: wave 5s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+/* Rising bubbles */
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -20px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: rise 4s infinite ease-in;
+    opacity: 0.5;
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    left: 30%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+    left: 50%;
+    animation-duration: 4.5s;
+    animation-delay: 0.5s;
+}
+
+.bubble:nth-child(4) {
+    left: 70%;
+    animation-duration: 5.5s;
+    animation-delay: 1.5s;
+}
+
+.bubble:nth-child(5) {
+    left: 90%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-450px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Fish styling */
+.fish {
+    position: absolute;
+    font-size: 45px;
+    transition: transform 0.1s ease;
+    z-index: 10;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+/* Idle wiggle */
+.fish.idle {
+    animation: idle-swim 2s ease-in-out infinite;
+}
+
+@keyframes idle-swim {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(5px) rotate(-2deg);
+    }
+}
+
+/* Food pellet */
+.food {
+    position: absolute;
+    font-size: 18px;
+    z-index: 5;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+}
+
+/* Splash effect when food drops */
+.splash {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    animation: splash 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes splash {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Eating effect */
+.eat-effect {
+    position: absolute;
+    font-size: 20px;
+    animation: eat 0.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes eat {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Feeder cursor */
+.feeder {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    z-index: 40;
+    opacity: 0.95;
+    transition: transform 0.06s linear;
+}
+
+/* Controls styling */
+.controls {
+    text-align: center;
+    padding: 25px;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 20px auto;
+
+}
+
+.controls p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.controls .hint {
+    font-size: 14px;
+    color: #88b;
+    font-style: italic;
+}
+
+#score {
+    font-weight: bold;
+    color: #00bfff;
+    font-size: 28px;
+}
+
+/* TAB 3 - Juego */
+#tab3 {
+    text-align: center;
+}
+
+#numeroUsuario {
+    width: 180px;
+    padding: 12px;
+    border: 2px solid #ff69b4;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px;
+}
+
+.game-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #ff69b4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.game-btn:hover {
+    background: #e0559e;
+}
+
+#mensajeJuego {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+/* Nivel 3 */
+button {
+    padding: 15px 30px;
+    /* Espaciado interno: 15px vertical y 30px horizontal */
+    font-size: 20px;
+    /* Tamaño de la fuente del texto */
+    font-weight: bold;
+    /* Hace el texto en negrita */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Elimina el borde del botón */
+    border-radius: 50px;
+    /* Redondea las esquinas del botón */
+    background: linear-gradient(45deg, #ff6f61, #d6336c, #4a90e2);
+    /* Degradado diagonal en el fondo */
+    background-size: 300% 300%;
+    /* Amplía el tamaño del degradado para animarlo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave para dar profundidad */
+    transition: all 0.3s ease;
+    /* Transición suave para transformaciones y cambios de sombra */
+    cursor: pointer;
+    /* Cambia el cursor a una mano cuando pasa sobre el botón */
+    outline: none;
+    /* Elimina el contorno del botón al hacer clic */
+    animation: gradientAnimation 5s infinite;
+    /* Aplica una animación infinita al degradado */
+    margin-top: 20px;
+}
+
+/* Efecto cuando el usuario pasa el mouse sobre el botón */
+button:hover {
+    transform: scale(1.1);
+    /* Aumenta el tamaño del botón en un 10% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Aumenta la intensidad de la sombra */
+}
+
+/* Animación del degradado del botón */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Posición inicial del degradado */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* Mueve el degradado hacia la derecha */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* Regresa el degradado a la posición inicial */
+    }
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a57086;
+}
+
+footer {
+    margin-top: 30px;
+    background: linear-gradient(135deg,
+            #ecdae3,
+            #f5bfda,
+            #ffb3d9);
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-content p {
+    margin: 8px 0;
+}
+
+.footer-content hr {
+    width: 20px;
+    margin: 10px auto;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}

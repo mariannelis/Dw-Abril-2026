@@ -1,14 +1,126 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 0 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js"></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 36</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
-    
+  <header>
+    <h1>Práctica de Tabs</h1>
+  </header>
+  <main>
+    <section class="tabs-section">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active-tab" role="tab" aria-selected="true" data-tab="tab1"> Helados</button>
+
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab2">Chocolate</button>
+
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab3">Fresa</button>
+
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab4">Vainilla</button>
+      </div>
+
+      <div id="tab1" class="tab-content active-content">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Chocolate</div>
+
+            <div class="flip-card-back">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600">
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Fresa</div>
+            <div class="flip-card-back">
+              <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600">
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+
+            <div class="flip-card-front">Vainilla</div>
+            <div class="flip-card-back">
+              <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nivel 2 multimedia -->
+      <div id="tab2" class="tab-content">
+        <h3>Las Aventuras de Helados</h3>
+        <video class="ice-video" autoplay loop muted playsinline>
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+
+        <h3>Diviertete alimentando a los peces!</h3>
+        <div class="ocean" id="ocean">
+          <!-- Waves for realism -->
+          <div class="wave wave1"></div>
+          <div class="wave wave2"></div>
+          <div class="wave wave3"></div>
+
+          <!-- Bubbles for atmosphere -->
+          <div class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+          </div>
+
+          <!-- Our fish -->
+          <div class="fish" id="fish1">🐟</div>
+          <div class="fish" id="fish2">🐠</div>
+          <div class="fish" id="fish3">🐡</div>
+          <div class="fish" id="fish4">🐬</div>
+          <div class="fish" id="fish4">🐙</div>
+          <div class="fish" id="fish4">🪼</div>
+          <div class="fish" id="fish4">🦑</div>
+
+          <!-- Feeder cursor (follows the mouse) -->
+          <div class="feeder" id="feeder">🪣</div>
+        </div>
+
+        <div class="controls">
+          <p>Haz clic en cualquier parte del océano para soltar deliciosos helados</p>
+          <p>Peces alimentados: <span id="score">0</span> veces/p>
+          <p class="hint">Observa cómo los peces nadan hacia el helado!</p>
+        </div>
+      </div>
+      <div id="tab3" class="tab-content">
+        <h3>Juego: Adivina el número</h3>
+        <input type="number" id="numeroUsuario" min="1" max="9" placeholder="1 al 9">
+        <button class="game-btn" onclick="jugarNumero()">Jugar</button>
+        <p id="mensajeJuego"></p>
+      </div>
+
+      <div id="tab4" class="tab-content">
+        <h3>Fiesta de Helados</h3>
+        <p>Haz clic en el botón para activar una sorpresa.</p>
+        <button id="confettiButton" aria-label="Lanzar confetti">¡Click aquí!</button>
+      </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <h3>Heladería Deliciosa</h3>
+      <p>Práctica de Tabs - HTML, CSS y JavaScript</p>
+      <hr>
+      <p>&copy; 2026 Marianne Lucena</p>
+    </div>
+  </footer>
 </body>
+
 </html>
