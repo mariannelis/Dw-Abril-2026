@@ -1,34 +1,100 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dia 37 </title>
-      <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
-    <link rel='stylesheet' href='css/main.css'>
-    <script src="js/main.js" defer></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 37- Parallax</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+ <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@6.3.3/dist/simpleParallax.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.js"></script>
+ <script src="js/main.js" defer></script>
 </head>
 
-<!-- Nivel 2 -->
+
 <body>
-  
-    <h1>Y tu que miras?</h1>
-    <div class="container">
-      <div id="square">
-        <div class="iris" id="iris">
-          <div class="eyeball" id="eyeball">
+  <!-- Nivel 1 -->
+  <main>
+    <div class="header-container"></div>
+    <section class="content">
+      <h2>Primera Sección</h2>
+      <p>Desplázate hacia abajo para observar el efecto Parallax.</p>
+    </section>
+    <div class="main-container"></div>
+    <section class="content">
+      <h2>Segunda Sección</h2>
+      <p>La imagen permanece fija mientras el contenido se desplaza.</p>
+    </section>
+    <div class="footer-container"></div>
+
+    <!-- Nivel 2 -->
+    <section class="content2">
+      <h1>¿Y tú qué miras?</h1>
+
+      <div class="container">
+        <div id="square">
+          <div id="eyeball">
+            <div id="iris">
+              <div id="pupil"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-     <!-- <section>
-     <h2>Parallax con JavaScript</h2>
-     <div id="container2"></div>
-     <div id="square1">
-      <div class="eyeball1" id="eyeball1">
-      </div>
-     </div>
+    </section>
 
-      </section> -->
+    <!-- Nivel 3 -->
+    <section class="nivel3">
+      <h1>Parallax con Librería</h1>
+      <div class="image-box">
+        <img class="parallax-img parallax-one" src="https://www.freejpg.com.ar/asset/900/1c/1c75/F100010802.jpg" alt="Paisaje 1">
+      </div>
+      <div class="image-box">
+        <img class="parallax-img parallax-two" src="https://www.freejpg.com.ar/asset/900/84/84ad/F100004759.jpg"
+          alt="Paisaje 2">
+      </div>
+    </section>
+
+
+    <!-- Nivel extra -->
+    <section class="atropo1">
+      <div class="container3">
+        <atropos-component>
+          <!-- main Atropos container (required), add your custom class here -->
+          <div class="atropos">
+            <!-- scale container (required) -->
+            <div class="atropos-scale">
+              <!-- rotate container (required) -->
+              <div class="atropos-rotate">
+                <!-- inner container (required) -->
+                <div class="atropos-inner">
+                  <!-- put your custom content here -->
+                  <img class="atropos-spacer" src="https://atroposjs.com/images/header/atropos-bg.svg" alt="stars">
+                  <img data-atropos-offset="-4.5" src="https://atroposjs.com/images/header/atropos-bg.svg" alt="stars">
+                  <img data-atropos-offset="-2.5" src="https://atroposjs.com/images/header/atropos-mountains.svg"
+                    alt="mountains">
+                  <img data-atropos-offset="0" src="https://atroposjs.com/images/header/atropos-forest-back.svg"
+                    alt="forest">
+                  <img data-atropos-offset="2" src="https://atroposjs.com/images/header/atropos-forest-mid.svg"
+                    alt="forest">
+                  <img data-atropos-offset="4" src="https://atroposjs.com/images/header/atropos-forest-front.svg"
+                    alt="forest">
+                  <img data-atropos-offset="5" src="https://atroposjs.com/images/header/atropos-logo-en.svg"
+                    alt="atropos logo">
+                  <div data-atropos-offset="6" class="atropos-button-wrap">
+                    <a href="https://atroposjs.com/" target="_blank">Get Started</a>
+                  </div>
+                </div>
+                <div class="atropos-shadow"></div>
+              </div>
+            </div>
+          </div>
+        </atropos-component>
+
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
