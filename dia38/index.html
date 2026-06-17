@@ -11,11 +11,54 @@
 </head>
 
 <body>
-  <!-- Nivel 1 -->
-  <h1>Cargando contenido</h1>
-  <button id="btn1">contenido 1</button>
-  <button id="btn2">contenido 2</button>
-  <div id="contenido">Selecciona una página para cargar su contenido.</div>
-<!-- Nivel 2 -->
+  <header>
+    <h1>Promesas y Fetch</h1>
+  </header>
+  <main>
+    <!-- Nivel 1 -->
+    <section class="contenedor0">
+      <section class="nivel1">
+        <h2>Cargando contenido</h2>
+        <div class="botones">
+        <button id="btn1">Contenido 1</button>
+        <button id="btn2">Contenido 2</button>
+      </div>
+        <div id="contenido">Selecciona una página para cargar su contenido.</div>
+      </section>
+      <!-- Nivel 2 -->
+      <section class="nivel2">
+        <div class="container">
+          <h2>Clima actual</h2>
+          <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Escribe una ciudad" />
+            <button onclick="getWeather()">Buscar</button>
+          </div>
+          <div class="weather-card" id="weatherCard">
+            <h2 id="cityName">Estambul</h2>
+            <img id="weatherIcon" src="" alt="Icono del clima" />
+            <p id="temperature"></p>
+            <p id="description"></p>
+          </div>
+          <p id="errorMessage"></p>
+        </div>
+      </section>
+
+      <!-- Nivel 3 -->
+      <section class="nivel3">
+        <div class="container movies-container">
+          <h2>Buscador de películas</h2>
+          <div class="search-box">
+            <input type="text" id="movieInput" placeholder="Escribe una película" />
+            <button id="movieButton">Buscar</button>
+          </div>
+
+          <p id="movieError"></p>
+
+          <div id="moviesResults" class="movies-results"></div>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
+
 </html>
