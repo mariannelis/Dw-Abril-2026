@@ -12,28 +12,31 @@
 
 <body>
   <header class="header">
-<h1>Optimizaciones JS</h1>
+    <h1>Ejercicio de Tabs</h1>
   </header>
   <main>
-    <!-- Ejercicio de Acordeon -->
-    <div class="acordeon">
-      <div class="bloque activo">
-        <h2 class="h2">Indice 0</h2>
-        <div class="contenido">Bloque de Información 0</div>
+    <!-- Ejercicio de Tabs -->
+    <section class="tabs">
+      <div class="tabs__buttons">
+        <button class="tabs__button activo">Opción 0</button>
+        <button class="tabs__button">Opción 1</button>
+        <button class="tabs__button">Opción 2</button>
       </div>
-      <div class="bloque">
-        <h2 class="h2">Indice 1</h2>
-        <div class="contenido">Bloque de Información 1</div>
+
+      <div class="tabs__content activo">
+        <p>Contenido de la opción 0.</p>
       </div>
-      <div class="bloque">
-        <h2 class="h2">Indice 2</h2>
-        <div class="contenido">Bloque de Información 2</div>
+
+      <div class="tabs__content">
+        <p>JavaScript permite crear interfaces dinámicas e interactivas para mejorar la experiencia del usuario.
+          Mediante el uso de pestañas, es posible organizar grandes cantidades de información de forma clara y
+          accesible, mostrando únicamente el contenido relevante cuando el usuario lo solicita.</p>
       </div>
-      <div class="bloque">
-        <h2 class="h2">Indice 3</h2>
-        <div class="contenido">Bloque de Información 3</div>
+
+      <div class="tabs__content">
+        <p>Contenido de la opción 2.</p>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -43,5 +46,4 @@
     <p class="footer__copy">© 2025 Tecnoazul - Todos los derechos reservados</p>
   </footer>
 </body>
-
 </html>

@@ -12,6 +12,7 @@
   --azul-suave: #eef5ff;
   --blanco: #ffffff;
   --gris: #5f6f89;
+  --pink: #e5c7e7;
 }
 
 body {
@@ -32,7 +33,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 25px 40px;
-  background: var(--blanco);
+  background: var(--pink)
 }
 
 h1 {
@@ -41,45 +42,45 @@ h1 {
   margin: 20px auto;
 }
 
-.acordeon {
-  padding: 20px;
+.tabs{
   width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-}
-
-.bloque {
-  margin-bottom: 16px;
+  max-width: 760px;
+  min-height: 220px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #eeeeee;
   border-radius: 12px;
-  overflow: hidden;
-  background-color: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,.2);
 }
 
-.h2 {
-  padding: 18px;
+.tabs__buttons{
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tabs__button{
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f7f7f7;
   cursor: pointer;
-  background-color: #0f172a;
-  color: white;
-  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
 }
 
-.contenido {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 18px;
-  transition: all 0.4s ease;
+.tabs__button.activo{
+  background: var(--blanco);
+  transform: translateY(-2px);
 }
 
-.bloque.activo .contenido {
-  max-height: 200px;
-  padding: 18px;
+.tabs__content{
+  display: none;
+  line-height: 1.6;
 }
 
-@media (max-width: 600px) {
-  .acordeon {
-    width: 95%;
-  }
-
+.tabs__content.activo{
+  display: block;
 }
 
 /* FOOTER */
@@ -106,22 +107,32 @@ h1 {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
-  .footer {
-    padding: 1.5rem 1rem;
+  .tabs{
+    margin: 3rem auto;
+    padding: 1.5rem;
   }
 
-  .footer__title {
-    font-size: 1.05rem;
+  .tabs__buttons{
+    gap: 1rem;
   }
 
-  .footer__text {
-    font-size: 0.95rem;
+  .tabs__button{
+    padding: .8rem;
+    font-size: .9rem;
   }
 
-  .footer__copy {
-    font-size: 0.75rem;
+}
+
+@media (max-width: 480px){
+
+  .tabs__buttons{
+    flex-direction: column;
+  }
+
+  .tabs{
+    min-height: auto;
   }
 
 }

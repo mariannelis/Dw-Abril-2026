@@ -1,17 +1,12 @@
-const acordeon = document.querySelector('.acordeon');
+const tabsButtons = document.querySelectorAll('.tabs__button');
+const tabsContents = document.querySelectorAll('.tabs__content');
 
-acordeon.addEventListener('click', (e) => {
+tabsButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    tabsButtons.forEach(btn => btn.classList.remove('activo'));
+    tabsContents.forEach(content => content.classList.remove('activo'));
 
-  const titulo = e.target.closest('.h2');
-
-  if (!titulo) return;
-
-  const bloqueActual = titulo.parentElement;
-
-  document.querySelectorAll('.bloque').forEach((bloque) => {
-    bloque.classList.remove('activo');
+    button.classList.add('activo');
+    tabsContents[index].classList.add('activo');
   });
-
-  bloqueActual.classList.add('activo');
-
 });
