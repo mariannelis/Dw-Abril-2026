@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-oscuro: #071a33;
+  --azul-principal: #1e6cff;
+  --azul-claro: #dceaff;
+  --azul-suave: #eef5ff;
+  --blanco: #ffffff;
+  --gris: #5f6f89;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--azul-suave);
+  color: var(--azul-oscuro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: var(--gris);
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.galeria {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.galeria__img {
+  width: 220px;
+  max-width: 90%;
+  cursor: pointer;
+  border: 4px solid var(--blanco);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.lightbox.activo {
+  display: flex;
+}
+
+.grande {
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 4px solid var(--blanco);
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1rem 1.25rem;
+  background-color: var(--blanco);
+}
+
+.footer__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--azul-principal);
+}
+
+.footer__text {
+  margin-bottom: 1rem;
+  color: var(--gris);
+}
+
+.footer__copy {
+  font-size: 0.8125rem;
+  color: var(--gris);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .lightbox-container {
+    min-height: 55vh;
+    padding: 2rem 1rem;
+  }
+
+  .img {
+    width: 100px;
+  }
+
+  .grande {
+    width: 260px;
+    max-width: 85%;
+  }
+
+  .cerrar {
+    top: 30%;
+    right: calc(50% - 145px);
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .img {
+    width: 90px;
+  }
+
+  .grande {
+    width: 220px;
+    max-width: 90%;
+  }
+
+  .cerrar {
+    top: 28%;
+    right: calc(50% - 125px);
+  }
+
+}
