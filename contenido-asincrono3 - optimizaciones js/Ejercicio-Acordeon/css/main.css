@@ -7,7 +7,7 @@
 
 :root {
   --azul-oscuro: #071a33;
-  --azul-principal: #1e6cff;
+  --azul-principal: #81a2df;
   --azul-claro: #dceaff;
   --azul-suave: #eef5ff;
   --blanco: #ffffff;
@@ -32,7 +32,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 25px 40px;
-  background: var(--blanco);
+  background: var(--azul-principal);
 }
 
 h1 {
