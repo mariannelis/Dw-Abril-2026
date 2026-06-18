@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Pruebas técnicas</title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <button class="menu-btn" aria-label="Abrir menú">☰</button>
+
+  <nav class="menu">
+    <button class="menu__close" aria-label="Cerrar menú">×</button>
+
+    <div class="menu__content">
+      <div class="menu__left">
+        <h2 class="menu__logo">mater</h2>
+
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#">Collection</a>
+
+            <ul class="submenu">
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Lighting</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Design</a></li>
+          <li><a href="#">Craftmanship</a></li>
+          <li><a href="#">Ethics</a></li>
+        </ul>
+
+        <div class="menu__footer">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Dealers</a>
+          <a href="#">News</a>
+          <a href="#">Care</a>
+          <a href="#">Press</a>
+        </div>
+      </div>
+
+      <div class="menu__right">
+        <img src="images/mesa_negra.png" alt="Mueble seleccionado" class="menu__product">
+      </div>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="hero">
+      <div class="hero__text">
+        <span class="hero__subtitle">Colección moderna</span>
+        <h1 class="hero__title">Diseño elegante para tu hogar</h1>
+        <p class="hero__description">Explora muebles seleccionados con estilo, comodidad y personalidad.</p>
+      </div>
+
+      <div class="hero__image">
+        <img src="images/mesa_negra.png" alt="Mesa negra" class="product-img">
+      </div>
+    </section>
+
+    <section class="scroll-section" data-product="mesa">
+      <h2>Mesa</h2>
+    </section>
+
+    <section class="scroll-section" data-product="silla">
+      <h2>Silla</h2>
+    </section>
+
+    <section class="scroll-section" data-product="sofa">
+      <h2>Sofá</h2>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav__btn activo" data-product="mesa">Mesa</button>
+    <button class="nav__btn" data-product="silla">Silla</button>
+    <button class="nav__btn" data-product="sofa">Sofá</button>
+  </nav>
+
+</body>
+
+</html>

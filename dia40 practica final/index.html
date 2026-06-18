@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Dia 40-practica final </title>
+  <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
+  <link rel='stylesheet' href='css/main.css'>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <body>
+
+
+    <header class="header">
+      <nav class="navbar">
+        <a href="#inicio" class="logo">
+          <img src="images/logo (2).png" alt="Logo Arte en Pared" title="logo">
+        </a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#quien-soy">Quién soy</a></li>
+          <li><a href="#posters">Pósters</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="inicio" class="hero">
+        <div class="hero-text">
+          <span class="small-title">Arte impreso para tu hogar</span>
+          <h1>Diseños que convierten una pared en un lugar especial</h1>
+          <p>Pósters artísticos creados con estilo cálido, natural y minimalista.</p>
+          <a href="#" class="btn">Ver pósters</a>
+        </div>
+      </section>
+
+      <section id="quienSoy" class="section about">
+        <div class="about-image">
+          <img src="images/laura.jpg" alt="Laura, creadora de Arte en Pared" title="creadora">
+        </div>
+
+        <div class="about-text">
+          <span class="small-title">Hola, soy Laura</span>
+          <h2>Creo pósters para espacios con personalidad</h2>
+          <p>Arte en Pared nació de mi amor por la ilustración, la decoración y los pequeños detalles
+           que hacen que una casa se sienta más propia.</p>
+          <p>Diseño pósters inspirados en la naturaleza, los viajes, la calma y las emociones cotidianas.
+            Cada pieza está pensada para decorar sin recargar, aportando belleza y cercanía.  </p>
+        </div>
+      </section>
+
+      <section id="posters" class="section posters">
+        <div class="section-title">
+          <span class="small-title">Colección</span>
+          <h2>Pósters disponibles</h2>
+        </div>
+
+        <div class="poster-grid">
+          <article class="poster-card">
+            <img src="images/poster1.jpg" alt="Póster Horizonte Dorado">
+            <h3>Horizonte Dorado</h3>
+            <p>Amanecer cálido inspirado en paisajes tranquilos.</p>
+            <strong>25€</strong>
+          </article>
+
+          <article class="poster-card">
+            <img src="images/poster2.jpg" alt="Póster Bosque Interior">
+            <h3>Bosque Interior</h3>
+            <p>Composición natural con tonos verdes y tierra.</p>
+            <strong>22€</strong>
+          </article>
+
+          <article class="poster-card">
+            <img src="images/poster3.jpg" alt="Póster Luna Serena">
+            <h3>Luna Serena</h3>
+            <p>Diseño nocturno suave para ambientes relajados.</p>
+            <strong>24€</strong>
+          </article>
+
+          <article class="poster-card">
+            <img src="images/poster4.jpg" alt="Póster Flores de Otoño">
+            <h3>Flores de Otoño</h3>
+            <p>Ilustración floral con colores cálidos y delicados.</p>
+            <strong>20€</strong>
+          </article>
+
+          <article class="poster-card">
+            <img src="images/poster5.jpg" alt="Póster Camino al Mar">
+            <h3>Camino al Mar</h3>
+            <p>Paisaje minimalista inspirado en el mar y la calma.</p>
+            <strong>27€</strong>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="section contact">
+        <div class="section-title">
+          <span class="small-title">Contacto</span>
+          <h2>Cuéntame qué diseño buscas</h2>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="Nombre">
+          <input type="email" id="email" placeholder="Correo electrónico">
+          <textarea id="message" placeholder="Mensaje"></textarea>
+
+          <label class="file-label">
+            Imagen personalizada
+            <input type="file" id="imageFile">
+          </label>
+
+          <button type="submit" class="btn">Enviar mensaje</button>
+          <p id="formMessage"></p>
+        </form>
+      </section>
+
+      <section class="section info">
+        <div>
+          <h2>Datos de contacto</h2>
+          <p><strong>Email:</strong> laura@arteenpared.com</p>
+          <p><strong>Teléfono:</strong> +34 644 123 456</p>
+          <p><strong>Horario:</strong> Lunes a viernes, 10:00 - 18:00</p>
+          <p><strong>Instagram:</strong> @arteenpared</p>
+          <p><strong>Facebook:</strong> Arte en Pared</p>
+        </div>
+
+        <div>
+          <h2>Dónde suelo exponer</h2>
+          <iframe src="https://www.google.com/maps?q=Madrid%20Mercado%20de%20Diseño&output=embed" loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="lightbox" id="lightbox">
+      <span id="closeLightbox">&times;</span>
+      <img id="lightboxImage" src="" alt="Imagen ampliada">
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 Arte en Pared. Proyecto web académico.</p>
+    </footer>
+
+  </body>
+
+</html>
