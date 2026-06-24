@@ -4,153 +4,414 @@
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Dia 40-practica final </title>
+  <title>Dia 40-practica final</title>
   <link rel='icon' href='images/Aguila_2.0.webp' type='image/webp'>
   <link rel='stylesheet' href='css/main.css'>
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <!-- HEADER / NAVEGACIÓN -->
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="#inicio" class="header__logo">
+        <img src="images/logo (2).png" alt="Arte en Pared" title="logo">
+      </a>
 
-  <body>
-
-
-    <header class="header">
-      <nav class="navbar">
-        <a href="#inicio" class="logo">
-          <img src="images/logo (2).png" alt="Logo Arte en Pared" title="logo">
-        </a>
-
-        <button class="menu-btn" id="menuBtn">☰</button>
-
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#quien-soy">Quién soy</a></li>
-          <li><a href="#posters">Pósters</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#nosotros" class="nav__link">Quiénes Somos</a></li>
+          <li><a href="#galeria" class="nav__link">Galería</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
       </nav>
-    </header>
 
-    <main>
+      <button class="header__toggle" id="navToggle" aria-label="Abrir menú">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
 
-      <section id="inicio" class="hero">
-        <div class="hero-text">
-          <span class="small-title">Arte impreso para tu hogar</span>
-          <h1>Diseños que convierten una pared en un lugar especial</h1>
-          <p>Pósters artísticos creados con estilo cálido, natural y minimalista.</p>
-          <a href="#" class="btn">Ver pósters</a>
+  <main>
+    <!-- HERO / INICIO -->
+    <section class="hero" id="inicio">
+      <div class="hero__content">
+        <h1 class="hero__title">Arte que transforma tus espacios</h1>
+        <p class="hero__text">Pósters artísticos únicos para dar vida a tus paredes</p>
+        <a href="#galeria" class="btn btn--primary">Ver colección</a>
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section class="section about" id="nosotros">
+      <div class="container">
+        <h2 class="section__title">Quiénes Somos</h2>
+
+        <div class="about__grid">
+          <div class="about__content">
+            <p>Soy Laura, artista y fundadora de <strong>Arte en Pared</strong>. Desde 2019 creo pósters que combinan
+              ilustración contemporánea con toques minimalistas, perfectos para quienes buscan decorar con
+              personalidad.</p>
+
+            <p>Cada diseño nace de la observación: paisajes urbanos, naturaleza y momentos cotidianos transformados en
+              arte accesible.</p>
+
+            <h3>Mis valores</h3>
+            <ul class="about__values">
+              <li><strong>Originalidad:</strong> Diseños propios, nunca repetidos</li>
+              <li><strong>Calidad:</strong> Impresión en papel premium de 250g</li>
+              <li><strong>Sostenibilidad:</strong> Tintas ecológicas y envíos sin plástico</li>
+              <li><strong>Cercanía:</strong> Atención personalizada a cada cliente</li>
+            </ul>
+          </div>
+
+          <div class="about__image">
+            <img src="images/laura-quien-soy.png" alt="Laura en su estudio de diseño" title="Laura">
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="quienSoy" class="section about">
-        <div class="about-image">
-          <img src="images/laura.jpg" alt="Laura, creadora de Arte en Pared" title="creadora">
-        </div>
+    <!-- GALERÍA DE PRODUCTOS -->
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <h2 class="section__title">Colección</h2>
+        <p class="section__subtitle">Haz clic en cualquier póster para verlo en detalle</p>
 
-        <div class="about-text">
-          <span class="small-title">Hola, soy Laura</span>
-          <h2>Creo pósters para espacios con personalidad</h2>
-          <p>Arte en Pared nació de mi amor por la ilustración, la decoración y los pequeños detalles
-           que hacen que una casa se sienta más propia.</p>
-          <p>Diseño pósters inspirados en la naturaleza, los viajes, la calma y las emociones cotidianas.
-            Cada pieza está pensada para decorar sin recargar, aportando belleza y cercanía.  </p>
-        </div>
-      </section>
-
-      <section id="posters" class="section posters">
-        <div class="section-title">
-          <span class="small-title">Colección</span>
-          <h2>Pósters disponibles</h2>
-        </div>
-
-        <div class="poster-grid">
-          <article class="poster-card">
-            <img src="images/poster1.jpg" alt="Póster Horizonte Dorado">
-            <h3>Horizonte Dorado</h3>
-            <p>Amanecer cálido inspirado en paisajes tranquilos.</p>
-            <strong>25€</strong>
+        <div class="gallery__grid">
+          <!-- Producto 1 -->
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/amanecer-urbano.png" alt="Póster Amanecer Urbano" class="product-card__image"
+                data-lightbox="true" title="horizonte">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Amanecer Urbano</h3>
+              <p class="product-card__description">Silueta de ciudad al amanecer con tonos cálidos. Perfecto para
+                salones modernos.</p>
+              <p class="product-card__price">25,00 €</p>
+            </div>
           </article>
 
-          <article class="poster-card">
-            <img src="images/poster2.jpg" alt="Póster Bosque Interior">
-            <h3>Bosque Interior</h3>
-            <p>Composición natural con tonos verdes y tierra.</p>
-            <strong>22€</strong>
+          <!-- Producto 2 -->
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/botanica-minimal.png" alt="Póster Botánica Minimal" class="product-card__image"
+                data-lightbox="true">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Botánica Minimal</h3>
+              <p class="product-card__description">Líneas elegantes de plantas sobre fondo neutro. Ideal para espacios
+                zen.</p>
+              <p class="product-card__price">22,00 €</p>
+            </div>
           </article>
 
-          <article class="poster-card">
-            <img src="images/poster3.jpg" alt="Póster Luna Serena">
-            <h3>Luna Serena</h3>
-            <p>Diseño nocturno suave para ambientes relajados.</p>
-            <strong>24€</strong>
+          <!-- Producto 3 -->
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/geometria-azul.png" alt="Póster Geometría Azul" class="product-card__image"
+                data-lightbox="true">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Geometría Azul</h3>
+              <p class="product-card__description">Formas geométricas en degradados azules. Aporta serenidad a
+                cualquier habitación.</p>
+              <p class="product-card__price">28,00 €</p>
+            </div>
           </article>
 
-          <article class="poster-card">
-            <img src="images/poster4.jpg" alt="Póster Flores de Otoño">
-            <h3>Flores de Otoño</h3>
-            <p>Ilustración floral con colores cálidos y delicados.</p>
-            <strong>20€</strong>
+          <!-- Producto 4 -->
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/atardecer-mar.png" alt="Póster Atardecer en el Mar" class="product-card__image"
+                data-lightbox="true">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Atardecer en el Mar</h3>
+              <p class="product-card__description">Horizonte marino con paleta de naranjas y rosas. El más vendido de
+                la colección.</p>
+              <p class="product-card__price">30,00 €</p>
+            </div>
           </article>
 
-          <article class="poster-card">
-            <img src="images/poster5.jpg" alt="Póster Camino al Mar">
-            <h3>Camino al Mar</h3>
-            <p>Paisaje minimalista inspirado en el mar y la calma.</p>
-            <strong>27€</strong>
+          <!-- Producto 5 -->
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/retrato-abstracto.png" alt="Póster Retrato Abstracto" class="product-card__image"
+                data-lightbox="true">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Retrato Abstracto</h3>
+              <p class="product-card__description">Silueta humana en trazos sueltos y colores tierra. Arte con personalidad.</p>
+              <p class="product-card__price">35,00 €</p>
+            </div>
           </article>
+
+          <!-- producto 6 -->
+        <article class="product-card">
+  <div class="product-card__image-wrapper">
+    <img src="images/paisaje-abstracto.png" alt="Póster Paisaje Abstracto" class="product-card__image" data-lightbox="true">
+    <button class="product-card__zoom" aria-label="Ampliar imagen">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor"
+          d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="product-card__info">
+    <h3 class="product-card__name">Paisaje Abstracto</h3>
+    <p class="product-card__description">Composición de montañas y formas suaves en tonos tierra. Ideal para dormitorios o estudios creativos.</p>
+    <p class="product-card__price">27,00 €</p>
+  </div>
+</article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contacto" class="section contact">
-        <div class="section-title">
-          <span class="small-title">Contacto</span>
-          <h2>Cuéntame qué diseño buscas</h2>
-        </div>
 
-        <form class="contact-form" id="contactForm">
-          <input type="text" id="name" placeholder="Nombre">
-          <input type="email" id="email" placeholder="Correo electrónico">
-          <textarea id="message" placeholder="Mensaje"></textarea>
-
-          <label class="file-label">
-            Imagen personalizada
-            <input type="file" id="imageFile">
-          </label>
-
-          <button type="submit" class="btn">Enviar mensaje</button>
-          <p id="formMessage"></p>
-        </form>
-      </section>
-
-      <section class="section info">
-        <div>
-          <h2>Datos de contacto</h2>
-          <p><strong>Email:</strong> laura@arteenpared.com</p>
-          <p><strong>Teléfono:</strong> +34 644 123 456</p>
-          <p><strong>Horario:</strong> Lunes a viernes, 10:00 - 18:00</p>
-          <p><strong>Instagram:</strong> @arteenpared</p>
-          <p><strong>Facebook:</strong> Arte en Pared</p>
-        </div>
-
-        <div>
-          <h2>Dónde suelo exponer</h2>
-          <iframe src="https://www.google.com/maps?q=Madrid%20Mercado%20de%20Diseño&output=embed" loading="lazy">
-          </iframe>
-        </div>
-      </section>
-
-    </main>
-
-    <div class="lightbox" id="lightbox">
-      <span id="closeLightbox">&times;</span>
-      <img id="lightboxImage" src="" alt="Imagen ampliada">
+    <!-- LIGHTBOX (oculto por defecto) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="32" height="32">
+          <path fill="currentColor"
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+      </button>
+      <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </button>
+      <div class="lightbox__content">
+        <img src="" alt="" class="lightbox__image" id="lightboxImage">
+        <p class="lightbox__caption" id="lightboxCaption"></p>
+      </div>
+      <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </button>
     </div>
 
-    <footer class="footer">
-      <p>© 2026 Arte en Pared. Proyecto web académico.</p>
-    </footer>
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto">
+      <div class="container">
+        <h2 class="section__title">Contacto</h2>
 
-  </body>
+        <div class="contact__grid">
+          <!-- Formulario -->
+          <div class="contact__form-wrapper">
+            <form class="form" id="contactForm" novalidate>
+              <div class="form__group">
+                <label for="nombre" class="form__label">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" class="form__input" required autocomplete="name">
+                <span class="form__error" id="nombreError"></span>
+              </div>
 
+              <div class="form__group">
+                <label for="email" class="form__label">Correo electrónico *</label>
+                <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+                <span class="form__error" id="emailError"></span>
+              </div>
+
+              <div class="form__group">
+                <label for="mensaje" class="form__label">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" class="form__input form__textarea" rows="5" required></textarea>
+                <span class="form__error" id="mensajeError"></span>
+              </div>
+
+              <div class="form__group">
+                <label for="archivo" class="form__label">Adjuntar imagen (opcional)</label>
+                <div class="form__file-wrapper">
+                  <input type="file" id="archivo" name="archivo" class="form__file" accept="image/*">
+                  <span class="form__file-label" id="archivoLabel">Seleccionar archivo...</span>
+                </div>
+                <span class="form__hint">Máximo 900KB. Formatos: JPG, PNG, WebP</span>
+                <span class="form__error" id="archivoError"></span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">
+                Enviar mensaje
+              </button>
+            </form>
+
+            <!-- Mensaje de confirmación (oculto) -->
+            <div class="form__success" id="formSuccess" hidden>
+              <svg viewBox="0 0 24 24" width="64" height="64">
+                <path fill="#A0522D"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              <h3>¡Mensaje enviado!</h3>
+              <p>Gracias por contactar con Arte en Pared. Te responderé lo antes posible.</p>
+              <button class="btn btn--secondary" id="resetForm">Enviar otro mensaje</button>
+            </div>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="contact__info">
+            <div class="contact__block">
+              <h3>Datos de contacto</h3>
+              <ul class="contact__list">
+                <li>
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor"
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <span>Calle del Arte 15, 28012 Madrid</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor"
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                  <span>+34 612 345 678</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor"
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                  <span>soylaura@arteenpared.es</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact__block">
+              <h3>Horario de atención</h3>
+              <ul class="contact__hours">
+                <li><strong>Lunes a Viernes:</strong> 10:00 - 19:00</li>
+                <li><strong>Sábados:</strong> 11:00 - 14:00</li>
+                <li><strong>Domingos:</strong> Cerrado</li>
+              </ul>
+            </div>
+
+            <div class="contact__block">
+              <h3>Sígueme en redes</h3>
+              <div class="social">
+                <a href="#" class="social__link" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor"
+                      d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+                  </svg>
+                </a>
+                <a href="#" class="social__link" aria-label="Pinterest">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor"
+                      d="M9.04 21.54c.96.29 1.93.46 2.96.46a10 10 0 0 0 10-10A10 10 0 0 0 12 2 10 10 0 0 0 2 12c0 4.25 2.67 7.9 6.44 9.34-.09-.78-.18-2.07 0-2.96l1.15-4.94s-.29-.58-.29-1.5c0-1.38.86-2.41 1.84-2.41.86 0 1.26.63 1.26 1.44 0 .86-.57 2.09-.86 3.27-.17.98.52 1.84 1.52 1.84 1.78 0 3.16-1.9 3.16-4.58 0-2.4-1.72-4.04-4.19-4.04-2.82 0-4.48 2.1-4.48 4.31 0 .86.28 1.73.74 2.3.09.06.09.14.06.29l-.29 1.09c0 .17-.11.23-.28.11-1.28-.56-2.02-2.38-2.02-3.85 0-3.16 2.24-6.03 6.56-6.03 3.44 0 6.12 2.47 6.12 5.75 0 3.44-2.13 6.2-5.18 6.2-.97 0-1.92-.52-2.26-1.13l-.67 2.37c-.23.86-.86 2.01-1.29 2.7v-.03z" />
+                  </svg>
+                </a>
+                <a href="#" class="social__link" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor"
+                      d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="section map" id="ubicacion">
+      <div class="container">
+        <h2 class="section__title">Dónde Expongo</h2>
+        <p class="section__subtitle">Encuéntrame habitualmente en el Mercado de Motores y ferias de arte del centro de
+          Madrid</p>
+
+        <div class="map__wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6234567890123!2d-3.6941234!3d40.4078234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d5b1ab3ff%3A0x123456789abcdef!2sCalle%20del%20Arte%2C%2015%2C%2028012%20Madrid!5e0!3m2!1ses!2ses!4v1234567890123"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Arte en Pared">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <h2 class="footer__logo">Arte en Pared</h2>
+        <p>
+          Pósters artísticos creados para transformar espacios con diseño,
+          color y personalidad.
+        </p>
+      </div>
+
+      <div class="footer__links">
+        <h3>Explorar</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#galeria">Colección</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h3>Contacto</h3>
+        <ul>
+          <li>Sevilla, España</li>
+          <li>soylaura@arteenpared.es</li>
+          <li>+34 612 345 678</li>
+        </ul>
+      </div>
+
+      <div class="footer__social">
+        <h3>Sígueme</h3>
+        <div class="footer__social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Pinterest">PT</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Arte en Pared. Todos los derechos reservados.</p>
+      <p>Diseñado en Sevilla con arte y creatividad.</p>
+    </div>
+  </div>
+</footer>
+</body>
 </html>
