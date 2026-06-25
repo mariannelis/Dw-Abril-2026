@@ -15,7 +15,7 @@
   <header class="header" id="header">
     <div class="header__container">
       <a href="#inicio" class="header__logo">
-        <img src="images/logo (2).png" alt="Arte en Pared" title="logo">
+        <img src="images/logoli.png" alt="Arte en Pared" title="logo">
       </a>
 
       <nav class="nav" id="nav">
@@ -38,13 +38,28 @@
   <main>
     <!-- HERO / INICIO -->
     <section class="hero" id="inicio">
-      <div class="hero__content">
-        <h1 class="hero__title">Arte que transforma tus espacios</h1>
-        <p class="hero__text">Pósters artísticos únicos para dar vida a tus paredes</p>
-        <a href="#galeria" class="btn btn--primary">Ver colección</a>
-      </div>
-    </section>
+  <div class="hero__content">
+    <span class="hero__tag">Colección artística 2026</span>
+    <h1 class="hero__title">Arte que transforma tus espacios</h1>
+    <p class="hero__text">Pósters artísticos únicos para dar vida, estilo y personalidad a tus paredes.</p>
+    <a href="#galeria" class="btn btn--primary">Ver colección</a>
+  </div>
 
+  <div class="hero__carousel" aria-label="Carrusel de pósters destacados">
+    <button class="hero__carousel-btn hero__carousel-btn--prev" id="heroPrev" aria-label="Imagen anterior">‹</button>
+
+    <div class="hero__carousel-track">
+      <img src="images/amanecer-urbano.png" alt="Póster Amanecer Urbano" class="hero__slide active">
+      <img src="images/botanica-minimal.png" alt="Póster Botánica Minimal" class="hero__slide">
+      <img src="images/geometria-azul.png" alt="Póster Geometría Azul" class="hero__slide">
+      <img src="images/atardecer-mar.png" alt="Póster Atardecer en el Mar" class="hero__slide">
+    </div>
+
+    <button class="hero__carousel-btn hero__carousel-btn--next" id="heroNext" aria-label="Imagen siguiente">›</button>
+
+    <div class="hero__dots" id="heroDots"></div>
+  </div>
+</section>
     <!-- QUIÉNES SOMOS -->
     <section class="section about" id="nosotros">
       <div class="container">
@@ -52,7 +67,7 @@
 
         <div class="about__grid">
           <div class="about__content">
-            <p>Soy Laura, artista y fundadora de <strong>Arte en Pared</strong>. Desde 2019 creo pósters que combinan
+            <p>Soy Laura, artista y fundadora de Arte en Pared. Desde 2019 creo pósters que combinan
               ilustración contemporánea con toques minimalistas, perfectos para quienes buscan decorar con
               personalidad.</p>
 
@@ -89,15 +104,13 @@
                 data-lightbox="true" title="horizonte">
               <button class="product-card__zoom" aria-label="Ampliar imagen">
                 <svg viewBox="0 0 24 24" width="24" height="24">
-                  <path fill="currentColor"
-                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                 </svg>
               </button>
             </div>
             <div class="product-card__info">
               <h3 class="product-card__name">Amanecer Urbano</h3>
-              <p class="product-card__description">Silueta de ciudad al amanecer con tonos cálidos. Perfecto para
-                salones modernos.</p>
+              <p class="product-card__description">Silueta de ciudad al amanecer con tonos cálidos. Perfecto para salones modernos.</p>
               <p class="product-card__price">25,00 €</p>
             </div>
           </article>
@@ -105,8 +118,7 @@
           <!-- Producto 2 -->
           <article class="product-card">
             <div class="product-card__image-wrapper">
-              <img src="images/botanica-minimal.png" alt="Póster Botánica Minimal" class="product-card__image"
-                data-lightbox="true">
+              <img src="images/botanica-minimal.png" alt="Póster Botánica Minimal" class="product-card__image" data-lightbox="true">
               <button class="product-card__zoom" aria-label="Ampliar imagen">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                   <path fill="currentColor"
@@ -116,8 +128,7 @@
             </div>
             <div class="product-card__info">
               <h3 class="product-card__name">Botánica Minimal</h3>
-              <p class="product-card__description">Líneas elegantes de plantas sobre fondo neutro. Ideal para espacios
-                zen.</p>
+              <p class="product-card__description">Líneas elegantes de plantas sobre fondo neutro. Ideal para espacios zen.</p>
               <p class="product-card__price">22,00 €</p>
             </div>
           </article>
@@ -176,29 +187,32 @@
             </div>
             <div class="product-card__info">
               <h3 class="product-card__name">Retrato Abstracto</h3>
-              <p class="product-card__description">Silueta humana en trazos sueltos y colores tierra. Arte con personalidad.</p>
+              <p class="product-card__description">Silueta humana en trazos sueltos y colores tierra. Arte con
+                personalidad.</p>
               <p class="product-card__price">35,00 €</p>
             </div>
           </article>
 
           <!-- producto 6 -->
-        <article class="product-card">
-  <div class="product-card__image-wrapper">
-    <img src="images/paisaje-abstracto.png" alt="Póster Paisaje Abstracto" class="product-card__image" data-lightbox="true">
-    <button class="product-card__zoom" aria-label="Ampliar imagen">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <path fill="currentColor"
-          d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-      </svg>
-    </button>
-  </div>
+          <article class="product-card">
+            <div class="product-card__image-wrapper">
+              <img src="images/paisaje-abstracto.png" alt="Póster Paisaje Abstracto" class="product-card__image"
+                data-lightbox="true">
+              <button class="product-card__zoom" aria-label="Ampliar imagen">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor"
+                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+              </button>
+            </div>
 
-  <div class="product-card__info">
-    <h3 class="product-card__name">Paisaje Abstracto</h3>
-    <p class="product-card__description">Composición de montañas y formas suaves en tonos tierra. Ideal para dormitorios o estudios creativos.</p>
-    <p class="product-card__price">27,00 €</p>
-  </div>
-</article>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Paisaje Abstracto</h3>
+              <p class="product-card__description">Composición de montañas y formas suaves en tonos tierra. Ideal para
+                dormitorios o estudios creativos.</p>
+              <p class="product-card__price">27,00 €</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -354,7 +368,6 @@
         <h2 class="section__title">Dónde Expongo</h2>
         <p class="section__subtitle">Encuéntrame habitualmente en el Mercado de Motores y ferias de arte del centro de
           Madrid</p>
-
         <div class="map__wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6234567890123!2d-3.6941234!3d40.4078234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d5b1ab3ff%3A0x123456789abcdef!2sCalle%20del%20Arte%2C%2015%2C%2028012%20Madrid!5e0!3m2!1ses!2ses!4v1234567890123"
@@ -367,51 +380,60 @@
   </main>
 
   <!-- FOOTER -->
-  <<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <h2 class="footer__logo">Arte en Pared</h2>
-        <p>
-          Pósters artísticos creados para transformar espacios con diseño,
-          color y personalidad.
-        </p>
-      </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h2 class="footer__logo">Arte en Pared</h2>
+          <p>
+            Pósters artísticos creados para transformar espacios con diseño,
+            color y personalidad.
+          </p>
+        </div>
 
-      <div class="footer__links">
-        <h3>Explorar</h3>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Quiénes somos</a></li>
-          <li><a href="#galeria">Colección</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
+        <div class="footer__links">
+          <h3>Explorar</h3>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Quiénes somos</a></li>
+            <li><a href="#galeria">Colección</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
 
-      <div class="footer__contact">
-        <h3>Contacto</h3>
-        <ul>
-          <li>Sevilla, España</li>
-          <li>soylaura@arteenpared.es</li>
-          <li>+34 612 345 678</li>
-        </ul>
-      </div>
+        <div class="footer__contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li>Sevilla, España</li>
+            <li>soylaura@arteenpared.es</li>
+            <li>+34 612 345 678</li>
+          </ul>
+        </div>
 
-      <div class="footer__social">
-        <h3>Sígueme</h3>
-        <div class="footer__social-links">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Pinterest">PT</a>
-          <a href="#" aria-label="Facebook">FB</a>
+        <div class="footer__social">
+          <h3>Sígueme</h3>
+          <div class="footer__social-links">
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <img src="images/instagram.png" alt="Instagram">
+            </a>
+
+            <a href="#" aria-label="Pinterest" title="Pinterest">
+              <img src="images/pinterest.png" alt="Pinterest">
+            </a>
+
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <img src="images/facebook.png" alt="Facebook">
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="footer__bottom">
-      <p>&copy; 2026 Arte en Pared. Todos los derechos reservados.</p>
-      <p>Diseñado en Sevilla con arte y creatividad.</p>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Arte en Pared. Todos los derechos reservados.</p>
+        <p>Diseñado en Sevilla con arte y creatividad por <code>Codevaml</code></p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
+
 </html>

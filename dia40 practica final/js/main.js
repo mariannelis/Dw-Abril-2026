@@ -448,6 +448,7 @@
         initLightbox();
         initFormValidation();
         initScrollEffects();
+        initHeroCarousel();
     }
 
     // Ejecutar cuando el DOM esté listo
@@ -458,3 +459,68 @@
     }
 
 })();
+// carrucel de imagenes
+function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero__slide');
+    const prevBtn = document.getElementById('heroPrev');
+    const nextBtn = document.getElementById('heroNext');
+    const dotsContainer = document.getElementById('heroDots');
+
+    if (!slides.length || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    let currentSlide = 0;
+    let autoPlay;
+
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'hero__dot';
+        dot.setAttribute('aria-label', `Ver póster ${index + 1}`);
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            restartAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.hero__dot');
+
+    function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+        autoPlay = setInterval(nextSlide, 4000);
+    }
+
+    function restartAutoPlay() {
+        clearInterval(autoPlay);
+        startAutoPlay();
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        restartAutoPlay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        restartAutoPlay();
+    });
+
+    showSlide(0);
+    startAutoPlay();
+}
