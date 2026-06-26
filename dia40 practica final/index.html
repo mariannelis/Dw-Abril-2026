@@ -44,7 +44,7 @@
         <a href="#galeria" class="btn btn--primary">Ver colección</a>
       </div>
 
-      <div class="hero__carousel" aria-label="Carrusel de pósters destacados">
+      <div class="hero__carousel" role="region" aria-label="Carrusel de pósters destacados">
         <span class="hero__tag hero__tag--carousel">Destacados</span>
         <button class="hero__carousel-btn hero__carousel-btn--prev" id="heroPrev"
           aria-label="Imagen anterior">‹</button>
@@ -237,7 +237,8 @@
         </svg>
       </button>
       <div class="lightbox__content">
-        <img src="" alt="" class="lightbox__image" id="lightboxImage">
+        <img src="images/amanecer-urbano.png" alt="Imagen ampliada del póster" class="lightbox__image"
+          id="lightboxImage">
         <p class="lightbox__caption" id="lightboxCaption"></p>
       </div>
       <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Siguiente">
@@ -374,8 +375,8 @@
         <div class="map__wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6234567890123!2d-3.6941234!3d40.4078234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d5b1ab3ff%3A0x123456789abcdef!2sCalle%20del%20Arte%2C%2015%2C%2028012%20Madrid!5e0!3m2!1ses!2ses!4v1234567890123"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Arte en Pared">
+            style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Arte en Pared">
           </iframe>
         </div>
       </div>
@@ -433,6 +434,13 @@
         <p>Diseñado con arte y creatividad por <code>Codevaml</code></p>
       </div>
     </div>
+    <p>
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss"
+          alt="¡CSS Válido!" />
+      </a>
+    </p>
   </footer>
 </body>
+
 </html>
