@@ -3,105 +3,285 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Detalle del proyecto Saray App desarrollado por Marianne Lucena.">
-    <meta name="keywords" content="Saray App, Marianne Lucena, React Native, aplicación móvil">
+    <meta name="description"
+        content="Detalle del proyecto Saray App, aplicación móvil diseñada por Marianne Lucena para fortalecer los vínculos culturales entre Turquía y Latinoamérica.">
+    <meta name="keywords"
+        content="Saray App, Marianne Lucena, aplicación móvil, React Native, cultura turca, Latinoamérica, tesis">
     <meta name="author" content="Marianne Lucena">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saray App | Proyecto de Marianne Lucena</title>
-
     <link rel="icon" href="images/logoMkll.png" type="image/png">
+    <!-- Tipografía principal del proyecto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
+    <!-- Header interno -->
     <header class="header">
         <div class="header__container">
             <a class="header__brand" href="index.html" title="Volver al inicio">
                 <img class="header__logo" src="images/logoml.png" alt="Logo de Marianne Lucena">
             </a>
 
+            <button class="header__menu-button" type="button" title="Abrir menú de navegación"
+                aria-label="Abrir menú de navegación">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+
             <nav class="nav" aria-label="Navegación principal">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html">Inicio</a>
+                        <a class="nav__link" href="index.html" title="Volver al inicio">Inicio</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#proyectos">Proyectos</a>
+                        <a class="nav__link" href="index.html#proyectos" title="Ver proyectos">Proyectos</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#contacto">Contacto</a>
+                        <a class="nav__link" href="index.html#servicios" title="Ver servicios">Servicios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html#sobre-mi" title="Sobre Marianne">Sobre mí</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html#contacto" title="Contactar">Contacto</a>
                     </li>
                 </ul>
             </nav>
+
+            <div class="header__actions">
+                <a class="header__icon" href="mailto:lucena.lis14@gmail.com" title="Enviar correo"
+                    aria-label="Enviar correo">
+                    ✉
+                </a>
+
+                <a class="header__icon" href="tel:+34691296388" title="Llamar" aria-label="Llamar por teléfono">
+                    ☎
+                </a>
+
+                <span class="header__language">EN</span>
+                <span class="header__location">GLOBAL</span>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="project-detail">
+        <!-- Hero del proyecto -->
+        <section class="project-detail project-detail--saray">
             <div class="project-detail__container">
-                <p class="section__eyebrow">Proyecto destacado</p>
+                <a class="project-detail__back" href="index.html#proyectos" title="Volver a proyectos">
+                    ← Volver a proyectos
+                </a>
 
-                <h1 class="project-detail__title">Saray App</h1>
+                <div class="project-detail__header">
+                    <div>
+                        <p class="section__eyebrow">Proyecto destacado</p>
 
-                <p class="project-detail__intro">
-                    Saray App es una aplicación móvil diseñada para acercar contenidos culturales, noticias y
-                    experiencias digitales a usuarios interesados en Turquía y Latinoamérica.
-                </p>
+                        <h1 class="project-detail__title">Saray App</h1>
 
-                <div class="project-detail__hero">
-                    <img src="images/saray-1.png" alt="Pantalla principal del proyecto Saray App">
+                        <p class="project-detail__subtitle">
+                            Diseño de aplicación móvil para facilitar el acceso a contenido cultural turco en español.
+                        </p>
+                    </div>
+
+                    <div class="project-detail__logo-box">
+                        <img src="images/Logo-saray2.png" alt="Logo del proyecto Saray App">
+                    </div>
                 </div>
 
-                <div class="project-detail__grid">
+                <div class="project-detail__hero">
+                    <img src="images/saray/saray-register-screen.webp"
+                        alt="Pantalla de registro de la aplicación Saray">
+                </div>
+
+                <!-- Información principal -->
+                <section class="project-detail__section">
+                    <p class="section__eyebrow">Título académico</p>
+
+                    <h2 class="project-detail__heading">
+                        Diseño de aplicaciones móviles para facilitar el acceso a la transmisión en vivo:
+                        un ejemplo en español
+                    </h2>
+
+                    <p class="project-detail__text">
+                        Este proyecto presenta el diseño y desarrollo de una aplicación móvil llamada Saray,
+                        orientada a fortalecer los vínculos culturales entre Turquía y Latinoamérica.
+                        La aplicación propone una experiencia digital estructurada, accesible y visualmente atractiva
+                        para usuarios hispanohablantes interesados en la cultura turca.
+                    </p>
+                </section>
+
+                <!-- Resumen -->
+                <section class="project-detail__section">
+                    <p class="section__eyebrow">Resumen</p>
+
+                    <p class="project-detail__text">
+                        This research presents the design and development of a mobile application named Saray,
+                        aimed at strengthening cultural ties between Turkey and Latin America. In a global context
+                        where mobile technologies are rapidly transforming access to information, this project emerges
+                        as a digital solution that facilitates access to Turkish cultural content for Spanish-speaking
+                        users in a structured, accessible, and visually appealing manner.
+                    </p>
+
+                    <p class="project-detail__text">
+                        A qualitative research method was applied using focus group technique to determine the
+                        technological habits, cultural interests, and expectations regarding mobile interface design
+                        of Latin American participants. Live streaming features were envisioned as an innovative
+                        component to connect users with real-time cultural events in Turkey.
+                    </p>
+
+                    <p class="project-detail__text">
+                        The results emphasize the importance of combining user-centered design principles,
+                        digital accessibility, and cultural sensitivity in mobile application development.
+                        Saray stands out not only as a tool for accessing Turkish culture but also as a replicable
+                        model for digital initiatives that promote intercultural dialogue.
+                    </p>
+                </section>
+
+                <!-- Cards -->
+                <section class="project-detail__grid">
                     <article class="project-detail__card">
                         <h2>Objetivo</h2>
                         <p>
-                            Crear una experiencia móvil moderna, clara y funcional, enfocada en el acceso rápido a
-                            contenidos digitales.
+                            Facilitar el acceso a contenido cultural turco para usuarios de habla hispana,
+                            integrando una experiencia móvil clara, intuitiva y visualmente coherente.
+                        </p>
+                    </article>
+
+                    <article class="project-detail__card">
+                        <h2>Enfoque</h2>
+                        <p>
+                            Diseño centrado en el usuario, accesibilidad digital, sensibilidad cultural y estructura
+                            de contenidos adaptada a las necesidades de usuarios latinoamericanos.
                         </p>
                     </article>
 
                     <article class="project-detail__card">
                         <h2>Tecnologías</h2>
                         <p>
-                            React Native, Python, diseño responsive, estructura de contenidos y experiencia de usuario.
+                            React Native, JavaScript, MongoDB, diseño de interfaces móviles, estructura de datos
+                            y prototipado visual.
                         </p>
                     </article>
+                </section>
 
-                    <article class="project-detail__card">
-                        <h2>Resultado</h2>
-                        <p>
-                            Una propuesta digital organizada, visualmente cuidada y orientada a facilitar la navegación
-                            del usuario.
-                        </p>
-                    </article>
-                </div>
-
+                <!-- Galería -->
                 <section class="project-gallery">
-                    <h2>Galería del proyecto</h2>
+                    <div class="section__header">
+                        <p class="section__eyebrow">Galería</p>
+                        <h2 class="section__title">Pantallas y proceso visual</h2>
+                        <p class="section__description">
+                            Imágenes del diseño, pantallas de autenticación, estructura de datos y desarrollo técnico
+                            de la aplicación Saray.
+                        </p>
+                    </div>
 
                     <div class="project-gallery__grid">
-                        <img src="images/saray-1.png" alt="Vista 1 de Saray App">
-                        <img src="images/saray-2.png" alt="Vista 2 de Saray App">
-                        <img src="images/saray-3.png" alt="Vista 3 de Saray App">
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-register-screen.webp" alt="Pantalla de registro de Saray">
+                            <figcaption>Registro de usuario</figcaption>
+                        </figure>
+
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-reset-password-screen.webp"
+                                alt="Pantalla para restablecer contraseña en Saray">
+                            <figcaption>Recuperación de contraseña</figcaption>
+                        </figure>
+
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-profile-screen.webp"
+                                alt="Pantalla de perfil de usuario en Saray">
+                            <figcaption>Perfil de usuario</figcaption>
+                        </figure>
+
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-database-structure.webp"
+                                alt="Estructura de base de datos de Saray">
+                            <figcaption>Estructura de base de datos</figcaption>
+                        </figure>
+
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-login-code.webp"
+                                alt="Código de la pantalla de inicio de sesión de Saray">
+                            <figcaption>Desarrollo de login</figcaption>
+                        </figure>
+
+                        <figure class="project-gallery__item">
+                            <img src="images/saray/saray-home-code.webp" alt="Código de la pantalla principal de Saray">
+                            <figcaption>Pantalla principal en desarrollo</figcaption>
+                        </figure>
                     </div>
                 </section>
 
+                <!-- Video opcional -->
                 <section class="project-video">
-                    <h2>Video demostrativo</h2>
+                    <div class="project-video__content">
+                        <p class="section__eyebrow">Video</p>
+                        <h2 class="project-detail__heading">Demostración del proyecto</h2>
+                        <p class="project-detail__text">
+                            Aquí puedes colocar un video demostrativo de la aplicación cuando lo tengas listo.
+                            Mientras tanto, esta sección puede quedar preparada para cumplir con la estructura
+                            multimedia del proyecto.
+                        </p>
+                    </div>
 
-                    <video controls poster="images/saray-1.png">
-                        <source src="videos/saray-demo.mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de video.
-                    </video>
+                    <div class="project-video__box">
+                        <video controls poster="images/saray/saray-register-screen.webp">
+                            <source src="videos/saray-demo.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
                 </section>
 
-                <a class="project-detail__button" href="index.html#proyectos">
-                    Volver a proyectos
-                </a>
+                <div class="project-detail__actions">
+                    <a class="project-detail__button" href="index.html#proyectos">
+                        Volver a proyectos
+                    </a>
+
+                    <a class="project-detail__button project-detail__button--secondary" href="index.html#contacto">
+                        Hablemos de tu proyecto
+                    </a>
+                </div>
             </div>
         </section>
     </main>
-</body>
 
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__column">
+                <h2 class="footer__brand">Marianne Lucena</h2>
+                <p class="footer__text">Ingeniera en Informática creando experiencias digitales con estrategia, diseño y tecnología.</p>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">Navegación</h3>
+                <a class="footer__link" href="index.html">Inicio</a>
+                <a class="footer__link" href="index.html#proyectos">Proyectos</a>
+                <a class="footer__link" href="index.html#servicios">Servicios</a>
+                <a class="footer__link" href="index.html#contacto">Contacto</a>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">Proyecto</h3>
+                <a class="footer__link" href="#top">Saray App</a>
+                <a class="footer__link" href="#galeria">Galería</a>
+                <a class="footer__link" href="#video">Video</a>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">Contacto</h3>
+                <a class="footer__link" href="mailto:lucena.lis14@gmail.com">lucena.lis14@gmail.com</a>
+                <a class="footer__link" href="tel:+34691296388">+34 691 29 63 88</a>
+            </div>
+        </div>
+        <p class="footer__copy">© 2026 Marianne Lucena. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
 </html>
