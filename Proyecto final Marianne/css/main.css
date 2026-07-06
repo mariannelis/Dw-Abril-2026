@@ -270,8 +270,24 @@ button {
     max-width: var(--container-width);
     position: relative;
     text-align: center;
+    transform: translateY(-2rem);
     width: 100%;
     z-index: 2;
+}
+
+.hero__name {
+    color: var(--color-secondary);
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 0.28rem;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__name:hover {
+    color: var(--color-accent);
+    transform: translateY(-0.1rem);
 }
 
 .hero__eyebrow {
@@ -286,10 +302,11 @@ button {
 .hero__title {
     color: var(--color-primary);
     font-family: var(--font-title);
-    font-size: clamp(3.4rem, 8vw, 7.2rem);
-    letter-spacing: -0.25rem;
-    line-height: 0.95;
-    margin-bottom: 1.4rem;
+    font-size: clamp(1.25rem, 7vw, 6.2rem);
+    letter-spacing: -0.19rem;
+    line-height: 1.11;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.4rem;
 }
 
 .hero__title span {
@@ -334,6 +351,7 @@ button {
         box-shadow var(--transition-fast),
         color var(--transition-fast),
         transform var(--transition-fast);
+    gap: 0.5rem;
 }
 
 .hero__button--primary {
@@ -351,6 +369,7 @@ button {
     text-transform: uppercase;
     box-shadow: 0 1rem 2rem rgba(37, 99, 235, 0.25);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin-top: 2.8rem;
 }
 
 .hero__button--primary:hover {
@@ -562,6 +581,18 @@ button {
     padding: 0.45rem 0.8rem;
 }
 
+.project-card__link {
+    color: inherit;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.project-card__link:focus {
+    outline: 0.18rem solid rgba(124, 58, 237, 0.45);
+    outline-offset: 0.25rem;
+}
+
 .projects__button {
     align-items: center;
     background-color: var(--color-white);
@@ -726,10 +757,12 @@ button {
 }
 
 .process-card {
-    background: rgba(255, 255, 255, 0.82);
-    border: 0.08rem solid rgba(37, 99, 235, 0.18);
+    background: rgba(255, 255, 255, 0.88);
+    border: 0.19rem solid rgba(65, 6, 243, 0.35);
     border-radius: 1.4rem;
-    box-shadow: 0 1rem 2.5rem rgba(15, 23, 42, 0.08);
+    box-shadow:
+        0 1rem 2.5rem rgba(15, 23, 42, 0.07),
+        0 0 0 0.28rem rgba(124, 58, 237, 0.04);
     left: 50%;
     max-width: 21rem;
     min-height: 12rem;
@@ -742,17 +775,29 @@ button {
         opacity 0.55s ease,
         transform 0.55s ease,
         box-shadow 0.55s ease,
-        border-color 0.55s ease;
+        border-color 0.55s ease,
+        background-color 0.55s ease;
     width: 100%;
 }
 
+.process-card:hover {
+    border-color: rgba(124, 58, 237, 0.72);
+    box-shadow:
+        0 1.6rem 3.2rem rgba(37, 99, 235, 0.16),
+        0 0 0 0.35rem rgba(124, 58, 237, 0.1);
+}
+
 .process-card.is-center {
-    border-color: rgba(124, 58, 237, 0.36);
-    box-shadow: 0 1.5rem 3rem rgba(37, 99, 235, 0.16);
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(124, 58, 237, 0.62);
+    box-shadow:
+        0 1.5rem 3rem rgba(37, 99, 235, 0.14),
+        0 0 0 0.32rem rgba(124, 58, 237, 0.08);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     z-index: 4;
 }
+
 
 .process-card.is-left {
     opacity: 0.45;
@@ -842,6 +887,7 @@ button {
         transform: translate(-50%, -50%) scale(0.8);
     }
 }
+
 /* ==========================================================================
    11. Contacto
    ========================================================================== */
@@ -990,6 +1036,7 @@ button {
     box-shadow: 0 1rem 2rem rgba(37, 99, 235, 0.22);
     transform: translateY(-0.15rem);
 }
+
 /* ==========================================================================
    12. Preguntas frecuentes
    ========================================================================== */
@@ -1299,13 +1346,13 @@ button {
     }
 
     .hero__cards {
-    grid-template-columns: 1fr;
-    max-width: 34rem;
-}
+        grid-template-columns: 1fr;
+        max-width: 34rem;
+    }
 
-.hero-service-card {
-    transform: none;
-}
+    .hero-service-card {
+        transform: none;
+    }
 }
 
 /* ==========================================================================
@@ -1417,5 +1464,136 @@ button {
         bottom: 1.2rem;
         font-size: 0.78rem;
         left: 1rem;
+    }
+}
+
+/* ==========================================================================
+   Páginas internas de proyectos
+   ========================================================================== */
+
+.project-detail {
+    background:
+        radial-gradient(circle at 76% 35%, rgba(124, 58, 237, 0.16), transparent 32%),
+        radial-gradient(circle at 18% 48%, rgba(37, 99, 235, 0.14), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #eef4ff 48%, #f8fbff 100%);
+    min-height: 100vh;
+    padding: 6rem 1.5rem;
+}
+
+.project-detail__container {
+    margin: 0 auto;
+    max-width: var(--container-width);
+}
+
+.project-detail__title {
+    color: var(--color-primary);
+    font-family: var(--font-title);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+}
+
+.project-detail__intro {
+    color: var(--color-muted);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.project-detail__hero {
+    background-color: rgba(255, 255, 255, 0.82);
+    border: 0.12rem solid rgba(167, 139, 250, 0.35);
+    border-radius: 1.6rem;
+    box-shadow:
+        0 1.4rem 3rem rgba(15, 23, 42, 0.08),
+        0 0 0 0.35rem rgba(124, 58, 237, 0.06);
+    margin: 3rem 0;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.project-detail__hero img {
+    border-radius: 1rem;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-detail__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
+}
+
+.project-detail__card {
+    background-color: rgba(255, 255, 255, 0.88);
+    border: 0.12rem solid rgba(167, 139, 250, 0.32);
+    border-radius: 1.4rem;
+    box-shadow:
+        0 1rem 2.5rem rgba(15, 23, 42, 0.07),
+        0 0 0 0.28rem rgba(124, 58, 237, 0.04);
+    padding: 1.6rem;
+}
+
+.project-detail__card h2,
+.project-gallery h2,
+.project-video h2 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-detail__card p {
+    color: var(--color-muted);
+}
+
+.project-gallery {
+    margin-bottom: 4rem;
+}
+
+.project-gallery__grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.project-gallery__grid img {
+    border: 0.08rem solid rgba(167, 139, 250, 0.3);
+    border-radius: 1.2rem;
+    box-shadow: var(--shadow-card);
+    height: 16rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-video {
+    margin-bottom: 3rem;
+}
+
+.project-video video {
+    border: 0.12rem solid rgba(167, 139, 250, 0.35);
+    border-radius: 1.4rem;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+}
+
+.project-detail__button {
+    align-items: center;
+    animation: gradientMove 7s ease infinite;
+    background: linear-gradient(135deg, #2563eb, #7c3aed, #2dd4bf, #2563eb);
+    background-size: 300% 300%;
+    border-radius: 0.8rem;
+    color: var(--color-white);
+    display: inline-flex;
+    font-weight: 900;
+    padding: 1rem 1.6rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .project-detail__grid,
+    .project-gallery__grid {
+        grid-template-columns: 1fr;
     }
 }
