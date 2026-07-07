@@ -25,7 +25,7 @@
     <header class="header">
         <div class="header__container">
             <a class="header__brand" href="index.html" title="Volver al inicio">
-                <img class="header__logo" src="images/logoml.png" alt="Logo de Marianne Lucena">
+                <img class="header__logo" src="images/logo_principal.png" alt="Logo de Marianne Lucena">
             </a>
 
             <button class="header__menu-button" type="button" title="Abrir menú de navegación"
@@ -41,16 +41,16 @@
                         <a class="nav__link" href="index.html" title="Volver al inicio">Inicio</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#proyectos" title="Ver proyectos">Proyectos</a>
+                        <a class="nav__link" href="index.html#proyectos" title="Ver proyectos" class="nav__link--active">Proyectos</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#servicios" title="Ver servicios">Servicios</a>
+                        <a class="nav__link" href="index.html#servicios" title="Ver servicios" class="nav__link--active">Servicios</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#sobre-mi" title="Sobre Marianne">Sobre mí</a>
+                        <a class="nav__link" href="index.html#sobre-mi" title="Sobre Marianne" class="nav__link--active">Sobre mí</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="index.html#contacto" title="Contactar">Contacto</a>
+                        <a class="nav__link" href="index.html#contacto" title="Contactar" class="nav__link--active">Contacto</a>
                     </li>
                 </ul>
             </nav>
@@ -95,10 +95,46 @@
                     </div>
                 </div>
 
-                <div class="project-detail__hero">
-                    <img src="images/saray/saray-register-screen.webp"
-                        alt="Pantalla de registro de la aplicación Saray">
-                </div>
+                <div class="project-detail__hero project-slider">
+    <button class="project-slider__button project-slider__button--prev" type="button" aria-label="Imagen anterior">
+        ‹
+    </button>
+
+    <div class="project-slider__viewport">
+        <div class="project-slider__track">
+            <figure class="project-slider__item">
+                <img src="images/saray-register-screen.webp" alt="Pantalla de registro de Saray">
+                <figcaption>Registro de usuario</figcaption>
+            </figure>
+
+            <figure class="project-slider__item">
+                <img src="images/saray-reset-password-screen.webp" alt="Pantalla de recuperación de contraseña de Saray">
+                <figcaption>Recuperación de contraseña</figcaption>
+            </figure>
+
+            <figure class="project-slider__item">
+                <img src="images/saray-profile-screen.webp" alt="Pantalla de perfil de usuario de Saray">
+                <figcaption>Perfil de usuario</figcaption>
+            </figure>
+
+            <figure class="project-slider__item">
+                <img src="images/saray-database-structure.webp" alt="Estructura de base de datos de Saray">
+                <figcaption>Estructura de base de datos</figcaption>
+            </figure>
+
+            <figure class="project-slider__item">
+                <img src="images/saray-home-code.webp" alt="Código de la pantalla principal de Saray">
+                <figcaption>Desarrollo de la pantalla principal</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <button class="project-slider__button project-slider__button--next" type="button" aria-label="Imagen siguiente">
+        ›
+    </button>
+
+    <div class="project-slider__dots" aria-label="Indicadores del carrusel"></div>
+</div>
 
                 <!-- Información principal -->
                 <section class="project-detail__section">
@@ -184,36 +220,36 @@
 
                     <div class="project-gallery__grid">
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-register-screen.webp" alt="Pantalla de registro de Saray">
+                            <img src="images/saray-register-screen.webp" alt="Pantalla de registro de Saray">
                             <figcaption>Registro de usuario</figcaption>
                         </figure>
 
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-reset-password-screen.webp"
+                            <img src="images/saray-reset-password-screen.webp"
                                 alt="Pantalla para restablecer contraseña en Saray">
                             <figcaption>Recuperación de contraseña</figcaption>
                         </figure>
 
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-profile-screen.webp"
+                            <img src="images/saray-profile-screen.webp"
                                 alt="Pantalla de perfil de usuario en Saray">
                             <figcaption>Perfil de usuario</figcaption>
                         </figure>
 
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-database-structure.webp"
+                            <img src="images/saray-database-structure.webp"
                                 alt="Estructura de base de datos de Saray">
                             <figcaption>Estructura de base de datos</figcaption>
                         </figure>
 
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-login-code.webp"
+                            <img src="images/saray-login-code.webp"
                                 alt="Código de la pantalla de inicio de sesión de Saray">
                             <figcaption>Desarrollo de login</figcaption>
                         </figure>
 
                         <figure class="project-gallery__item">
-                            <img src="images/saray/saray-home-code.webp" alt="Código de la pantalla principal de Saray">
+                            <img src="images/saray-home-code.webp" alt="Código de la pantalla principal de Saray">
                             <figcaption>Pantalla principal en desarrollo</figcaption>
                         </figure>
                     </div>
@@ -224,15 +260,12 @@
                     <div class="project-video__content">
                         <p class="section__eyebrow">Video</p>
                         <h2 class="project-detail__heading">Demostración del proyecto</h2>
-                        <p class="project-detail__text">
-                            Aquí puedes colocar un video demostrativo de la aplicación cuando lo tengas listo.
-                            Mientras tanto, esta sección puede quedar preparada para cumplir con la estructura
-                            multimedia del proyecto.
+                        <p class="project-detail__text">Video demostrativo de la aplicación Saray, mostrando la navegación entre pantallas y la interacción con las funciones principales.
                         </p>
                     </div>
 
                     <div class="project-video__box">
-                        <video controls poster="images/saray/saray-register-screen.webp">
+                        <video controls poster="images/saray-register-screen.webp">
                             <source src="videos/saray-demo.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de video.
                         </video>

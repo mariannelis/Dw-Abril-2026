@@ -353,4 +353,85 @@ Carrusel 3D de proceso
     };
 
     form?.addEventListener("submit", handleFormSubmit);
+
+    /* ==========================================================================
+   Carrusel interno de páginas de proyecto
+   ========================================================================== */
+
+const projectSlider = document.querySelector(".project-slider");
+
+if (projectSlider) {
+    const sliderTrack = projectSlider.querySelector(".project-slider__track");
+    const sliderItems = projectSlider.querySelectorAll(".project-slider__item");
+    const sliderPrev = projectSlider.querySelector(".project-slider__button--prev");
+    const sliderNext = projectSlider.querySelector(".project-slider__button--next");
+    const sliderDotsContainer = projectSlider.querySelector(".project-slider__dots");
+
+    let sliderIndex = 0;
+    let sliderAutoplay = null;
+
+    sliderItems.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = "project-slider__dot";
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
+
+        dot.addEventListener("click", () => {
+            sliderIndex = index;
+            updateProjectSlider();
+            restartProjectSliderAutoplay();
+        });
+
+        sliderDotsContainer.appendChild(dot);
+    });
+
+    const sliderDots = projectSlider.querySelectorAll(".project-slider__dot");
+
+    const updateProjectSlider = () => {
+        sliderTrack.style.transform = `translateX(-${sliderIndex * 100}%)`;
+
+        sliderDots.forEach((dot, index) => {
+            dot.classList.toggle("is-active", index === sliderIndex);
+        });
+    };
+
+    const showNextProjectSlide = () => {
+        sliderIndex = (sliderIndex + 1) % sliderItems.length;
+        updateProjectSlider();
+    };
+
+    const showPrevProjectSlide = () => {
+        sliderIndex = (sliderIndex - 1 + sliderItems.length) % sliderItems.length;
+        updateProjectSlider();
+    };
+
+    const startProjectSliderAutoplay = () => {
+        sliderAutoplay = setInterval(showNextProjectSlide, 4500);
+    };
+
+    const stopProjectSliderAutoplay = () => {
+        clearInterval(sliderAutoplay);
+    };
+
+    const restartProjectSliderAutoplay = () => {
+        stopProjectSliderAutoplay();
+        startProjectSliderAutoplay();
+    };
+
+    sliderNext?.addEventListener("click", () => {
+        showNextProjectSlide();
+        restartProjectSliderAutoplay();
+    });
+
+    sliderPrev?.addEventListener("click", () => {
+        showPrevProjectSlide();
+        restartProjectSliderAutoplay();
+    });
+
+    projectSlider.addEventListener("mouseenter", stopProjectSliderAutoplay);
+    projectSlider.addEventListener("mouseleave", startProjectSliderAutoplay);
+
+    updateProjectSlider();
+    startProjectSliderAutoplay();
+}
 })();

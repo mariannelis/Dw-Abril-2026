@@ -24,10 +24,12 @@
   <!-- Cabecera principal de la página -->
   <header class="header">
     <div class="header__container">
-      <!-- Logo e identidad -->
-      <a class="header__brand" href="#inicio" title="Ir al inicio">
-        <img class="header__logo" src="images/logo33.png" alt="Logo de Marianne Lucena">
+      <!-- Logo de la marca -->
+      <a class="header__logo" href="#inicio" title="Ir a inicio">
+        <img class="header__logo-image" src="images/codeva-blu.png" alt="Logo de Marianne Lucena">
       </a>
+
+
       <!-- Botón del menú responsive -->
       <button class="header__menu-button" type="button" title="Abrir menú de navegación"
         aria-label="Abrir menú de navegación">
@@ -40,19 +42,16 @@
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#inicio" title="Ir a inicio">Inicio</a>
+            <a class="nav__link" href="#inicio" title="Ir a inicio" class="nav__link--active">Inicio</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#proyectos" title="Ir a proyectos">Proyectos</a>
+            <a class="nav__link" href="#proyectos" title="Ir a proyectos" class="nav__link--active ">Proyectos</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#servicios" title="Ir a servicios">Servicios</a>
+            <a class="nav__link" href="#servicios" title="Ir a servicios" class="nav__link--active">Servicios</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#sobre-mi" title="Ir a sobre mí">Sobre mí</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#contacto" title="Ir a contacto">Contacto</a>
+            <a class="nav__link" href="#contacto" title="Ir a contacto" class="nav__link--active">Contacto</a>
           </li>
         </ul>
       </nav>
@@ -77,46 +76,51 @@
 
   <!-- Contenido principal -->
   <main>
-    <!-- Sección inicial o hero -->
-    <section class="hero hero--dark snap-section" id="inicio">
-      <div class="hero__glow"></div>
-
+    <section class="hero" id="inicio">
       <div class="hero__container">
         <div class="hero__content">
+
           <p class="hero__name">Marianne Lucena</p>
+
           <h1 class="hero__title">
-            Diseño y desarrollo experiencias digitales
-            <span>con visión tecnológica.</span>
+            Desarrollo web
+            <strong>con propósito.</strong>
           </h1>
 
-          <!-- <p class="hero__subtitle">
-            Creo soluciones digitales modernas, funcionales y visualmente cuidadas
-            que conectan ideas, personas y resultados.
-          </p> -->
-          <a class="hero__button hero__button--primary" href="#contacto"
-            title="Iniciar un proyecto con Marianne Lucena">
-            Iniciar proyecto
-            <span class="hero__button-icon">→</span>
-          </a>
+
+
+          <div class="hero__buttons">
+            <a class="hero__button hero__button--primary" href="#contacto">
+              Iniciar proyecto
+            </a>
+
+            <a class="hero__button hero__button--secondary" href="#proyectos">
+              Ver proyectos
+            </a>
+          </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__shape"></div>
+
+        <div class="hero__image-wrapper">
+          <img class="hero__image" src="images/herocentral.png" alt="Ilustración digital tecnológica">
         </div>
       </div>
-
+    </section>
+    <!-- Tarjetas del hero inferior
+     <section class="hero-service-card">
       <div class="hero__cards">
         <article class="hero-service-card">
-          <div class="hero-service-card__icon">⌘</div>
-
           <div class="hero-service-card__content">
             <h3>Desarrollo Web</h3>
             <p>Sitios rápidos, responsivos y optimizados para resultados.</p>
           </div>
         </article>
 
+          <div class="hero-service-card__content">
+            <h3>Diseño UI/UX</h3>
+            <p>Interfaces elegantes, modernas y adaptadas a cada proyecto.</p>
+          </div>
+        </article>
         <article class="hero-service-card">
-          <div class="hero-service-card__icon">◇</div>
-
           <div class="hero-service-card__content">
             <h3>Aplicaciones</h3>
             <p>Soluciones digitales a medida para cada necesidad.</p>
@@ -124,15 +128,13 @@
         </article>
 
         <article class="hero-service-card">
-          <div class="hero-service-card__icon">⬡</div>
-
           <div class="hero-service-card__content">
             <h3>Tecnología</h3>
             <p>Innovación, rendimiento y experiencias digitales seguras.</p>
           </div>
         </article>
       </div>
-    </section>
+    </section> -->
 
     <!-- Sección de proyectos destacados -->
     <section class="projects section" id="proyectos">
@@ -157,8 +159,8 @@
             <a class="project-card__link" href="saray.html" target="_blank" rel="noopener noreferrer">
               <picture>
                 <source srcset="images/proyecto-saray.webp" type="image/webp">
-                <img class="project-card__image" src="images/Logo-saray2.png" alt="Vista del proyecto Saray App" loading="lazy"
-                  title="App Móvil Saray">
+                <img class="project-card__image" src="images/Logo-saray2.png" alt="Vista del proyecto Saray App"
+                  loading="lazy" title="App Móvil Saray">
               </picture>
               <div class="project-card__content">
                 <h3 class="project-card__title">Saray App</h3>
