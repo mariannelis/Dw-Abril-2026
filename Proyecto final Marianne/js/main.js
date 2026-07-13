@@ -24,37 +24,37 @@
     const scrollIndicator = document.querySelector("#scrollIndicator");
 
     let isIntroScrolling = false;
-/* ==========================================================================
-   Efecto 3D en tarjetas del hero
-   ========================================================================== */
+    /* ==========================================================================
+       Efecto 3D en tarjetas del hero
+       ========================================================================== */
 
-const heroCards = document.querySelectorAll(".hero-service-card");
+    const heroCards = document.querySelectorAll(".hero-service-card");
 
-heroCards.forEach((card) => {
-    card.addEventListener("mousemove", (event) => {
-        const rect = card.getBoundingClientRect();
+    heroCards.forEach((card) => {
+        card.addEventListener("mousemove", (event) => {
+            const rect = card.getBoundingClientRect();
 
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
 
-        card.style.transform = `
+            card.style.transform = `
             perspective(900px)
             rotateX(${rotateX}deg)
             rotateY(${rotateY}deg)
             translateY(-0.35rem)
         `;
-    });
+        });
 
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
+        });
     });
-});
     /* ==========================================================================
        2. Indicador fijo: desplazarse para explorar
        ========================================================================== */
@@ -358,141 +358,242 @@ Carrusel 3D de proceso
    Carrusel interno de páginas de proyecto
    ========================================================================== */
 
-const projectSlider = document.querySelector(".project-slider");
+    const projectSlider = document.querySelector(".project-slider");
 
-if (projectSlider) {
-    const sliderTrack = projectSlider.querySelector(".project-slider__track");
-    const sliderItems = projectSlider.querySelectorAll(".project-slider__item");
-    const sliderPrev = projectSlider.querySelector(".project-slider__button--prev");
-    const sliderNext = projectSlider.querySelector(".project-slider__button--next");
-    const sliderDotsContainer = projectSlider.querySelector(".project-slider__dots");
+    if (projectSlider) {
+        const sliderTrack = projectSlider.querySelector(".project-slider__track");
+        const sliderItems = projectSlider.querySelectorAll(".project-slider__item");
+        const sliderPrev = projectSlider.querySelector(".project-slider__button--prev");
+        const sliderNext = projectSlider.querySelector(".project-slider__button--next");
+        const sliderDotsContainer = projectSlider.querySelector(".project-slider__dots");
 
-    let sliderIndex = 0;
-    let sliderAutoplay = null;
+        let sliderIndex = 0;
+        let sliderAutoplay = null;
 
-    sliderItems.forEach((_, index) => {
-        const dot = document.createElement("button");
-        dot.className = "project-slider__dot";
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
+        sliderItems.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.className = "project-slider__dot";
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
 
-        dot.addEventListener("click", () => {
-            sliderIndex = index;
+            dot.addEventListener("click", () => {
+                sliderIndex = index;
+                updateProjectSlider();
+                restartProjectSliderAutoplay();
+            });
+
+            sliderDotsContainer.appendChild(dot);
+        });
+
+        const sliderDots = projectSlider.querySelectorAll(".project-slider__dot");
+
+        const updateProjectSlider = () => {
+            sliderTrack.style.transform = `translateX(-${sliderIndex * 100}%)`;
+
+            sliderDots.forEach((dot, index) => {
+                dot.classList.toggle("is-active", index === sliderIndex);
+            });
+        };
+
+        const showNextProjectSlide = () => {
+            sliderIndex = (sliderIndex + 1) % sliderItems.length;
             updateProjectSlider();
+        };
+
+        const showPrevProjectSlide = () => {
+            sliderIndex = (sliderIndex - 1 + sliderItems.length) % sliderItems.length;
+            updateProjectSlider();
+        };
+
+        const startProjectSliderAutoplay = () => {
+            sliderAutoplay = setInterval(showNextProjectSlide, 4500);
+        };
+
+        const stopProjectSliderAutoplay = () => {
+            clearInterval(sliderAutoplay);
+        };
+
+        const restartProjectSliderAutoplay = () => {
+            stopProjectSliderAutoplay();
+            startProjectSliderAutoplay();
+        };
+
+        sliderNext?.addEventListener("click", () => {
+            showNextProjectSlide();
             restartProjectSliderAutoplay();
         });
 
-        sliderDotsContainer.appendChild(dot);
-    });
+        sliderPrev?.addEventListener("click", () => {
+            showPrevProjectSlide();
+            restartProjectSliderAutoplay();
+        });
 
-    const sliderDots = projectSlider.querySelectorAll(".project-slider__dot");
+        projectSlider.addEventListener("mouseenter", stopProjectSliderAutoplay);
+        projectSlider.addEventListener("mouseleave", startProjectSliderAutoplay);
 
-    const updateProjectSlider = () => {
-        sliderTrack.style.transform = `translateX(-${sliderIndex * 100}%)`;
+        updateProjectSlider();
+        startProjectSliderAutoplay();
+    }
 
-        sliderDots.forEach((dot, index) => {
-            dot.classList.toggle("is-active", index === sliderIndex);
+    /* ==========================================================================
+       Estado activo del menú según la sección visible
+       ========================================================================== */
+
+    const menuSectionLinks = document.querySelectorAll(".nav__link");
+
+    const menuSections = document.querySelectorAll(
+        "#inicio, #proyectos, #servicios, #sobre-mi, #contacto"
+    );
+
+    const activateMenuLink = () => {
+        let currentSection = "inicio";
+
+        menuSections.forEach((section) => {
+            const sectionTop = section.offsetTop - 180;
+
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        menuSectionLinks.forEach((link) => {
+            const linkTarget = link.getAttribute("href");
+            link.classList.toggle("is-active", linkTarget === `#${currentSection}`);
         });
     };
 
-    const showNextProjectSlide = () => {
-        sliderIndex = (sliderIndex + 1) % sliderItems.length;
-        updateProjectSlider();
-    };
+    window.addEventListener("scroll", activateMenuLink);
+    window.addEventListener("load", activateMenuLink);
 
-    const showPrevProjectSlide = () => {
-        sliderIndex = (sliderIndex - 1 + sliderItems.length) % sliderItems.length;
-        updateProjectSlider();
-    };
+    /* ==========================================================================
+       Movimiento interactivo de la imagen del hero
+       ========================================================================== */
 
-    const startProjectSliderAutoplay = () => {
-        sliderAutoplay = setInterval(showNextProjectSlide, 4500);
-    };
+    const hero = document.querySelector(".hero");
+    const heroImage = document.querySelector(".hero__image");
 
-    const stopProjectSliderAutoplay = () => {
-        clearInterval(sliderAutoplay);
-    };
+    if (hero && heroImage) {
+        hero.addEventListener("mousemove", (event) => {
+            const rect = hero.getBoundingClientRect();
 
-    const restartProjectSliderAutoplay = () => {
-        stopProjectSliderAutoplay();
-        startProjectSliderAutoplay();
-    };
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
 
-    sliderNext?.addEventListener("click", () => {
-        showNextProjectSlide();
-        restartProjectSliderAutoplay();
-    });
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-    sliderPrev?.addEventListener("click", () => {
-        showPrevProjectSlide();
-        restartProjectSliderAutoplay();
-    });
+            const moveX = ((x - centerX) / centerX) * 1.2;
+            const moveY = ((y - centerY) / centerY) * 1.2;
 
-    projectSlider.addEventListener("mouseenter", stopProjectSliderAutoplay);
-    projectSlider.addEventListener("mouseleave", startProjectSliderAutoplay);
-
-    updateProjectSlider();
-    startProjectSliderAutoplay();
-}
-
-/* ==========================================================================
-   Estado activo del menú según la sección visible
-   ========================================================================== */
-
-const menuSectionLinks = document.querySelectorAll(".nav__link");
-
-const menuSections = document.querySelectorAll(
-    "#inicio, #proyectos, #servicios, #sobre-mi, #contacto"
-);
-
-const activateMenuLink = () => {
-    let currentSection = "inicio";
-
-    menuSections.forEach((section) => {
-        const sectionTop = section.offsetTop - 180;
-
-        if (window.scrollY >= sectionTop) {
-            currentSection = section.getAttribute("id");
-        }
-    });
-
-    menuSectionLinks.forEach((link) => {
-        const linkTarget = link.getAttribute("href");
-        link.classList.toggle("is-active", linkTarget === `#${currentSection}`);
-    });
-};
-
-window.addEventListener("scroll", activateMenuLink);
-window.addEventListener("load", activateMenuLink);
-
-/* ==========================================================================
-   Movimiento interactivo de la imagen del hero
-   ========================================================================== */
-
-const hero = document.querySelector(".hero");
-const heroImage = document.querySelector(".hero__image");
-
-if (hero && heroImage) {
-    hero.addEventListener("mousemove", (event) => {
-        const rect = hero.getBoundingClientRect();
-
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const moveX = ((x - centerX) / centerX) * 1.2;
-        const moveY = ((y - centerY) / centerY) * 1.2;
-
-        heroImage.style.transform = `
+            heroImage.style.transform = `
             translate(${moveX}rem, ${moveY}rem)
             scale(1.01)
         `;
+        });
+
+        hero.addEventListener("mouseleave", () => {
+            heroImage.style.transform = "translate(0, 0) scale(1)";
+        });
+    }
+
+    /* ==========================================================================
+       Chatbot Eva
+       ========================================================================== */
+
+    const chatbot = document.querySelector("#chatbot");
+    const chatbotToggle = document.querySelector("#chatbotToggle");
+    const chatbotClose = document.querySelector("#chatbotClose");
+    const chatbotForm = document.querySelector("#chatbotForm");
+    const chatbotInput = document.querySelector("#chatbotInput");
+    const chatbotMessages = document.querySelector("#chatbotMessages");
+
+    const chatbotResponses = [
+        {
+            keywords: ["hola", "buenas", "hello", "hi"],
+            response: "Hola, soy Eva. Estoy aquí para ayudarte con información sobre Marianne, sus servicios y sus proyectos."
+        },
+        {
+            keywords: ["servicio", "servicios", "ofreces", "haces", "trabajo"],
+            response: "Marianne ofrece diseño web personalizado, landing pages, portafolios profesionales, sitios responsive y soluciones digitales modernas."
+        },
+        {
+            keywords: ["proyecto", "proyectos", "portafolio", "trabajos"],
+            response: "Puedes conocer proyectos como Saray App, Pasha Delight, Raíces Cruzadas, CodeVaml y Venezuela Levántate en la sección de proyectos."
+        },
+        {
+            keywords: ["saray"],
+            response: "Saray App es una aplicación móvil diseñada para acercar la cultura turca a usuarios hispanohablantes."
+        },
+        {
+            keywords: ["contacto", "correo", "email", "gmail", "whatsapp", "teléfono", "telefono"],
+            response: "Puedes contactar a Marianne desde el formulario de contacto o por correo electrónico."
+        },
+        {
+            keywords: ["precio", "costo", "cuánto", "cuanto", "tarifa", "presupuesto"],
+            response: "El costo depende del tipo de proyecto, número de secciones y funcionalidades. Lo mejor es enviar una solicitud para preparar una propuesta personalizada."
+        },
+        {
+            keywords: ["responsive", "móvil", "movil", "tablet", "celular"],
+            response: "Sí, los sitios se diseñan para verse bien en computadora, tablet y móvil."
+        },
+        {
+            keywords: ["marianne", "quién", "quien", "perfil"],
+            response: "Marianne Lucena es Ingeniera en Informática, enfocada en desarrollo web, aplicaciones móviles y soluciones digitales con propósito."
+        }
+    ];
+
+    const addChatbotMessage = (message, type) => {
+        const messageElement = document.createElement("div");
+
+        messageElement.classList.add("chatbot__message");
+        messageElement.classList.add(`chatbot__message--${type}`);
+        messageElement.textContent = message;
+
+        chatbotMessages?.appendChild(messageElement);
+
+        if (chatbotMessages) {
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+    };
+
+    const getChatbotResponse = (userMessage) => {
+        const normalizedMessage = userMessage.toLowerCase();
+
+        const matchedResponse = chatbotResponses.find((item) =>
+            item.keywords.some((keyword) => normalizedMessage.includes(keyword))
+        );
+
+        if (matchedResponse) {
+            return matchedResponse.response;
+        }
+
+        return "Gracias por escribirme. Soy Eva y puedo ayudarte con información sobre servicios, proyectos, contacto o el perfil profesional de Marianne.";
+    };
+
+    chatbotToggle?.addEventListener("click", () => {
+        chatbot?.classList.toggle("is-open");
     });
 
-    hero.addEventListener("mouseleave", () => {
-        heroImage.style.transform = "translate(0, 0) scale(1)";
+    chatbotClose?.addEventListener("click", () => {
+        chatbot?.classList.remove("is-open");
     });
-}
+
+    chatbotForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const userMessage = chatbotInput.value.trim();
+
+        if (!userMessage) {
+            return;
+        }
+
+        addChatbotMessage(userMessage, "user");
+        chatbotInput.value = "";
+
+        setTimeout(() => {
+            const botResponse = getChatbotResponse(userMessage);
+            addChatbotMessage(botResponse, "bot");
+        }, 500);
+    });
+
 })();

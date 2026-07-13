@@ -470,6 +470,45 @@
       © 2026 Marianne Lucena. Todos los derechos reservados.
     </p>
   </footer>
+  <!-- Chatbot Eva -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" id="chatbotToggle" type="button" aria-label="Abrir chatbot Eva">
+      <img class="chatbot__avatar" src="images/eva.png" alt="Eva, asistente virtual">
+      <span class="chatbot__label">Eva</span>
+    </button>
+
+    <div class="chatbot__window" id="chatbotWindow">
+      <div class="chatbot__header">
+        <div class="chatbot__header-info">
+          <img class="chatbot__header-avatar" src="images/eva.png" alt="Avatar de Eva">
+
+          <div>
+            <strong>Eva</strong>
+            <span>Asistente virtual</span>
+          </div>
+        </div>
+
+        <button class="chatbot__close" id="chatbotClose" type="button" aria-label="Cerrar chatbot">
+          ×
+        </button>
+      </div>
+
+      <div class="chatbot__messages" id="chatbotMessages">
+        <div class="chatbot__message chatbot__message--bot">
+          Hola, soy Eva. Estoy aquí para ayudarte con información sobre los servicios, proyectos y contacto de Marianne.
+        </div>
+      </div>
+
+      <form class="chatbot__form" id="chatbotForm">
+        <input class="chatbot__input" id="chatbotInput" type="text" placeholder="Escribe tu pregunta..."
+          autocomplete="off">
+
+        <button class="chatbot__send" type="submit">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>
