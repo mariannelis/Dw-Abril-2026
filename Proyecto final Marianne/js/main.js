@@ -434,4 +434,65 @@ if (projectSlider) {
     updateProjectSlider();
     startProjectSliderAutoplay();
 }
+
+/* ==========================================================================
+   Estado activo del menú según la sección visible
+   ========================================================================== */
+
+const menuSectionLinks = document.querySelectorAll(".nav__link");
+
+const menuSections = document.querySelectorAll(
+    "#inicio, #proyectos, #servicios, #sobre-mi, #contacto"
+);
+
+const activateMenuLink = () => {
+    let currentSection = "inicio";
+
+    menuSections.forEach((section) => {
+        const sectionTop = section.offsetTop - 180;
+
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    menuSectionLinks.forEach((link) => {
+        const linkTarget = link.getAttribute("href");
+        link.classList.toggle("is-active", linkTarget === `#${currentSection}`);
+    });
+};
+
+window.addEventListener("scroll", activateMenuLink);
+window.addEventListener("load", activateMenuLink);
+
+/* ==========================================================================
+   Movimiento interactivo de la imagen del hero
+   ========================================================================== */
+
+const hero = document.querySelector(".hero");
+const heroImage = document.querySelector(".hero__image");
+
+if (hero && heroImage) {
+    hero.addEventListener("mousemove", (event) => {
+        const rect = hero.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const moveX = ((x - centerX) / centerX) * 1.2;
+        const moveY = ((y - centerY) / centerY) * 1.2;
+
+        heroImage.style.transform = `
+            translate(${moveX}rem, ${moveY}rem)
+            scale(1.01)
+        `;
+    });
+
+    hero.addEventListener("mouseleave", () => {
+        heroImage.style.transform = "translate(0, 0) scale(1)";
+    });
+}
 })();
