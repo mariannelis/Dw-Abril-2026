@@ -25,6 +25,13 @@
 
     let isIntroScrolling = false;
     /* ==========================================================================
+   Botón de idioma del header
+   ========================================================================== */
+    const languageToggle = document.querySelector("#languageToggle");
+    languageToggle?.addEventListener("click", () => {
+        languageToggle.textContent = languageToggle.textContent.trim() === "ES" ? "EN" : "ES";
+    });
+    /* ==========================================================================
        Efecto 3D en tarjetas del hero
        ========================================================================== */
 
@@ -170,8 +177,63 @@
     projectPrevButton?.addEventListener("click", handleCarouselPrev);
 
     /* ==========================================================================
-Carrusel 3D de proceso
-========================================================================== */
+   Slider premium de servicios
+   ========================================================================== */
+
+    const servicesSlider = document.querySelector("#servicesSlider");
+
+    if (servicesSlider) {
+        const servicesTrack = servicesSlider.querySelector(".services-slider__track");
+        const servicesSlides = servicesSlider.querySelectorAll(".services-slider__slide");
+        const servicesPrev = servicesSlider.querySelector(".services-slider__button--prev");
+        const servicesNext = servicesSlider.querySelector(".services-slider__button--next");
+        const servicesDotsContainer = servicesSlider.querySelector("#servicesSliderDots");
+
+        let currentServiceSlide = 0;
+
+        servicesSlides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.className = "services-slider__dot";
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Ver servicio ${index + 1}`);
+
+            dot.addEventListener("click", () => {
+                currentServiceSlide = index;
+                updateServicesSlider();
+            });
+
+            servicesDotsContainer.appendChild(dot);
+        });
+
+        const servicesDots = servicesSlider.querySelectorAll(".services-slider__dot");
+
+        const updateServicesSlider = () => {
+            servicesTrack.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+
+            servicesDots.forEach((dot, index) => {
+                dot.classList.toggle("is-active", index === currentServiceSlide);
+            });
+        };
+
+        const showNextServiceSlide = () => {
+            currentServiceSlide = (currentServiceSlide + 1) % servicesSlides.length;
+            updateServicesSlider();
+        };
+
+        const showPrevServiceSlide = () => {
+            currentServiceSlide =
+                (currentServiceSlide - 1 + servicesSlides.length) % servicesSlides.length;
+            updateServicesSlider();
+        };
+
+        servicesNext?.addEventListener("click", showNextServiceSlide);
+        servicesPrev?.addEventListener("click", showPrevServiceSlide);
+
+        updateServicesSlider();
+    }
+    /* ==========================================================================
+     Carrusel 3D de proceso
+     ========================================================================== */
 
     const processCards = document.querySelectorAll(".process-card");
     const processTrack = document.querySelector(".process-carousel__track");
@@ -186,45 +248,48 @@ Carrusel 3D de proceso
     const updateProcessCarousel = () => {
         const total = processCards.length;
 
-        processCards.forEach((card) => {
-            card.classList.remove(
-                "is-center",
-                "is-left",
-                "is-right",
-                "is-hidden-left",
-                "is-hidden-right"
-            );
-        });
-
         if (total === 0) {
             return;
         }
 
-        const center = processIndex;
-        const left = (processIndex - 1 + total) % total;
-        const right = (processIndex + 1) % total;
-        const hiddenLeft = (processIndex - 2 + total) % total;
-        const hiddenRight = (processIndex + 2) % total;
+        processCards.forEach((card, index) => {
+            card.classList.remove("is-center", "is-left", "is-right", "is-hidden");
 
-        processCards[center]?.classList.add("is-center");
-        processCards[left]?.classList.add("is-left");
-        processCards[right]?.classList.add("is-right");
-        processCards[hiddenLeft]?.classList.add("is-hidden-left");
-        processCards[hiddenRight]?.classList.add("is-hidden-right");
+            const position = (index - processIndex + total) % total;
+
+            if (position === 0) {
+                card.classList.add("is-center");
+            } else if (position === 1) {
+                card.classList.add("is-right");
+            } else if (position === total - 1) {
+                card.classList.add("is-left");
+            } else {
+                card.classList.add("is-hidden");
+            }
+        });
     };
 
     const handleProcessNext = () => {
+        if (processCards.length === 0) {
+            return;
+        }
+
         processIndex = (processIndex + 1) % processCards.length;
         updateProcessCarousel();
     };
 
     const handleProcessPrev = () => {
+        if (processCards.length === 0) {
+            return;
+        }
+
         processIndex = (processIndex - 1 + processCards.length) % processCards.length;
         updateProcessCarousel();
     };
 
     const startProcessAutoplay = () => {
-        processAutoplay = setInterval(handleProcessNext, 3000);
+        stopProcessAutoplay();
+        processAutoplay = setInterval(handleProcessNext, 3500);
     };
 
     const stopProcessAutoplay = () => {
@@ -233,7 +298,7 @@ Carrusel 3D de proceso
 
     const handleProcessDragStart = (event) => {
         processIsDragging = true;
-        processStartX = event.clientX || event.touches?.[0].clientX || 0;
+        processStartX = event.clientX || event.touches?.[0]?.clientX || 0;
         stopProcessAutoplay();
     };
 
@@ -242,7 +307,7 @@ Carrusel 3D de proceso
             return;
         }
 
-        const endX = event.clientX || event.changedTouches?.[0].clientX || 0;
+        const endX = event.clientX || event.changedTouches?.[0]?.clientX || 0;
         const distance = endX - processStartX;
 
         if (distance > 40) {
@@ -442,7 +507,7 @@ Carrusel 3D de proceso
     const menuSectionLinks = document.querySelectorAll(".nav__link");
 
     const menuSections = document.querySelectorAll(
-        "#inicio, #proyectos, #servicios, #sobre-mi, #contacto"
+        "#inicio, #proyectos, #servicios, #sobre-mi, #proceso, #contacto"
     );
 
     const activateMenuLink = () => {
@@ -495,6 +560,133 @@ Carrusel 3D de proceso
             heroImage.style.transform = "translate(0, 0) scale(1)";
         });
     }
+    /* ==========================================================================
+   Validaciones del formulario de contacto
+   ========================================================================== */
+
+    const contactForm = document.querySelector("#contactForm");
+
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const phoneInput = document.querySelector("#phone");
+    const messageInput = document.querySelector("#message");
+
+    const nameError = document.querySelector("#nameError");
+    const emailError = document.querySelector("#emailError");
+    const phoneError = document.querySelector("#phoneError");
+    const messageError = document.querySelector("#messageError");
+    const formSuccess = document.querySelector("#formSuccess");
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[0-9+\s()-]{7,20}$/;
+
+    const setFieldError = (input, errorElement, message) => {
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+        errorElement.textContent = message;
+    };
+
+    const setFieldSuccess = (input, errorElement) => {
+        input.classList.remove("is-invalid");
+        input.classList.add("is-valid");
+        errorElement.textContent = "";
+    };
+
+    const validateName = () => {
+        const value = nameInput.value.trim();
+
+        if (value === "") {
+            setFieldError(nameInput, nameError, "Por favor, escribe tu nombre.");
+            return false;
+        }
+
+        if (value.length < 3) {
+            setFieldError(nameInput, nameError, "El nombre debe tener al menos 3 caracteres.");
+            return false;
+        }
+
+        setFieldSuccess(nameInput, nameError);
+        return true;
+    };
+
+    const validateEmail = () => {
+        const value = emailInput.value.trim();
+
+        if (value === "") {
+            setFieldError(emailInput, emailError, "Por favor, escribe tu correo.");
+            return false;
+        }
+
+        if (!emailPattern.test(value)) {
+            setFieldError(emailInput, emailError, "Escribe un correo válido. Ejemplo: nombre@email.com");
+            return false;
+        }
+
+        setFieldSuccess(emailInput, emailError);
+        return true;
+    };
+
+    const validatePhone = () => {
+        const value = phoneInput.value.trim();
+
+        if (value === "") {
+            setFieldError(phoneInput, phoneError, "Por favor, escribe tu teléfono.");
+            return false;
+        }
+
+        if (!phonePattern.test(value)) {
+            setFieldError(phoneInput, phoneError, "Escribe un teléfono válido.");
+            return false;
+        }
+
+        setFieldSuccess(phoneInput, phoneError);
+        return true;
+    };
+
+    const validateMessage = () => {
+        const value = messageInput.value.trim();
+
+        if (value === "") {
+            setFieldError(messageInput, messageError, "Por favor, escribe tu mensaje.");
+            return false;
+        }
+
+        if (value.length < 10) {
+            setFieldError(messageInput, messageError, "El mensaje debe tener al menos 10 caracteres.");
+            return false;
+        }
+
+        setFieldSuccess(messageInput, messageError);
+        return true;
+    };
+
+    nameInput?.addEventListener("input", validateName);
+    emailInput?.addEventListener("input", validateEmail);
+    phoneInput?.addEventListener("input", validatePhone);
+    messageInput?.addEventListener("input", validateMessage);
+
+    contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isMessageValid = validateMessage();
+
+        if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
+            formSuccess.textContent = "";
+            return;
+        }
+
+        formSuccess.textContent = "Mensaje validado correctamente. Gracias por contactar a Marianne.";
+
+        contactForm.reset();
+
+        nameInput.classList.remove("is-valid");
+        emailInput.classList.remove("is-valid");
+        phoneInput.classList.remove("is-valid");
+        messageInput.classList.remove("is-valid");
+    });
 
     /* ==========================================================================
        Chatbot Eva
@@ -595,5 +787,6 @@ Carrusel 3D de proceso
             addChatbotMessage(botResponse, "bot");
         }, 500);
     });
+
 
 })();

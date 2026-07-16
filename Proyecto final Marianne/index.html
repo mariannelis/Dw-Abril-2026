@@ -14,7 +14,8 @@
   <!-- Tipografía principal del proyecto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/main.js" defer></script>
@@ -51,8 +52,12 @@
             <a class="nav__link" href="#servicios" title="Ir a servicios">Servicios</a>
           </li>
           <li class="nav__item">
+            <a class="nav__link" href="#proceso" title="Ir a proceso">Proceso</a>
+          </li>
+          <li class="nav__item">
             <a class="nav__link" href="#contacto" title="Ir a contacto">Contacto</a>
           </li>
+
         </ul>
       </nav>
 
@@ -84,7 +89,8 @@
 
           <h1 class="hero__title">
             Desarrollo web
-            <strong>con propósito.</strong>
+            <strong>La solución para tu negocio</strong>
+            <h2>Transformo tus ideas en soluciones digitales</h2>
           </h1>
           <span class="hero__subtitle">Soluciones digitales | Sistemas IA | Aplicaciones móviles</span>
 
@@ -104,36 +110,6 @@
         </div>
       </div>
     </section>
-    <!-- Tarjetas del hero inferior
-     <section class="hero-service-card">
-      <div class="hero__cards">
-        <article class="hero-service-card">
-          <div class="hero-service-card__content">
-            <h3>Desarrollo Web</h3>
-            <p>Sitios rápidos, responsivos y optimizados para resultados.</p>
-          </div>
-        </article>
-
-          <div class="hero-service-card__content">
-            <h3>Diseño UI/UX</h3>
-            <p>Interfaces elegantes, modernas y adaptadas a cada proyecto.</p>
-          </div>
-        </article>
-        <article class="hero-service-card">
-          <div class="hero-service-card__content">
-            <h3>Aplicaciones</h3>
-            <p>Soluciones digitales a medida para cada necesidad.</p>
-          </div>
-        </article>
-
-        <article class="hero-service-card">
-          <div class="hero-service-card__content">
-            <h3>Tecnología</h3>
-            <p>Innovación, rendimiento y experiencias digitales seguras.</p>
-          </div>
-        </article>
-      </div>
-    </section> -->
 
     <!-- Sección de proyectos destacados -->
     <section class="projects section" id="proyectos">
@@ -153,18 +129,17 @@
           ‹
         </button>
 
-        <div class="projects__track">
+        <section class="projects__track">
           <article class="project-card">
             <a class="project-card__link" href="saray.html" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="images/proyecto-saray.webp" type="image/webp">
-                <img class="project-card__image" src="images/Logo-saray2.png" alt="Vista del proyecto Saray App"
-                  loading="lazy" title="App Móvil Saray">
-              </picture>
+              <img class="project-card__image" src="images/saray.principal.png" alt="Vista del proyecto Saray App"
+                loading="lazy" title="App Móvil Saray">
+
               <div class="project-card__content">
                 <h3 class="project-card__title">Saray App</h3>
-                <p class="project-card__text">Aplicación móvil para fortalecer los vínculos culturales entre Turquía y
-                  Latinoamérica.</p>
+                <p class="project-card__text">
+                  Aplicación móvil para fortalecer los vínculos culturales entre Turquía y Latinoamérica.
+                </p>
                 <span class="project-card__tag">Ver más</span>
               </div>
             </a>
@@ -172,14 +147,14 @@
 
           <article class="project-card">
             <a class="project-card__link" href="pasha.html" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="images/proyecto-pasha.webp" type="image/webp">
-                <img class="project-card__image" src="#" alt="Vista del proyecto Pasha Delight" loading="lazy"
-                  title="Pasha Delight">
-              </picture>
+              <img class="project-card__image" src="images/pasha_principal.png" alt="Vista del proyecto Pasha Delight"
+                loading="lazy" title="Pasha Delight">
+
               <div class="project-card__content">
                 <h3 class="project-card__title">Pasha Delight</h3>
-                <p class="project-card__text">Sitio web para presentar dulces turcos al mercado internacional.</p>
+                <p class="project-card__text">
+                  Sitio web para presentar dulces turcos al mercado internacional.
+                </p>
                 <span class="project-card__tag">Ver más</span>
               </div>
             </a>
@@ -187,237 +162,334 @@
 
           <article class="project-card">
             <a class="project-card__link" href="venezuela.html" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="images/proyecto-venezuela.webp" type="image/webp">
-                <img class="project-card__image" src="#" alt="Vista del proyecto Venezuela Levántate" loading="lazy"
-                  title="Venezuela Levántate">
-              </picture>
+              <img class="project-card__image" src="images/vzla-principal.png"
+                alt="Vista del proyecto Venezuela Levántate" loading="lazy" title="Venezuela Levántate">
+
               <div class="project-card__content">
                 <h3 class="project-card__title">Venezuela Levántate</h3>
-                <p class="project-card__text">Landing informativa de apoyo, orientación y recursos solidarios.</p>
+                <p class="project-card__text">
+                  Landing informativa de apoyo, orientación y recursos solidarios.
+                </p>
                 <span class="project-card__tag">Ver más</span>
               </div>
             </a>
           </article>
-        </div>
+        </section>
 
         <button class="projects__button projects__button--next" type="button" title="Ver proyecto siguiente"
           aria-label="Ver proyecto siguiente">
           ›
         </button>
       </div>
-    </section>
-
-    <!-- Sección de servicios -->
-    <section class="services section" id="servicios">
-      <div class="section__header">
-        <p class="section__eyebrow">Servicios</p>
-        <h2 class="section__title">Soluciones digitales para marcas y profesionales</h2>
-        <p class="section__description">
-          Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza en
-          la audiencia.
-        </p>
-      </div>
-
-      <div class="services__grid">
-        <article class="service-card">
-          <h3 class="service-card__title">Diseño web personalizado</h3>
-          <p class="service-card__text">
-            Interfaces elegantes, modernas y adaptadas a la identidad de cada proyecto.
+      <!-- Sección de servicios -->
+      <section class="services section" id="servicios">
+        <div class="section__header">
+          <p class="section__eyebrow">Servicios</p>
+          <h2 class="section__title">Soluciones digitales para marcas y profesionales</h2>
+          <p class="section__description">
+            Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza
+            en
+            la audiencia.
           </p>
-        </article>
-
-        <article class="service-card">
-          <h3 class="service-card__title">Landing pages</h3>
-          <p class="service-card__text">
-            Páginas estratégicas para presentar servicios, productos o marcas personales.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <h3 class="service-card__title">Portafolios profesionales</h3>
-          <p class="service-card__text">
-            Sitios personales para mostrar experiencia, proyectos y habilidades.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <h3 class="service-card__title">Diseño responsive</h3>
-          <p class="service-card__text">
-            Experiencias adaptadas a móvil, tablet y escritorio.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Sección sobre Marianne -->
-    <section class="about section" id="sobre-mi">
-      <div class="about__container">
-        <div class="about__image-wrapper">
-          <picture>
-            <source srcset="assets/images/marianne-lucena.webp" type="image/webp">
-            <img class="about__image" src="#" alt="Fotografía profesional de Marianne Lucena" loading="lazy">
-          </picture>
         </div>
 
-        <div class="about__content">
-          <p class="section__eyebrow">Sobre Marianne</p>
-          <h2 class="section__title">Ingeniera en Informática con visión creativa y tecnológica</h2>
+        <div class="services-slider" id="servicesSlider">
+          <button class="services-slider__button services-slider__button--prev" type="button"
+            aria-label="Servicio anterior">
+            ‹
+          </button>
 
-          <p class="about__text">
-            Soy Marianne Lucena, Ingeniera en Informática. Me especializo en crear experiencias digitales que combinan
-            diseño, estructura, tecnología y propósito.
-          </p>
+          <div class="services-slider__viewport">
+            <div class="services-slider__track">
 
-          <p class="about__text">
-            Mi enfoque une pensamiento técnico, sensibilidad visual y estrategia para desarrollar sitios web modernos,
-            funcionales y orientados a resultados.
-          </p>
+              <article class="services-slider__slide">
+                <div class="services-slider__content">
 
-          <a class="about__link" href="#contacto" title="Contactar a Marianne Lucena">
-            Hablemos de tu proyecto
-          </a>
+                  <h3>Diseño web personalizado</h3>
+                  <p>
+                    Desarrollo sitios web modernos, elegantes y adaptados a la identidad visual de cada proyecto,
+                    cuidando la estructura, la experiencia del usuario y la presentación profesional.
+                  </p>
+
+                  <ul>
+                    <li>Diseño visual personalizado</li>
+                    <li>Estructura clara y profesional</li>
+                    <li>Adaptado a la marca</li>
+                  </ul>
+
+                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
+                </div>
+
+                <div class="services-slider__summary">
+                  <span>Ideal para</span>
+                  <strong>Marcas, empresas y profesionales</strong>
+                  <p>Una presencia digital clara, elegante y confiable.</p>
+                </div>
+              </article>
+
+              <article class="services-slider__slide">
+                <div class="services-slider__content">
+
+                  <h3>Landing pages estratégicas</h3>
+                  <p>
+                    Páginas enfocadas en presentar productos, servicios o campañas de forma directa,
+                    visualmente atractiva y orientada a resultados.
+                  </p>
+
+                  <ul>
+                    <li>Mensaje claro y directo</li>
+                    <li>Botones de llamada a la acción</li>
+                    <li>Diseño enfocado en conversión</li>
+                  </ul>
+
+                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
+                </div>
+
+                <div class="services-slider__summary">
+                  <span>Ideal para</span>
+                  <strong>Campañas, lanzamientos y ventas</strong>
+                  <p>Una página clara para captar atención y generar acción.</p>
+                </div>
+              </article>
+
+              <article class="services-slider__slide">
+                <div class="services-slider__content">
+
+                  <h3>Portafolios profesionales</h3>
+                  <p>
+                    Sitios personales para mostrar experiencia, proyectos, habilidades y perfil profesional
+                    de manera ordenada, elegante y confiable.
+                  </p>
+
+                  <ul>
+                    <li>Presentación profesional</li>
+                    <li>Sección de proyectos destacados</li>
+                    <li>Marca personal sólida</li>
+                  </ul>
+
+                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
+                </div>
+
+                <div class="services-slider__summary">
+                  <span>Ideal para</span>
+                  <strong>Ingenieros, freelancers y creativos</strong>
+                  <p>Una web para mostrar quién eres y qué sabes hacer.</p>
+                </div>
+              </article>
+
+              <article class="services-slider__slide">
+                <div class="services-slider__content">
+
+                  <h3>Diseño responsive</h3>
+                  <p>
+                    Desarrollo interfaces adaptadas a computadoras, tablets y teléfonos, manteniendo
+                    una experiencia visual limpia, cómoda y funcional.
+                  </p>
+
+                  <ul>
+                    <li>Adaptación a móvil</li>
+                    <li>Navegación clara</li>
+                    <li>Diseño flexible</li>
+                  </ul>
+
+                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
+                </div>
+
+                <div class="services-slider__summary">
+                  <span>Ideal para</span>
+                  <strong>Experiencias multiplataforma</strong>
+                  <p>Tu sitio se verá bien en cualquier pantalla.</p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="services-slider__button services-slider__button--next" type="button"
+            aria-label="Servicio siguiente">
+            ›
+          </button>
+
+          <div class="services-slider__dots" id="servicesSliderDots"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Sección de proceso de trabajo -->
-    <section class="process section" id="proceso">
-      <div class="section__header">
-        <p class="section__eyebrow">Proceso</p>
-        <h2 class="section__title">
-          Una metodología clara para transformar ideas en resultados
-        </h2>
-      </div>
+      <!-- Sección sobre Marianne -->
+      <section class="about section" id="sobre-mi">
+        <div class="about__container">
+          <div class="about__image-wrapper">
+            <picture>
+              <source srcset="images/marian-perfil.webp" type="image/webp">
+              <img class="about__image" src="images/marian-perfil.png" alt="Fotografía profesional de Marianne Lucena"
+                loading="lazy">
+            </picture>
+          </div>
 
-      <div class="process-carousel">
-        <button class="process-carousel__button process-carousel__button--prev" type="button" title="Ver paso anterior">
-          ‹
-        </button>
+          <div class="about__content">
+            <p class="section__eyebrow">Sobre Marianne</p>
+            <h2 class="section__title">Ingeniera en Informática con visión creativa y tecnológica</h2>
 
-        <div class="process-carousel__track">
-          <article class="process-card">
-            <h3 class="process-card__title">Escuchar</h3>
-            <p class="process-card__text">Comprender la necesidad, el objetivo y el público del proyecto.</p>
-          </article>
+            <p class="about__text">
+              Soy Marianne Lucena, Ingeniera en Informática. Me especializo en crear experiencias digitales que combinan
+              diseño, estructura, tecnología y propósito.
+            </p>
 
-          <article class="process-card">
-            <h3 class="process-card__title">Diseñar</h3>
-            <p class="process-card__text">Crear una propuesta visual coherente, elegante y funcional.</p>
-          </article>
+            <p class="about__text">
+              Mi enfoque une pensamiento técnico, sensibilidad visual y estrategia para desarrollar sitios web modernos,
+              funcionales y orientados a resultados.
+            </p>
 
-          <article class="process-card">
-            <h3 class="process-card__title">Desarrollar</h3>
-            <p class="process-card__text">Construir la web con HTML5, CSS3 y JavaScript nativo.</p>
-          </article>
-
-          <article class="process-card">
-            <h3 class="process-card__title">Publicar</h3>
-            <p class="process-card__text">Preparar el sitio para revisión online y entrega final.</p>
-          </article>
-        </div>
-
-        <button class="process-carousel__button process-carousel__button--next" type="button"
-          title="Ver siguiente paso">
-          ›
-        </button>
-      </div>
-    </section>
-
-    <!-- Sección de contacto -->
-    <section class="contact section" id="contacto">
-      <div class="contact__container">
-        <div class="contact__intro">
-          <h2 class="contact__title">Cuéntame sobre tu marca</h2>
-
-          <p class="contact__text">
-            ¿Valoras la colaboración cercana, la comunicación clara y una propuesta digital hecha con propósito?
-            Entonces estás en el lugar adecuado.
-          </p>
-
-          <div class="contact__info">
-            <a class="contact__link" href="mailto:lucena.lis14@gmail.com" title="Enviar correo a Marianne Lucena">
-              ✉ lucena.lis14@gmail.com
+            <a class="about__link" href="#contacto" title="Contactar a Marianne Lucena">
+              Hablemos de tu proyecto
             </a>
-
-            <a class="contact__link" href="tel:+34691296388" title="Llamar a Marianne Lucena">
-              ☎ +34 691 29 63 88
-            </a>
-
-            <a class="contact__link" href="#" title="Ver LinkedIn de Marianne Lucena">
-              <span>in</span>
-              <span>LinkedIn</span>
-            </a>
           </div>
         </div>
+      </section>
 
-        <form class="form" action="#" method="post">
-          <div class="form__group">
-            <label class="form__label" for="name">Nombre</label>
-            <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
-          </div>
+      <!-- Sección de proceso de trabajo -->
+      <section class="process section" id="proceso">
+        <div class="section__header">
+          <p class="section__eyebrow">Proceso</p>
 
-          <div class="form__group">
-            <label class="form__label" for="email">Correo</label>
-            <input class="form__input" type="email" id="email" name="email"
-              placeholder="Tu dirección de correo electrónico" required>
-          </div>
+          <h2 class="section__title">
+            Una metodología clara para transformar ideas en resultados
+          </h2>
 
-          <div class="form__group">
-            <label class="form__label" for="phone">Teléfono</label>
-            <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono" required>
-          </div>
-
-          <div class="form__group">
-            <label class="form__label" for="message">Mensaje</label>
-            <textarea class="form__textarea" id="message" name="message" placeholder="Cuentame sobre tu proyecto"
-              required></textarea>
-          </div>
-
-          <button class="form__button" type="submit" title="Enviar mensaje">
-            Enviar mensaje
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Sección de preguntas frecuentes -->
-    <section class="faq section" id="preguntas">
-      <div class="section__header">
-        <p class="section__eyebrow">Preguntas frecuentes</p>
-        <h2 class="section__title">Dudas comunes antes de iniciar</h2>
-      </div>
-
-      <div class="faq__list">
-        <article class="faq__item">
-          <button class="faq__button" type="button" title="Mostrar respuesta sobre el costo de un sitio web">
-            ¿Cuánto cuesta un sitio web?
-          </button>
-          <p class="faq__answer">
-            El costo depende del alcance, número de secciones, funcionalidades, diseño y tiempo de desarrollo.
+          <p class="section__description">
+            Trabajo cada proyecto con una estructura organizada, desde la idea inicial hasta la entrega final.
           </p>
-        </article>
+        </div>
 
-        <article class="faq__item">
-          <button class="faq__button" type="button" title="Mostrar respuesta sobre qué se necesita para empezar">
-            ¿Qué necesito para empezar?
-          </button>
-          <p class="faq__answer">
-            Necesitamos definir el objetivo, estilo visual, contenido principal, imágenes y secciones del proyecto.
-          </p>
-        </article>
+        <div class="process-timeline">
+          <article class="process-step">
+            <span class="process-step__number">01</span>
+            <h3 class="process-step__title">Escuchar</h3>
+            <p class="process-step__text">
+              Comprender la necesidad, el objetivo, el público y la visión del proyecto.
+            </p>
+          </article>
 
-        <article class="faq__item">
-          <button class="faq__button" type="button" title="Mostrar respuesta sobre el tiempo de desarrollo">
-            ¿Cuánto tiempo dura un proyecto?
-          </button>
-          <p class="faq__answer">
-            El tiempo varía según la complejidad. Una landing page puede desarrollarse en menos tiempo que una web
-            completa.
-          </p>
-        </article>
-      </div>
-    </section>
+          <article class="process-step">
+            <span class="process-step__number">02</span>
+            <h3 class="process-step__title">Diseñar</h3>
+            <p class="process-step__text">
+              Crear una propuesta visual coherente, elegante y alineada con la identidad de la marca.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <span class="process-step__number">03</span>
+            <h3 class="process-step__title">Desarrollar</h3>
+            <p class="process-step__text">
+              Construir el sitio con una estructura limpia, responsive y funcional.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <span class="process-step__number">04</span>
+            <h3 class="process-step__title">Publicar</h3>
+            <p class="process-step__text">
+              Revisar, ajustar y preparar el proyecto para su entrega o publicación online.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección de contacto -->
+      <section class="contact section" id="contacto">
+        <div class="contact__container">
+          <div class="contact__intro">
+            <h2 class="contact__title">Cuéntame sobre tu marca</h2>
+
+            <p class="contact__text">
+              ¿Valoras la colaboración cercana, la comunicación clara y una propuesta digital hecha con propósito?
+              Entonces estás en el lugar adecuado.
+            </p>
+
+            <div class="contact__info">
+              <a class="contact__link" href="mailto:lucena.lis14@gmail.com" title="Enviar correo a Marianne Lucena">
+                ✉ lucena.lis14@gmail.com
+              </a>
+
+              <a class="contact__link" href="tel:+34691296388" title="Llamar a Marianne Lucena">
+                ☎ +34 691 29 63 88
+              </a>
+
+              <a class="contact__link" href="#" title="Ver LinkedIn de Marianne Lucena">
+                <span>in</span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="form" id="contactForm" action="#" method="post" novalidate>
+            <div class="form__group">
+              <label class="form__label" for="name">Nombre</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
+              <small class="form__error" id="nameError"></small>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Correo</label>
+              <input class="form__input" type="email" id="email" name="email"
+                placeholder="Tu dirección de correo electrónico">
+              <small class="form__error" id="emailError"></small>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Teléfono</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono">
+              <small class="form__error" id="phoneError"></small>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="message">Mensaje</label>
+              <textarea class="form__textarea" id="message" name="message"
+                placeholder="Cuéntame sobre tu proyecto"></textarea>
+              <small class="form__error" id="messageError"></small>
+            </div>
+            <button class="form__button" type="submit" title="Enviar mensaje">
+              Enviar mensaje
+            </button>
+            <p class="form__success" id="formSuccess"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- Sección de preguntas frecuentes -->
+      <section class="faq section" id="preguntas">
+        <div class="section__header">
+          <p class="section__eyebrow">Preguntas frecuentes</p>
+          <h2 class="section__title">Dudas comunes antes de iniciar</h2>
+        </div>
+
+        <div class="faq__list">
+          <article class="faq__item">
+            <button class="faq__button" type="button" title="Mostrar respuesta sobre el costo de un sitio web">
+              ¿Cuánto cuesta un sitio web?
+            </button>
+            <p class="faq__answer">
+              El costo depende del alcance, número de secciones, funcionalidades, diseño y tiempo de desarrollo.
+            </p>
+          </article>
+
+          <article class="faq__item">
+            <button class="faq__button" type="button" title="Mostrar respuesta sobre qué se necesita para empezar">
+              ¿Qué necesito para empezar?
+            </button>
+            <p class="faq__answer">
+              Necesitamos definir el objetivo, estilo visual, contenido principal, imágenes y secciones del proyecto.
+            </p>
+          </article>
+
+          <article class="faq__item">
+            <button class="faq__button" type="button" title="Mostrar respuesta sobre el tiempo de desarrollo">
+              ¿Cuánto tiempo dura un proyecto?
+            </button>
+            <p class="faq__answer">
+              El tiempo varía según la complejidad. Una landing page puede desarrollarse en menos tiempo que una web
+              completa.
+            </p>
+          </article>
+        </div>
+      </section>
   </main>
 
   <!-- Indicador fijo para explorar -->
