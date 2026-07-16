@@ -152,30 +152,138 @@
     });
 
     /* ==========================================================================
-       5. Carrusel de proyectos
-       ========================================================================== */
+   Slider editorial de proyectos
+   ========================================================================== */
 
-    const handleCarouselNext = () => {
-        if (!projectTrack) {
-            return;
+    const portfolioSlider = document.querySelector("#portfolioSlider");
+
+    if (portfolioSlider) {
+        const track = portfolioSlider.querySelector(
+            ".portfolio-slider__track"
+        );
+
+        const slides = portfolioSlider.querySelectorAll(
+            ".portfolio-slide"
+        );
+
+        const previousButton = portfolioSlider.querySelector(
+            ".portfolio-slider__button--prev"
+        );
+
+        const nextButton = portfolioSlider.querySelector(
+            ".portfolio-slider__button--next"
+        );
+
+        const currentElement = portfolioSlider.querySelector(
+            "#portfolioCurrent"
+        );
+
+        const totalElement = portfolioSlider.querySelector(
+            "#portfolioTotal"
+        );
+
+        let currentIndex = 0;
+        let autoplay = null;
+        let touchStartX = 0;
+
+        const formatNumber = (number) => {
+            return String(number).padStart(2, "0");
+        };
+
+        const updateSlider = () => {
+            track.style.transform =
+                `translateX(-${currentIndex * 100}%)`;
+
+            if (currentElement) {
+                currentElement.textContent =
+                    formatNumber(currentIndex + 1);
+            }
+        };
+
+        const showNextSlide = () => {
+            currentIndex =
+                (currentIndex + 1) % slides.length;
+
+            updateSlider();
+        };
+
+        const showPreviousSlide = () => {
+            currentIndex =
+                (currentIndex - 1 + slides.length) %
+                slides.length;
+
+            updateSlider();
+        };
+
+        const stopAutoplay = () => {
+            clearInterval(autoplay);
+        };
+
+        const startAutoplay = () => {
+            stopAutoplay();
+
+            autoplay = setInterval(
+                showNextSlide,
+                5500
+            );
+        };
+
+        if (totalElement) {
+            totalElement.textContent =
+                formatNumber(slides.length);
         }
 
-        const cardWidth = projectTrack.querySelector(".project-card")?.offsetWidth || 0;
-        projectTrack.scrollLeft += cardWidth + 24;
-    };
+        previousButton?.addEventListener("click", () => {
+            showPreviousSlide();
+            startAutoplay();
+        });
 
-    const handleCarouselPrev = () => {
-        if (!projectTrack) {
-            return;
-        }
+        nextButton?.addEventListener("click", () => {
+            showNextSlide();
+            startAutoplay();
+        });
 
-        const cardWidth = projectTrack.querySelector(".project-card")?.offsetWidth || 0;
-        projectTrack.scrollLeft -= cardWidth + 24;
-    };
+        portfolioSlider.addEventListener(
+            "mouseenter",
+            stopAutoplay
+        );
 
-    projectNextButton?.addEventListener("click", handleCarouselNext);
-    projectPrevButton?.addEventListener("click", handleCarouselPrev);
+        portfolioSlider.addEventListener(
+            "mouseleave",
+            startAutoplay
+        );
 
+        portfolioSlider.addEventListener(
+            "touchstart",
+            (event) => {
+                touchStartX =
+                    event.touches[0].clientX;
+            },
+            { passive: true }
+        );
+
+        portfolioSlider.addEventListener(
+            "touchend",
+            (event) => {
+                const touchEndX =
+                    event.changedTouches[0].clientX;
+
+                const distance =
+                    touchEndX - touchStartX;
+
+                if (distance > 50) {
+                    showPreviousSlide();
+                } else if (distance < -50) {
+                    showNextSlide();
+                }
+
+                startAutoplay();
+            }
+        );
+
+        updateSlider();
+        startAutoplay();
+    }
     /* ==========================================================================
    Slider premium de servicios
    ========================================================================== */
@@ -231,121 +339,207 @@
 
         updateServicesSlider();
     }
-    /* ==========================================================================
-     Carrusel 3D de proceso
-     ========================================================================== */
+    const processCarousel = document.querySelector("#processCarousel");
 
-    const processCards = document.querySelectorAll(".process-card");
-    const processTrack = document.querySelector(".process-carousel__track");
-    const processPrevButton = document.querySelector(".process-carousel__button--prev");
-    const processNextButton = document.querySelector(".process-carousel__button--next");
+    if (processCarousel) {
+        const track = processCarousel.querySelector(".process-carousel__track");
+        const cards = [
+            ...processCarousel.querySelectorAll(".process-card")
+        ];
 
-    let processIndex = 0;
-    let processAutoplay = null;
-    let processStartX = 0;
-    let processIsDragging = false;
+        const dots = [
+            ...processCarousel.querySelectorAll(".process-carousel__dot")
+        ];
 
-    const updateProcessCarousel = () => {
-        const total = processCards.length;
+        const previousButton = processCarousel.querySelector(
+            ".process-carousel__button--previous"
+        );
 
-        if (total === 0) {
-            return;
+        const nextButton = processCarousel.querySelector(
+            ".process-carousel__button--next"
+        );
+
+        const totalCards = cards.length;
+        const stepAngle = 360 / totalCards;
+
+        let currentRotation = 0;
+        let targetRotation = 0;
+        let velocity = 0;
+        let selectedIndex = 0;
+
+        let isDragging = false;
+        let dragStartX = 0;
+        let previousPointerX = 0;
+        let dragDistance = 0;
+        let lastInteractionTime = Date.now();
+
+        const dragSensitivity = 0.32;
+        const friction = 0.92;
+        const autoRotateSpeed = 0.018;
+        const autoRotateDelay = 2600;
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        function normalizeIndex(index) {
+            return ((index % totalCards) + totalCards) % totalCards;
         }
 
-        processCards.forEach((card, index) => {
-            card.classList.remove("is-center", "is-left", "is-right", "is-hidden");
+        function getClosestIndex() {
+            const normalizedRotation =
+                ((-targetRotation % 360) + 360) % 360;
 
-            const position = (index - processIndex + total) % total;
+            return normalizeIndex(Math.round(normalizedRotation / stepAngle));
+        }
 
-            if (position === 0) {
-                card.classList.add("is-center");
-            } else if (position === 1) {
-                card.classList.add("is-right");
-            } else if (position === total - 1) {
-                card.classList.add("is-left");
-            } else {
-                card.classList.add("is-hidden");
+        function updateDots() {
+            selectedIndex = getClosestIndex();
+
+            dots.forEach((dot, index) => {
+                const isActive = index === selectedIndex;
+
+                dot.classList.toggle("is-active", isActive);
+                dot.setAttribute("aria-current", isActive ? "true" : "false");
+            });
+        }
+
+        function rotateToIndex(index) {
+            const safeIndex = normalizeIndex(index);
+
+            targetRotation = -(safeIndex * stepAngle);
+            velocity = 0;
+            selectedIndex = safeIndex;
+            lastInteractionTime = Date.now();
+
+            updateDots();
+        }
+
+        function moveToNextCard() {
+            rotateToIndex(selectedIndex + 1);
+        }
+
+        function moveToPreviousCard() {
+            rotateToIndex(selectedIndex - 1);
+        }
+
+        function beginDrag(event) {
+            isDragging = true;
+            dragStartX = event.clientX;
+            previousPointerX = event.clientX;
+            dragDistance = 0;
+            velocity = 0;
+            lastInteractionTime = Date.now();
+
+            processCarousel.classList.add("is-dragging");
+
+            if (event.pointerId !== undefined) {
+                processCarousel.setPointerCapture(event.pointerId);
+            }
+        }
+
+        function dragCarousel(event) {
+            if (!isDragging) {
+                return;
+            }
+
+            const movementX = event.clientX - previousPointerX;
+
+            previousPointerX = event.clientX;
+            dragDistance = event.clientX - dragStartX;
+
+            const rotationMovement = movementX * dragSensitivity;
+
+            targetRotation += rotationMovement;
+            currentRotation += rotationMovement;
+            velocity = rotationMovement;
+
+            lastInteractionTime = Date.now();
+        }
+
+        function finishDrag(event) {
+            if (!isDragging) {
+                return;
+            }
+
+            isDragging = false;
+            processCarousel.classList.remove("is-dragging");
+
+            if (
+                event.pointerId !== undefined &&
+                processCarousel.hasPointerCapture(event.pointerId)
+            ) {
+                processCarousel.releasePointerCapture(event.pointerId);
+            }
+
+            if (Math.abs(dragDistance) < 6) {
+                targetRotation =
+                    Math.round(targetRotation / stepAngle) * stepAngle;
+
+                updateDots();
+            }
+
+            lastInteractionTime = Date.now();
+        }
+
+        function updateCarousel() {
+            if (!isDragging) {
+                targetRotation += velocity;
+                velocity *= friction;
+
+                if (Math.abs(velocity) < 0.001) {
+                    velocity = 0;
+                }
+
+                const timeWithoutInteraction =
+                    Date.now() - lastInteractionTime;
+
+                if (
+                    !prefersReducedMotion &&
+                    timeWithoutInteraction > autoRotateDelay
+                ) {
+                    targetRotation -= autoRotateSpeed;
+                }
+            }
+
+            currentRotation +=
+                (targetRotation - currentRotation) * 0.09;
+
+            track.style.transform = `rotateY(${currentRotation}deg)`;
+
+            updateDots();
+            requestAnimationFrame(updateCarousel);
+        }
+
+        processCarousel.addEventListener("pointerdown", beginDrag);
+        processCarousel.addEventListener("pointermove", dragCarousel);
+        processCarousel.addEventListener("pointerup", finishDrag);
+        processCarousel.addEventListener("pointercancel", finishDrag);
+        processCarousel.addEventListener("pointerleave", finishDrag);
+
+        previousButton.addEventListener("click", moveToPreviousCard);
+        nextButton.addEventListener("click", moveToNextCard);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                rotateToIndex(index);
+            });
+        });
+
+        processCarousel.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+                moveToPreviousCard();
+            }
+
+            if (event.key === "ArrowRight") {
+                moveToNextCard();
             }
         });
-    };
 
-    const handleProcessNext = () => {
-        if (processCards.length === 0) {
-            return;
-        }
+        processCarousel.setAttribute("tabindex", "0");
 
-        processIndex = (processIndex + 1) % processCards.length;
-        updateProcessCarousel();
-    };
-
-    const handleProcessPrev = () => {
-        if (processCards.length === 0) {
-            return;
-        }
-
-        processIndex = (processIndex - 1 + processCards.length) % processCards.length;
-        updateProcessCarousel();
-    };
-
-    const startProcessAutoplay = () => {
-        stopProcessAutoplay();
-        processAutoplay = setInterval(handleProcessNext, 3500);
-    };
-
-    const stopProcessAutoplay = () => {
-        clearInterval(processAutoplay);
-    };
-
-    const handleProcessDragStart = (event) => {
-        processIsDragging = true;
-        processStartX = event.clientX || event.touches?.[0]?.clientX || 0;
-        stopProcessAutoplay();
-    };
-
-    const handleProcessDragEnd = (event) => {
-        if (!processIsDragging) {
-            return;
-        }
-
-        const endX = event.clientX || event.changedTouches?.[0]?.clientX || 0;
-        const distance = endX - processStartX;
-
-        if (distance > 40) {
-            handleProcessPrev();
-        }
-
-        if (distance < -40) {
-            handleProcessNext();
-        }
-
-        processIsDragging = false;
-        startProcessAutoplay();
-    };
-
-    processNextButton?.addEventListener("click", () => {
-        stopProcessAutoplay();
-        handleProcessNext();
-        startProcessAutoplay();
-    });
-
-    processPrevButton?.addEventListener("click", () => {
-        stopProcessAutoplay();
-        handleProcessPrev();
-        startProcessAutoplay();
-    });
-
-    processTrack?.addEventListener("mousedown", handleProcessDragStart);
-    processTrack?.addEventListener("mouseup", handleProcessDragEnd);
-    processTrack?.addEventListener("mouseleave", () => {
-        processIsDragging = false;
-    });
-
-    processTrack?.addEventListener("touchstart", handleProcessDragStart);
-    processTrack?.addEventListener("touchend", handleProcessDragEnd);
-
-    if (processCards.length > 0) {
-        updateProcessCarousel();
-        startProcessAutoplay();
+        updateDots();
+        updateCarousel();
     }
 
     /* ==========================================================================

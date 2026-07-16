@@ -27,13 +27,14 @@
     <div class="header__container">
       <!-- Logo de la marca -->
       <a class="header__logo" href="#inicio" title="Ir a inicio">
-        <img class="header__logo-image" src="images/codeva-blu.png" alt="Logo de Marianne Lucena">
+        <img class="header__logo-image" src="images/codeva-blu.png" alt="Logo">
       </a>
 
 
       <!-- Botón del menú responsive -->
       <button class="header__menu-button" type="button" title="Abrir menú de navegación"
-        aria-label="Abrir menú de navegación">
+        aria-label="Abrir menú de navegación" title="Abrir menú de navegación" aria-expanded="false"
+        aria-controls="headerMenu">
         <span class="header__menu-line"></span>
         <span class="header__menu-line"></span>
         <span class="header__menu-line"></span>
@@ -63,19 +64,8 @@
 
       <!-- Accesos rápidos del header -->
       <div class="header__actions">
-        <a class="header__icon" href="mailto:marianne.lucena.dev@gmail.com" title="Enviar correo a Marianne Lucena"
-          aria-label="Enviar correo">
-          ✉
-        </a>
-
-        <a class="header__icon" href="tel:+0000000000" title="Llamar a Marianne Lucena"
-          aria-label="Llamar por teléfono">
-          ☎
-        </a>
-
         <span class="header__language">EN</span>
-        <span class="header__location">GLOBAL</span>
-      </div>
+          </div>
     </div>
   </header>
 
@@ -90,16 +80,19 @@
           <h1 class="hero__title">
             Desarrollo web
             <strong>La solución para tu negocio</strong>
-            <h2>Transformo tus ideas en soluciones digitales</h2>
           </h1>
+
+          <p class="hero__message">
+            Transformo tus ideas en soluciones digitales
+          </p>
           <span class="hero__subtitle">Soluciones digitales | Sistemas IA | Aplicaciones móviles</span>
 
           <div class="hero__buttons">
-            <a class="hero__button hero__button--primary" href="#contacto">
+            <a class="hero__button hero__button--primary" href="#contacto" title="Iniciar proyecto con Marianne Lucena">
               Iniciar proyecto
             </a>
 
-            <a class="hero__button hero__button--primary" href="#proyectos">
+            <a class="hero__button hero__button--primary" href="#proyectos" title="Ver proyectos">
               Ver proyectos
             </a>
           </div>
@@ -111,385 +104,487 @@
       </div>
     </section>
 
-    <!-- Sección de proyectos destacados -->
-    <section class="projects section" id="proyectos">
+    <!-- Proyectos destacados -->
+    <section class="projects-showcase section" id="proyectos">
+
       <div class="section__header">
         <p class="section__eyebrow">Proyectos destacados</p>
-        <h2 class="section__title">Diseño y desarrollo con propósito</h2>
+        <h2 class="section__title">
+          Diseño y desarrollo con propósito
+        </h2>
         <p class="section__description">
-          Una selección de proyectos digitales creados para resolver necesidades reales, comunicar ideas y construir
-          presencia online.
+          Soluciones digitales creadas para resolver necesidades reales,
+          comunicar ideas y construir presencia online.
+        </p>
+      </div>
+      <div class="portfolio-slider" id="portfolioSlider">
+
+        <div class="portfolio-slider__viewport">
+          <div class="portfolio-slider__track">
+
+            <!-- Proyecto 1 -->
+            <article class="portfolio-slide">
+              <picture>
+                <source srcset="images/proyecto-saray-nuevo.webp" type="image/webp">
+                <img class="portfolio-slide__image" src="images/proyecto-saray-nuevo.png" alt="App" loading="lazy"
+                  title="Proyecto Saray App" title="Proyecto Saray App">
+              </picture>
+
+              <div class="portfolio-slide__content">
+                <div>
+                  <span class="portfolio-slide__category">
+                    Aplicación móvil
+                  </span>
+
+                  <h3 class="portfolio-slide__title">
+                    Saray App
+                  </h3>
+
+                  <p class="portfolio-slide__description">
+                    Aplicación móvil creada para acercar el contenido cultural
+                    de Turquía a usuarios hispanohablantes y fortalecer el
+                    intercambio entre Turquía y Latinoamérica.
+                  </p>
+                </div>
+
+                <div class="portfolio-slide__footer">
+                  <div class="portfolio-slide__technologies">
+                    <span>React Native</span>
+                    <span>Python</span>
+                    <span>MongoDB</span>
+                  </div>
+
+                  <a class="portfolio-slide__link" href="saray.html" target="_blank" rel="noopener noreferrer"
+                    title="explorar proyecto">
+                    Explorar proyecto
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="portfolio-slide">
+              <picture>
+                <source srcset="images/proyecto-pasha-nuevo.webp" type="image/webp">
+                <img class="portfolio-slide__image" src="images/proyecto-pasha-nuevo.png"
+                  alt="Vista del proyecto Pasha Delight" loading="lazy" title="Proyecto Pasha Delight"
+                  title="Proyecto Pasha Delight">
+              </picture>
+
+              <div class="portfolio-slide__content">
+                <div>
+                  <span class="portfolio-slide__category">
+                    Comercio digital
+                  </span>
+
+                  <h3 class="portfolio-slide__title">
+                    Pasha Delight
+                  </h3>
+
+                  <p class="portfolio-slide__description">
+                    Plataforma web para presentar dulces tradicionales turcos
+                    al mercado latinoamericano mediante una identidad visual
+                    cálida, clara y enfocada en la exportación.
+                  </p>
+                </div>
+
+                <div class="portfolio-slide__footer">
+                  <div class="portfolio-slide__technologies">
+                    <span>Next.js</span>
+                    <span>Diseño web</span>
+                    <span>Exportación</span>
+                  </div>
+
+                  <a class="portfolio-slide__link" href="pasha.html" target="_blank" rel="noopener noreferrer"
+                    title="explorar proyecto">
+                    Explorar proyecto
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="portfolio-slide" title="Proyecto Venezuela Levántate">
+              <picture>
+                <source srcset="images/proyecto-venezuela-nuevo.webp" type="image/webp">
+                <img class="portfolio-slide__image" src="images/proyecto-venezuela-nuevo.png"
+                  alt="Vista del proyecto Venezuela Levántate" loading="lazy" title="Proyecto Venezuela Levántate"
+                  title="Proyecto Venezuela Levántate">
+              </picture>
+              <div class="portfolio-slide__content">
+                <div>
+                  <span class="portfolio-slide__category">
+                    Plataforma social
+                  </span>
+
+                  <h3 class="portfolio-slide__title">
+                    Venezuela Levántate
+                  </h3>
+
+                  <p class="portfolio-slide__description">
+                    Landing informativa orientada a ofrecer apoyo, recursos
+                    y orientación a familias venezolanas mediante una
+                    experiencia humana y accesible.
+                  </p>
+                </div>
+
+                <div class="portfolio-slide__footer">
+                  <div class="portfolio-slide__technologies">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                  </div>
+
+                  <a class="portfolio-slide__link" href="venezuela.html" target="_blank" rel="noopener noreferrer"
+                    title="explorar proyecto">
+                    Explorar proyecto
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="portfolio-slider__navigation">
+          <button class="portfolio-slider__button portfolio-slider__button--prev" type="button"
+            aria-label="Proyecto anterior" title="Proyecto anterior">
+            ←
+          </button>
+
+          <div class="portfolio-slider__counter">
+            <span id="portfolioCurrent">01</span>
+            <span class="portfolio-slider__counter-line"></span>
+            <span id="portfolioTotal">03</span>
+          </div>
+
+          <button class="portfolio-slider__button portfolio-slider__button--next" type="button"
+            aria-label="Proyecto siguiente" title="Proyecto siguiente">
+            →
+          </button>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section class="services section" id="servicios">
+      <div class="section__header">
+        <p class="section__eyebrow">Servicios</p>
+        <h2 class="section__title">Soluciones digitales para marcas y profesionales</h2>
+        <p class="section__description">
+          Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza
+          en
+          la audiencia.
         </p>
       </div>
 
-      <!-- Carrusel de proyectos -->
-      <div class="projects__carousel">
-        <button class="projects__button projects__button--prev" type="button" title="Ver proyecto anterior"
-          aria-label="Ver proyecto anterior">
+      <div class="services-slider" id="servicesSlider">
+        <button class="services-slider__button services-slider__button--prev" type="button"
+          aria-label="Servicio anterior" title="Servicio anterior">
           ‹
         </button>
 
-        <section class="projects__track">
-          <article class="project-card">
-            <a class="project-card__link" href="saray.html" target="_blank" rel="noopener noreferrer">
-              <img class="project-card__image" src="images/saray.principal.png" alt="Vista del proyecto Saray App"
-                loading="lazy" title="App Móvil Saray">
+        <div class="services-slider__viewport">
+          <div class="services-slider__track">
 
-              <div class="project-card__content">
-                <h3 class="project-card__title">Saray App</h3>
-                <p class="project-card__text">
-                  Aplicación móvil para fortalecer los vínculos culturales entre Turquía y Latinoamérica.
+            <article class="services-slider__slide">
+              <div class="services-slider__content">
+
+                <h3>Diseño web personalizado</h3>
+                <p>
+                  Desarrollo sitios web modernos, elegantes y adaptados a la identidad visual de cada proyecto,
+                  cuidando la estructura, la experiencia del usuario y la presentación profesional.
                 </p>
-                <span class="project-card__tag">Ver más</span>
+
+                <ul>
+                  <li>Diseño visual personalizado</li>
+                  <li>Estructura clara y profesional</li>
+                  <li>Adaptado a la marca</li>
+                </ul>
+
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
+                  servicio</a>
               </div>
-            </a>
-          </article>
 
-          <article class="project-card">
-            <a class="project-card__link" href="pasha.html" target="_blank" rel="noopener noreferrer">
-              <img class="project-card__image" src="images/pasha_principal.png" alt="Vista del proyecto Pasha Delight"
-                loading="lazy" title="Pasha Delight">
+              <div class="services-slider__summary">
+                <span>Ideal para</span>
+                <strong>Marcas, empresas y profesionales</strong>
+                <p>Una presencia digital clara, elegante y confiable.</p>
+              </div>
+            </article>
 
-              <div class="project-card__content">
-                <h3 class="project-card__title">Pasha Delight</h3>
-                <p class="project-card__text">
-                  Sitio web para presentar dulces turcos al mercado internacional.
+            <article class="services-slider__slide">
+              <div class="services-slider__content">
+
+                <h3>Landing pages estratégicas</h3>
+                <p>
+                  Páginas enfocadas en presentar productos, servicios o campañas de forma directa,
+                  visualmente atractiva y orientada a resultados.
                 </p>
-                <span class="project-card__tag">Ver más</span>
+
+                <ul>
+                  <li>Mensaje claro y directo</li>
+                  <li>Botones de llamada a la acción</li>
+                  <li>Diseño enfocado en conversión</li>
+                </ul>
+
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
+                  servicio</a>
               </div>
-            </a>
-          </article>
 
-          <article class="project-card">
-            <a class="project-card__link" href="venezuela.html" target="_blank" rel="noopener noreferrer">
-              <img class="project-card__image" src="images/vzla-principal.png"
-                alt="Vista del proyecto Venezuela Levántate" loading="lazy" title="Venezuela Levántate">
+              <div class="services-slider__summary">
+                <span>Ideal para</span>
+                <strong>Campañas, lanzamientos y ventas</strong>
+                <p>Una página clara para captar atención y generar acción.</p>
+              </div>
+            </article>
 
-              <div class="project-card__content">
-                <h3 class="project-card__title">Venezuela Levántate</h3>
-                <p class="project-card__text">
-                  Landing informativa de apoyo, orientación y recursos solidarios.
+            <article class="services-slider__slide">
+              <div class="services-slider__content">
+
+                <h3>Portafolios profesionales</h3>
+                <p>
+                  Sitios personales para mostrar experiencia, proyectos, habilidades y perfil profesional
+                  de manera ordenada, elegante y confiable.
                 </p>
-                <span class="project-card__tag">Ver más</span>
-              </div>
-            </a>
-          </article>
-        </section>
 
-        <button class="projects__button projects__button--next" type="button" title="Ver proyecto siguiente"
-          aria-label="Ver proyecto siguiente">
+                <ul>
+                  <li>Presentación profesional</li>
+                  <li>Sección de proyectos destacados</li>
+                  <li>Marca personal sólida</li>
+                </ul>
+
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
+                  servicio</a>
+              </div>
+
+              <div class="services-slider__summary">
+                <span>Ideal para</span>
+                <strong>Ingenieros, freelancers y creativos</strong>
+                <p>Una web para mostrar quién eres y qué sabes hacer.</p>
+              </div>
+            </article>
+
+            <article class="services-slider__slide">
+              <div class="services-slider__content">
+
+                <h3>Diseño responsive</h3>
+                <p>
+                  Desarrollo interfaces adaptadas a computadoras, tablets y teléfonos, manteniendo
+                  una experiencia visual limpia, cómoda y funcional.
+                </p>
+
+                <ul>
+                  <li>Adaptación a móvil</li>
+                  <li>Navegación clara</li>
+                  <li>Diseño flexible</li>
+                </ul>
+
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
+                  servicio</a>
+              </div>
+
+              <div class="services-slider__summary">
+                <span>Ideal para</span>
+                <strong>Experiencias multiplataforma</strong>
+                <p>Tu sitio se verá bien en cualquier pantalla.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="services-slider__button services-slider__button--next" type="button"
+          aria-label="Servicio siguiente" title="Servicio siguiente">
           ›
         </button>
+
+        <div class="services-slider__dots" id="servicesSliderDots"></div>
       </div>
-      <!-- Sección de servicios -->
-      <section class="services section" id="servicios">
-        <div class="section__header">
-          <p class="section__eyebrow">Servicios</p>
-          <h2 class="section__title">Soluciones digitales para marcas y profesionales</h2>
-          <p class="section__description">
-            Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza
-            en
-            la audiencia.
+    </section>
+
+    <!-- Sección sobre Marianne -->
+    <section class="about section" id="sobre-mi">
+      <div class="about__container">
+        <div class="about__image-wrapper">
+          <picture>
+            <source srcset="images/marian-perfil.webp" type="image/webp">
+            <img class="about__image" src="images/marian-perfil.png" alt="Fotografía profesional" loading="lazy"
+              title="Ing. Marianne Lucena">
+          </picture>
+        </div>
+
+        <div class="about__content">
+          <p class="section__eyebrow">Sobre Marianne</p>
+          <h2 class="section__title">Ingeniera en Informática con visión creativa y tecnológica</h2>
+
+          <p class="about__text">
+            Soy Marianne Lucena, Ingeniera en Informática. Me especializo en crear experiencias digitales que combinan
+            diseño, estructura, tecnología y propósito.
           </p>
+
+          <p class="about__text">
+            Mi enfoque une pensamiento técnico, sensibilidad visual y estrategia para desarrollar sitios web modernos,
+            funcionales y orientados a resultados.
+          </p>
+
+          <a class="about__link" href="#contacto" title="Contactar a Marianne Lucena">
+            Hablemos de tu proyecto
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="services-slider" id="servicesSlider">
-          <button class="services-slider__button services-slider__button--prev" type="button"
-            aria-label="Servicio anterior">
-            ‹
-          </button>
+    <!-- Sección de proceso de trabajo -->
+    <section class="process section" id="proceso">
+      <div class="section__header">
+        <p class="section__eyebrow">Proceso</p>
 
-          <div class="services-slider__viewport">
-            <div class="services-slider__track">
+        <h2 class="section__title">
+          Una metodología clara para transformar ideas en resultados
+        </h2>
 
-              <article class="services-slider__slide">
-                <div class="services-slider__content">
+        <p class="section__description">
+          Trabajo cada proyecto con una estructura organizada, desde la idea inicial hasta la entrega final.
+        </p>
+      </div>
 
-                  <h3>Diseño web personalizado</h3>
-                  <p>
-                    Desarrollo sitios web modernos, elegantes y adaptados a la identidad visual de cada proyecto,
-                    cuidando la estructura, la experiencia del usuario y la presentación profesional.
-                  </p>
+      <div class="process-timeline">
+        <article class="process-step">
+          <span class="process-step__number">01</span>
+          <h3 class="process-step__title">Escuchar</h3>
+          <p class="process-step__text">
+            Comprender la necesidad, el objetivo, el público y la visión del proyecto.
+          </p>
+        </article>
 
-                  <ul>
-                    <li>Diseño visual personalizado</li>
-                    <li>Estructura clara y profesional</li>
-                    <li>Adaptado a la marca</li>
-                  </ul>
+        <article class="process-step">
+          <span class="process-step__number">02</span>
+          <h3 class="process-step__title">Diseñar</h3>
+          <p class="process-step__text">
+            Crear una propuesta visual coherente, elegante y alineada con la identidad de la marca.
+          </p>
+        </article>
 
-                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
-                </div>
+        <article class="process-step">
+          <span class="process-step__number">03</span>
+          <h3 class="process-step__title">Desarrollar</h3>
+          <p class="process-step__text">
+            Construir el sitio con una estructura limpia, responsive y funcional.
+          </p>
+        </article>
 
-                <div class="services-slider__summary">
-                  <span>Ideal para</span>
-                  <strong>Marcas, empresas y profesionales</strong>
-                  <p>Una presencia digital clara, elegante y confiable.</p>
-                </div>
-              </article>
+        <article class="process-step">
+          <span class="process-step__number">04</span>
+          <h3 class="process-step__title">Publicar</h3>
+          <p class="process-step__text">
+            Revisar, ajustar y preparar el proyecto para su entrega o publicación online.
+          </p>
+        </article>
+      </div>
+    </section>
 
-              <article class="services-slider__slide">
-                <div class="services-slider__content">
+    <!-- Sección de contacto -->
+    <section class="contact section" id="contacto">
+      <div class="contact__container">
+        <div class="contact__intro">
+          <h2 class="contact__title">Cuéntame sobre tu marca</h2>
 
-                  <h3>Landing pages estratégicas</h3>
-                  <p>
-                    Páginas enfocadas en presentar productos, servicios o campañas de forma directa,
-                    visualmente atractiva y orientada a resultados.
-                  </p>
+          <p class="contact__text">
+            ¿Valoras la colaboración cercana, la comunicación clara y una propuesta digital hecha con propósito?
+            Entonces estás en el lugar adecuado.
+          </p>
 
-                  <ul>
-                    <li>Mensaje claro y directo</li>
-                    <li>Botones de llamada a la acción</li>
-                    <li>Diseño enfocado en conversión</li>
-                  </ul>
+          <div class="contact__info">
+            <a class="contact__link" href="mailto:lucena.lis14@gmail.com" title="Enviar correo a Marianne Lucena">
+              ✉ lucena.lis14@gmail.com
+            </a>
 
-                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
-                </div>
+            <a class="contact__link" href="tel:+34691296388" title="Llamar a Marianne Lucena">
+              ☎ +34 691 29 63 88
+            </a>
 
-                <div class="services-slider__summary">
-                  <span>Ideal para</span>
-                  <strong>Campañas, lanzamientos y ventas</strong>
-                  <p>Una página clara para captar atención y generar acción.</p>
-                </div>
-              </article>
-
-              <article class="services-slider__slide">
-                <div class="services-slider__content">
-
-                  <h3>Portafolios profesionales</h3>
-                  <p>
-                    Sitios personales para mostrar experiencia, proyectos, habilidades y perfil profesional
-                    de manera ordenada, elegante y confiable.
-                  </p>
-
-                  <ul>
-                    <li>Presentación profesional</li>
-                    <li>Sección de proyectos destacados</li>
-                    <li>Marca personal sólida</li>
-                  </ul>
-
-                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
-                </div>
-
-                <div class="services-slider__summary">
-                  <span>Ideal para</span>
-                  <strong>Ingenieros, freelancers y creativos</strong>
-                  <p>Una web para mostrar quién eres y qué sabes hacer.</p>
-                </div>
-              </article>
-
-              <article class="services-slider__slide">
-                <div class="services-slider__content">
-
-                  <h3>Diseño responsive</h3>
-                  <p>
-                    Desarrollo interfaces adaptadas a computadoras, tablets y teléfonos, manteniendo
-                    una experiencia visual limpia, cómoda y funcional.
-                  </p>
-
-                  <ul>
-                    <li>Adaptación a móvil</li>
-                    <li>Navegación clara</li>
-                    <li>Diseño flexible</li>
-                  </ul>
-
-                  <a class="services-slider__link" href="#contacto">Solicitar este servicio</a>
-                </div>
-
-                <div class="services-slider__summary">
-                  <span>Ideal para</span>
-                  <strong>Experiencias multiplataforma</strong>
-                  <p>Tu sitio se verá bien en cualquier pantalla.</p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <button class="services-slider__button services-slider__button--next" type="button"
-            aria-label="Servicio siguiente">
-            ›
-          </button>
-
-          <div class="services-slider__dots" id="servicesSliderDots"></div>
-        </div>
-      </section>
-
-      <!-- Sección sobre Marianne -->
-      <section class="about section" id="sobre-mi">
-        <div class="about__container">
-          <div class="about__image-wrapper">
-            <picture>
-              <source srcset="images/marian-perfil.webp" type="image/webp">
-              <img class="about__image" src="images/marian-perfil.png" alt="Fotografía profesional de Marianne Lucena"
-                loading="lazy">
-            </picture>
-          </div>
-
-          <div class="about__content">
-            <p class="section__eyebrow">Sobre Marianne</p>
-            <h2 class="section__title">Ingeniera en Informática con visión creativa y tecnológica</h2>
-
-            <p class="about__text">
-              Soy Marianne Lucena, Ingeniera en Informática. Me especializo en crear experiencias digitales que combinan
-              diseño, estructura, tecnología y propósito.
-            </p>
-
-            <p class="about__text">
-              Mi enfoque une pensamiento técnico, sensibilidad visual y estrategia para desarrollar sitios web modernos,
-              funcionales y orientados a resultados.
-            </p>
-
-            <a class="about__link" href="#contacto" title="Contactar a Marianne Lucena">
-              Hablemos de tu proyecto
+            <a class="contact__link" href="#" title="Ver LinkedIn de Marianne Lucena">
+              <span>in</span>
+              <span>LinkedIn</span>
             </a>
           </div>
         </div>
-      </section>
 
-      <!-- Sección de proceso de trabajo -->
-      <section class="process section" id="proceso">
-        <div class="section__header">
-          <p class="section__eyebrow">Proceso</p>
-
-          <h2 class="section__title">
-            Una metodología clara para transformar ideas en resultados
-          </h2>
-
-          <p class="section__description">
-            Trabajo cada proyecto con una estructura organizada, desde la idea inicial hasta la entrega final.
-          </p>
-        </div>
-
-        <div class="process-timeline">
-          <article class="process-step">
-            <span class="process-step__number">01</span>
-            <h3 class="process-step__title">Escuchar</h3>
-            <p class="process-step__text">
-              Comprender la necesidad, el objetivo, el público y la visión del proyecto.
-            </p>
-          </article>
-
-          <article class="process-step">
-            <span class="process-step__number">02</span>
-            <h3 class="process-step__title">Diseñar</h3>
-            <p class="process-step__text">
-              Crear una propuesta visual coherente, elegante y alineada con la identidad de la marca.
-            </p>
-          </article>
-
-          <article class="process-step">
-            <span class="process-step__number">03</span>
-            <h3 class="process-step__title">Desarrollar</h3>
-            <p class="process-step__text">
-              Construir el sitio con una estructura limpia, responsive y funcional.
-            </p>
-          </article>
-
-          <article class="process-step">
-            <span class="process-step__number">04</span>
-            <h3 class="process-step__title">Publicar</h3>
-            <p class="process-step__text">
-              Revisar, ajustar y preparar el proyecto para su entrega o publicación online.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Sección de contacto -->
-      <section class="contact section" id="contacto">
-        <div class="contact__container">
-          <div class="contact__intro">
-            <h2 class="contact__title">Cuéntame sobre tu marca</h2>
-
-            <p class="contact__text">
-              ¿Valoras la colaboración cercana, la comunicación clara y una propuesta digital hecha con propósito?
-              Entonces estás en el lugar adecuado.
-            </p>
-
-            <div class="contact__info">
-              <a class="contact__link" href="mailto:lucena.lis14@gmail.com" title="Enviar correo a Marianne Lucena">
-                ✉ lucena.lis14@gmail.com
-              </a>
-
-              <a class="contact__link" href="tel:+34691296388" title="Llamar a Marianne Lucena">
-                ☎ +34 691 29 63 88
-              </a>
-
-              <a class="contact__link" href="#" title="Ver LinkedIn de Marianne Lucena">
-                <span>in</span>
-                <span>LinkedIn</span>
-              </a>
-            </div>
+        <form class="form" id="contactForm" action="mailto:lucena.lis@gmail.com" method="post" enctype="text/plain"
+          novalidate>
+          <div class="form__group">
+            <label class="form__label" for="name">Nombre</label>
+            <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
+            <small class="form__error" id="nameError"></small>
           </div>
+          <div class="form__group">
+            <label class="form__label" for="email">Correo</label>
+            <input class="form__input" type="email" id="email" name="email"
+              placeholder="Tu dirección de correo electrónico">
+            <small class="form__error" id="emailError"></small>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="phone">Teléfono</label>
+            <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono">
+            <small class="form__error" id="phoneError"></small>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">Mensaje</label>
+            <textarea class="form__textarea" id="message" name="message"
+              placeholder="Cuéntame sobre tu proyecto"></textarea>
+            <small class="form__error" id="messageError"></small>
+          </div>
+          <button class="form__button" type="submit" title="Enviar mensaje">
+            Enviar mensaje
+          </button>
+          <p class="form__success" id="formSuccess"></p>
+        </form>
+      </div>
+    </section>
 
-          <form class="form" id="contactForm" action="#" method="post" novalidate>
-            <div class="form__group">
-              <label class="form__label" for="name">Nombre</label>
-              <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
-              <small class="form__error" id="nameError"></small>
-            </div>
-            <div class="form__group">
-              <label class="form__label" for="email">Correo</label>
-              <input class="form__input" type="email" id="email" name="email"
-                placeholder="Tu dirección de correo electrónico">
-              <small class="form__error" id="emailError"></small>
-            </div>
-            <div class="form__group">
-              <label class="form__label" for="phone">Teléfono</label>
-              <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono">
-              <small class="form__error" id="phoneError"></small>
-            </div>
-            <div class="form__group">
-              <label class="form__label" for="message">Mensaje</label>
-              <textarea class="form__textarea" id="message" name="message"
-                placeholder="Cuéntame sobre tu proyecto"></textarea>
-              <small class="form__error" id="messageError"></small>
-            </div>
-            <button class="form__button" type="submit" title="Enviar mensaje">
-              Enviar mensaje
-            </button>
-            <p class="form__success" id="formSuccess"></p>
-          </form>
-        </div>
-      </section>
+    <!-- Sección de preguntas frecuentes -->
+    <section class="faq section" id="preguntas">
+      <div class="section__header">
+        <p class="section__eyebrow">Preguntas frecuentes</p>
+        <h2 class="section__title">Dudas comunes antes de iniciar</h2>
+      </div>
 
-      <!-- Sección de preguntas frecuentes -->
-      <section class="faq section" id="preguntas">
-        <div class="section__header">
-          <p class="section__eyebrow">Preguntas frecuentes</p>
-          <h2 class="section__title">Dudas comunes antes de iniciar</h2>
-        </div>
+      <div class="faq__list">
+        <article class="faq__item">
+          <button class="faq__button" type="button" title="Mostrar respuesta sobre el costo de un sitio web">
+            ¿Cuánto cuesta un sitio web?
+          </button>
+          <p class="faq__answer">
+            El costo depende del alcance, número de secciones, funcionalidades, diseño y tiempo de desarrollo.
+          </p>
+        </article>
 
-        <div class="faq__list">
-          <article class="faq__item">
-            <button class="faq__button" type="button" title="Mostrar respuesta sobre el costo de un sitio web">
-              ¿Cuánto cuesta un sitio web?
-            </button>
-            <p class="faq__answer">
-              El costo depende del alcance, número de secciones, funcionalidades, diseño y tiempo de desarrollo.
-            </p>
-          </article>
+        <article class="faq__item">
+          <button class="faq__button" type="button" title="Mostrar respuesta sobre qué se necesita para empezar">
+            ¿Qué necesito para empezar?
+          </button>
+          <p class="faq__answer">
+            Necesitamos definir el objetivo, estilo visual, contenido principal, imágenes y secciones del proyecto.
+          </p>
+        </article>
 
-          <article class="faq__item">
-            <button class="faq__button" type="button" title="Mostrar respuesta sobre qué se necesita para empezar">
-              ¿Qué necesito para empezar?
-            </button>
-            <p class="faq__answer">
-              Necesitamos definir el objetivo, estilo visual, contenido principal, imágenes y secciones del proyecto.
-            </p>
-          </article>
-
-          <article class="faq__item">
-            <button class="faq__button" type="button" title="Mostrar respuesta sobre el tiempo de desarrollo">
-              ¿Cuánto tiempo dura un proyecto?
-            </button>
-            <p class="faq__answer">
-              El tiempo varía según la complejidad. Una landing page puede desarrollarse en menos tiempo que una web
-              completa.
-            </p>
-          </article>
-        </div>
-      </section>
+        <article class="faq__item">
+          <button class="faq__button" type="button" title="Mostrar respuesta sobre el tiempo de desarrollo">
+            ¿Cuánto tiempo dura un proyecto?
+          </button>
+          <p class="faq__answer">
+            El tiempo varía según la complejidad. Una landing page puede desarrollarse en menos tiempo que una web
+            completa.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <!-- Indicador fijo para explorar -->
@@ -533,7 +628,7 @@
       <div class="footer__column">
         <h3 class="footer__title">Contacto</h3>
         <a class="footer__link" href="mailto:marianne.lucena.dev@gmail.com" title="Enviar correo">Email</a>
-        <a class="footer__link" href="tel:+0000000000" title="Llamar por teléfono">Teléfono</a>
+        <a class="footer__link" href="tel:+34691296388" title="Llamar por teléfono">Teléfono</a>
         <a class="footer__link" href="#contacto" title="Ir al formulario">Formulario</a>
       </div>
     </div>
@@ -544,7 +639,8 @@
   </footer>
   <!-- Chatbot Eva -->
   <div class="chatbot" id="chatbot">
-    <button class="chatbot__toggle" id="chatbotToggle" type="button" aria-label="Abrir chatbot Eva">
+    <button class="chatbot__toggle" id="chatbotToggle" type="button" aria-label="Abrir chatbot Eva"
+      title="Abrir chatbot Eva">
       <img class="chatbot__avatar" src="images/eva.png" alt="Eva, asistente virtual">
       <span class="chatbot__label">Eva</span>
     </button>
@@ -560,7 +656,8 @@
           </div>
         </div>
 
-        <button class="chatbot__close" id="chatbotClose" type="button" aria-label="Cerrar chatbot">
+        <button class="chatbot__close" id="chatbotClose" type="button" aria-label="Cerrar chatbot"
+          title="Cerrar chatbot">
           ×
         </button>
       </div>
@@ -575,12 +672,25 @@
         <input class="chatbot__input" id="chatbotInput" type="text" placeholder="Escribe tu pregunta..."
           autocomplete="off">
 
-        <button class="chatbot__send" type="submit">
+        <button class="chatbot__send" type="submit" aria-label="Enviar mensaje" title="Enviar mensaje">
           Enviar
         </button>
       </form>
     </div>
   </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="whatsapp-float"
+    href="https://wa.me/34691296388?text=Hola%20Marianne,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar%20sobre%20un%20proyecto."
+    target="_blank" rel="noopener noreferrer" aria-label="Contactar a Marianne por WhatsApp"
+    title="Escríbeme por WhatsApp">
+    <svg class="whatsapp-float__icon" viewBox="0 0 32 32" aria-hidden="true">
+      <path
+        d="M16.04 3C9.43 3 4.05 8.37 4.05 14.98c0 2.12.55 4.18 1.6 6L3.95 27l6.18-1.62a11.92 11.92 0 0 0 5.9 1.5h.01C22.65 26.88 28 21.5 28 14.9 28 8.31 22.64 3 16.04 3zm0 21.85h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.67.96.98-3.58-.23-.37a9.91 9.91 0 1 1 8.31 4.57zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47a8.9 8.9 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z" />
+    </svg>
+
+    <span class="whatsapp-float__label">WhatsApp</span>
+  </a>
 </body>
 
 </html>
