@@ -44,19 +44,22 @@
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#inicio" title="Ir a inicio">Inicio</a>
+            <a class="nav__link" href="#inicio" title="Ir a inicio" data-es="Inicio" data-en="Home">Inicio</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#proyectos" title="Ir a proyectos">Proyectos</a>
+            <a class="nav__link" href="#proyectos" title="Ir a proyectos" data-es="Proyectos"
+              data-en="Projects">Proyectos</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#servicios" title="Ir a servicios">Servicios</a>
+            <a class="nav__link" href="#servicios" title="Ir a servicios" data-es="Servicios"
+              data-en="Services">Servicios</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#proceso" title="Ir a proceso">Proceso</a>
+            <a class="nav__link" href="#proceso" title="Ir a proceso" data-es="Proceso" data-en="Process">Proceso</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#contacto" title="Ir a contacto">Contacto</a>
+            <a class="nav__link" href="#contacto" title="Ir a contacto" data-es="Contacto"
+              data-en="Contact">Contacto</a>
           </li>
 
         </ul>
@@ -64,8 +67,11 @@
 
       <!-- Accesos rápidos del header -->
       <div class="header__actions">
-        <span class="header__language">EN</span>
-          </div>
+        <button class="header__language" id="languageToggle" type="button" title="Cambiar idioma"
+          aria-label="Cambiar el sitio al idioma inglés">
+          EN
+        </button>
+      </div>
     </div>
   </header>
 
@@ -77,7 +83,7 @@
 
           <p class="hero__name">Marianne Lucena</p>
 
-          <h1 class="hero__title">
+          <h1 class="hero__title" data-es="Desarrollo web" data-en="Web development">
             Desarrollo web
             <strong>La solución para tu negocio</strong>
           </h1>
@@ -85,15 +91,21 @@
           <p class="hero__message">
             Transformo tus ideas en soluciones digitales
           </p>
-          <span class="hero__subtitle">Soluciones digitales | Sistemas IA | Aplicaciones móviles</span>
+          <span class="hero__subtitle" data-es="Soluciones digitales | Sistemas IA | Aplicaciones móviles"
+            data-en="Digital solutions | AI Systems | Mobile Applications">
+            Soluciones digitales | Sistemas IA | Aplicaciones móviles
+          </span>
 
           <div class="hero__buttons">
             <a class="hero__button hero__button--primary" href="#contacto" title="Iniciar proyecto con Marianne Lucena">
-              Iniciar proyecto
+              <span data-es="Iniciar proyecto" data-en="Start project">
+                Iniciar proyecto
             </a>
 
             <a class="hero__button hero__button--primary" href="#proyectos" title="Ver proyectos">
-              Ver proyectos
+              <span data-es="Ver proyectos" data-en="View projects">
+                Ver proyectos
+              </span>
             </a>
           </div>
         </div>
@@ -109,10 +121,13 @@
 
       <div class="section__header">
         <p class="section__eyebrow">Proyectos destacados</p>
-        <h2 class="section__title">
+        <h2 class="section__title" data-es="Diseño y desarrollo con propósito"
+          data-en="Design and development with purpose">
           Diseño y desarrollo con propósito
         </h2>
-        <p class="section__description">
+        <p class="section__description"
+          data-es="Soluciones digitales creadas para resolver necesidades reales, comunicar ideas y construir presencia online."
+          data-en="Digital solutions created to address real needs, communicate ideas, and build an online presence.">
           Soluciones digitales creadas para resolver necesidades reales,
           comunicar ideas y construir presencia online.
         </p>
@@ -127,12 +142,12 @@
               <picture>
                 <source srcset="images/proyecto-saray-nuevo.webp" type="image/webp">
                 <img class="portfolio-slide__image" src="images/proyecto-saray-nuevo.png" alt="App" loading="lazy"
-                  title="Proyecto Saray App" title="Proyecto Saray App">
+                  title="Proyecto Saray App">
               </picture>
 
               <div class="portfolio-slide__content">
                 <div>
-                  <span class="portfolio-slide__category">
+                  <span class="portfolio-slide__category" data-es="Aplicación móvil" data-en="Mobile Application">
                     Aplicación móvil
                   </span>
 
@@ -140,7 +155,9 @@
                     Saray App
                   </h3>
 
-                  <p class="portfolio-slide__description">
+                  <p class="portfolio-slide__description"
+                    data-es="Aplicación móvil creada para acercar el contenido cultural de Turquía a usuarios hispanohablantes y fortalecer el intercambio entre Turquía y Latinoamérica."
+                    data-en="Mobile application created to bring Turkish cultural content closer to Spanish-speaking users and strengthen the exchange between Turkey and Latin America.">
                     Aplicación móvil creada para acercar el contenido cultural
                     de Turquía a usuarios hispanohablantes y fortalecer el
                     intercambio entre Turquía y Latinoamérica.
@@ -154,11 +171,12 @@
                     <span>MongoDB</span>
                   </div>
 
-                  <a class="portfolio-slide__link" href="saray.html" target="_blank" rel="noopener noreferrer"
-                    title="explorar proyecto">
-                    Explorar proyecto
-                    <span aria-hidden="true">↗</span>
-                  </a>
+                  <button class="portfolio-slide__link project-open" type="button" data-project="saray"
+                    aria-haspopup="dialog" aria-controls="projectModal">
+                    <span data-es="Explorar proyecto" data-en="Explore project">
+                      Explorar proyecto
+                    </span>
+                  </button>
                 </div>
               </div>
             </article>
@@ -168,13 +186,12 @@
               <picture>
                 <source srcset="images/proyecto-pasha-nuevo.webp" type="image/webp">
                 <img class="portfolio-slide__image" src="images/proyecto-pasha-nuevo.png"
-                  alt="Vista del proyecto Pasha Delight" loading="lazy" title="Proyecto Pasha Delight"
-                  title="Proyecto Pasha Delight">
+                  alt="Vista del proyecto Pasha Delight" loading="lazy" title="Proyecto Pasha Delight">
               </picture>
 
               <div class="portfolio-slide__content">
                 <div>
-                  <span class="portfolio-slide__category">
+                  <span class="portfolio-slide__category" data-es="Comercio digital" data-en="Digital Commerce">
                     Comercio digital
                   </span>
 
@@ -182,7 +199,9 @@
                     Pasha Delight
                   </h3>
 
-                  <p class="portfolio-slide__description">
+                  <p class="portfolio-slide__description"
+                    data-es="Plataforma web para presentar dulces tradicionales turcos al mercado latinoamericano mediante una identidad visual cálida, clara y enfocada en la exportación."
+                    data-en="Web platform for presenting traditional Turkish sweets to the Latin American market through a warm, clear visual identity focused on exportation.">
                     Plataforma web para presentar dulces tradicionales turcos
                     al mercado latinoamericano mediante una identidad visual
                     cálida, clara y enfocada en la exportación.
@@ -196,11 +215,12 @@
                     <span>Exportación</span>
                   </div>
 
-                  <a class="portfolio-slide__link" href="pasha.html" target="_blank" rel="noopener noreferrer"
-                    title="explorar proyecto">
-                    Explorar proyecto
-                    <span aria-hidden="true">↗</span>
-                  </a>
+                  <button class="portfolio-slide__link project-open" type="button" data-project="pasha"
+                    aria-haspopup="dialog" aria-controls="projectModal">
+                    <span data-es="Explorar proyecto" data-en="Explore project">
+                      Explorar proyecto
+                    </span>
+                  </button>
                 </div>
               </div>
             </article>
@@ -210,20 +230,21 @@
               <picture>
                 <source srcset="images/proyecto-venezuela-nuevo.webp" type="image/webp">
                 <img class="portfolio-slide__image" src="images/proyecto-venezuela-nuevo.png"
-                  alt="Vista del proyecto Venezuela Levántate" loading="lazy" title="Proyecto Venezuela Levántate"
-                  title="Proyecto Venezuela Levántate">
+                  alt="Vista del proyecto Venezuela Levántate" loading="lazy" title="Proyecto Venezuela Levántate">
               </picture>
               <div class="portfolio-slide__content">
                 <div>
-                  <span class="portfolio-slide__category">
+                  <span class="portfolio-slide__category" data-es="Plataforma social" data-en="Social Platform">
                     Plataforma social
                   </span>
 
-                  <h3 class="portfolio-slide__title">
+                  <h3 class="portfolio-slide__title" data-es="Venezuela Levántate" data-en="Venezuela Rises">
                     Venezuela Levántate
                   </h3>
 
-                  <p class="portfolio-slide__description">
+                  <p class="portfolio-slide__description"
+                    data-es="Landing informativa orientada a ofrecer apoyo, recursos y orientación a familias venezolanas mediante una experiencia humana y accesible."
+                    data-en="Informational landing page designed to offer support, resources, and guidance to Venezuelan families through a human and accessible experience.">
                     Landing informativa orientada a ofrecer apoyo, recursos
                     y orientación a familias venezolanas mediante una
                     experiencia humana y accesible.
@@ -237,11 +258,12 @@
                     <span>JavaScript</span>
                   </div>
 
-                  <a class="portfolio-slide__link" href="venezuela.html" target="_blank" rel="noopener noreferrer"
-                    title="explorar proyecto">
-                    Explorar proyecto
-                    <span aria-hidden="true">↗</span>
-                  </a>
+                  <button class="portfolio-slide__link project-open" type="button" data-project="venezuela"
+                    aria-haspopup="dialog" aria-controls="projectModal">
+                    <span data-es="Explorar proyecto" data-en="Explore project">
+                      Explorar proyecto
+                    </span>
+                  </button>
                 </div>
               </div>
             </article>
@@ -267,23 +289,128 @@
           </button>
         </div>
       </div>
-
-      </div>
     </section>
+
+    <!-- Lightbox de proyectos -->
+    <dialog class="project-modal" id="projectModal" aria-labelledby="projectModalTitle"
+      aria-describedby="projectModalDescription">
+      <div class="project-modal__container">
+
+        <button class="project-modal__close" id="projectModalClose" type="button" aria-label="Cerrar proyecto"
+          title="Cerrar">
+          ×
+        </button>
+
+        <div class="project-modal__media">
+          <picture>
+            <source id="projectModalSource" srcset="" type="image/webp">
+
+            <img class="project-modal__image" id="projectModalImage" src="" alt="">
+          </picture>
+
+          <span class="project-modal__category" id="projectModalCategory"></span>
+        </div>
+
+        <div class="project-modal__content">
+          <header class="project-modal__header">
+            <p class="project-modal__eyebrow" data-es="Proyecto seleccionado" data-en="Selected project">
+              Proyecto seleccionado
+            </p>
+            <h2 class="project-modal__title" id="projectModalTitle"></h2>
+
+            <p class="project-modal__description" id="projectModalDescription"></p>
+          </header>
+
+          <div class="project-modal__details">
+            <article class="project-modal__detail">
+              <span class="project-modal__detail-number">01</span>
+
+              <div>
+                <h3 data-es="El desafío" data-en="The challenge">
+                  El desafío
+                </h3>
+                <p id="projectModalChallenge"></p>
+              </div>
+            </article>
+
+            <article class="project-modal__detail">
+              <span class="project-modal__detail-number">02</span>
+
+              <div>
+                <h3 data-es="La solución" data-en="The solution">
+                  La solución
+                </h3>
+                <p id="projectModalSolution"></p>
+              </div>
+            </article>
+
+            <article class="project-modal__detail">
+              <span class="project-modal__detail-number">03</span>
+
+              <div>
+                <h3 data-es="Mi participación" data-en="My participation">
+                  Desarrollo y Diseño
+                </h3>
+                <p id="projectModalRole"></p>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-modal__meta">
+            <div>
+              <span class="project-modal__meta-label" data-es="Tecnologías" data-en="Technologies">
+                Tecnologías
+              </span>
+
+              <div class="project-modal__technologies" id="projectModalTechnologies"></div>
+            </div>
+
+            <div>
+              <span class="project-modal__meta-label" data-es="Estado" data-en="Status">
+                Estado
+              </span>
+
+              <p class="project-modal__status" id="projectModalStatus"></p>
+            </div>
+          </div>
+
+          <div class="project-modal__actions">
+            <a class="project-modal__button project-modal__button--primary" id="projectModalLink" href="#"
+              target="_blank" rel="noopener noreferrer" title="Visitar proyecto">
+              Visitar proyecto
+            </a>
+
+            <button class="project-modal__button project-modal__button--secondary" id="projectModalSecondaryClose"
+              type="button">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <!-- Sección de servicios -->
     <section class="services section" id="servicios">
       <div class="section__header">
-        <p class="section__eyebrow">Servicios</p>
-        <h2 class="section__title">Soluciones digitales para marcas y profesionales</h2>
-        <p class="section__description">
-          Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza
-          en
-          la audiencia.
+        <p class="section__eyebrow" data-es="Servicios" data-en="Services">
+          Servicios
+        </p>
+
+        <h2 class="section__title" data-es="Soluciones digitales para marcas y profesionales"
+          data-en="Digital solutions for brands and professionals">
+          Soluciones digitales para marcas y profesionales
+        </h2>
+
+        <p class="section__description"
+          data-es="Desarrollo sitios web modernos, funcionales y responsive, pensados para comunicar mejor y generar confianza en la audiencia."
+          data-en="I develop modern, functional and responsive websites designed to communicate effectively and build audience trust.">
+          Desarrollo sitios web modernos, funcionales y responsive,
+          pensados para comunicar mejor y generar confianza en la audiencia.
         </p>
       </div>
 
       <div class="services-slider" id="servicesSlider">
+
         <button class="services-slider__button services-slider__button--prev" type="button"
           aria-label="Servicio anterior" title="Servicio anterior">
           ‹
@@ -292,107 +419,184 @@
         <div class="services-slider__viewport">
           <div class="services-slider__track">
 
+            <!-- Servicio 1 -->
             <article class="services-slider__slide">
               <div class="services-slider__content">
+                <h3 data-es="Diseño web personalizado" data-en="Custom web design">
+                  Diseño web personalizado
+                </h3>
 
-                <h3>Diseño web personalizado</h3>
-                <p>
-                  Desarrollo sitios web modernos, elegantes y adaptados a la identidad visual de cada proyecto,
-                  cuidando la estructura, la experiencia del usuario y la presentación profesional.
+                <p data-es="Desarrollo sitios web modernos, elegantes y adaptados a la identidad visual de cada proyecto, cuidando la estructura, la experiencia del usuario y la presentación profesional."
+                  data-en="I develop modern and elegant websites adapted to each project's visual identity, focusing on structure, user experience and professional presentation.">
+                  Desarrollo sitios web modernos, elegantes y adaptados a la
+                  identidad visual de cada proyecto, cuidando la estructura,
+                  la experiencia del usuario y la presentación profesional.
                 </p>
 
                 <ul>
-                  <li>Diseño visual personalizado</li>
-                  <li>Estructura clara y profesional</li>
-                  <li>Adaptado a la marca</li>
+                  <li data-es="Diseño visual personalizado" data-en="Custom visual design">
+                    Diseño visual personalizado
+                  </li>
+
+                  <li data-es="Estructura clara y profesional" data-en="Clear and professional structure">
+                    Estructura clara y profesional
+                  </li>
+
+                  <li data-es="Adaptado a la marca" data-en="Adapted to the brand">
+                    Adaptado a la marca
+                  </li>
                 </ul>
 
-                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
-                  servicio</a>
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">
+                  <span data-es="Solicitar este servicio" data-en="Request this service">
+                    Solicitar este servicio
+                  </span>
+                </a>
               </div>
 
-              <div class="services-slider__summary">
-                <span>Ideal para</span>
-                <strong>Marcas, empresas y profesionales</strong>
-                <p>Una presencia digital clara, elegante y confiable.</p>
+              <div class="services-slider__visual">
+                <picture>
+                  <source srcset="images/servicio-diseno-web-proyectos.webp" type="image/webp">
+
+                  <img class="services-slider__image" src="images/servicio-diseno-web-proyectos.png"
+                    alt="Diseño web personalizado basado en los proyectos Saray, Pasha Delight y Venezuela Levántate"
+                    loading="lazy">
+                </picture>
               </div>
             </article>
 
+            <!-- Servicio 2 -->
             <article class="services-slider__slide">
               <div class="services-slider__content">
+                <h3 data-es="Landing pages estratégicas" data-en="Strategic landing pages">
+                  Landing pages estratégicas
+                </h3>
 
-                <h3>Landing pages estratégicas</h3>
-                <p>
-                  Páginas enfocadas en presentar productos, servicios o campañas de forma directa,
-                  visualmente atractiva y orientada a resultados.
+                <p data-es="Páginas enfocadas en presentar productos, servicios o campañas de forma directa, visualmente atractiva y orientada a resultados."
+                  data-en="Pages designed to present products, services or campaigns directly, attractively and with a results-oriented approach.">
+                  Páginas enfocadas en presentar productos, servicios o campañas
+                  de forma directa, visualmente atractiva y orientada a resultados.
                 </p>
 
                 <ul>
-                  <li>Mensaje claro y directo</li>
-                  <li>Botones de llamada a la acción</li>
-                  <li>Diseño enfocado en conversión</li>
+                  <li data-es="Mensaje claro y directo" data-en="Clear and direct message">
+                    Mensaje claro y directo
+                  </li>
+
+                  <li data-es="Botones de llamada a la acción" data-en="Call-to-action buttons">
+                    Botones de llamada a la acción
+                  </li>
+
+                  <li data-es="Diseño enfocado en conversión" data-en="Conversion-focused design">
+                    Diseño enfocado en conversión
+                  </li>
                 </ul>
 
-                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
-                  servicio</a>
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">
+                  <span data-es="Solicitar este servicio" data-en="Request this service">
+                    Solicitar este servicio
+                  </span>
+                </a>
               </div>
 
-              <div class="services-slider__summary">
-                <span>Ideal para</span>
-                <strong>Campañas, lanzamientos y ventas</strong>
-                <p>Una página clara para captar atención y generar acción.</p>
+              <div class="services-slider__visual">
+                <picture>
+                  <source srcset="images/servicio-landing-pasha.webp" type="image/webp">
+
+                  <img class="services-slider__image" src="images/servicio-landing-pasha.png"
+                    alt="Landing page del proyecto Venezuela Levántate" loading="lazy" title=" proyecto Venezuela Levántate">
+                </picture>
               </div>
             </article>
 
+            <!-- Servicio 3 -->
             <article class="services-slider__slide">
               <div class="services-slider__content">
+                <h3 data-es="Portafolios profesionales" data-en="Professional portfolios">
+                  Portafolios profesionales
+                </h3>
 
-                <h3>Portafolios profesionales</h3>
-                <p>
-                  Sitios personales para mostrar experiencia, proyectos, habilidades y perfil profesional
-                  de manera ordenada, elegante y confiable.
+                <p data-es="Sitios personales para mostrar experiencia, proyectos, habilidades y perfil profesional de manera ordenada, elegante y confiable."
+                  data-en="Personal websites designed to present experience, projects, skills and professional profiles in an organized, elegant and trustworthy way.">
+                  Sitios personales para mostrar experiencia, proyectos,
+                  habilidades y perfil profesional de manera ordenada,
+                  elegante y confiable.
                 </p>
 
                 <ul>
-                  <li>Presentación profesional</li>
-                  <li>Sección de proyectos destacados</li>
-                  <li>Marca personal sólida</li>
+                  <li data-es="Presentación profesional" data-en="Professional presentation">
+                    Presentación profesional
+                  </li>
+
+                  <li data-es="Sección de proyectos destacados" data-en="Featured projects section">
+                    Sección de proyectos destacados
+                  </li>
+
+                  <li data-es="Marca personal sólida" data-en="Strong personal brand">
+                    Marca personal sólida
+                  </li>
                 </ul>
 
-                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
-                  servicio</a>
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">
+                  <span data-es="Solicitar este servicio" data-en="Request this service">
+                    Solicitar este servicio
+                  </span>
+                </a>
               </div>
 
-              <div class="services-slider__summary">
-                <span>Ideal para</span>
-                <strong>Ingenieros, freelancers y creativos</strong>
-                <p>Una web para mostrar quién eres y qué sabes hacer.</p>
+              <div class="services-slider__visual">
+                <picture>
+                  <source srcset="images/servicio-portafolios.webp" type="image/webp">
+
+                  <img class="services-slider__image" src="images/servicio-portafolios.png"
+                    alt="Portafolio profesional con los proyectos Saray, Pasha Delight y Venezuela Levántate"
+                    loading="lazy">
+                </picture>
               </div>
             </article>
 
+            <!-- Servicio 4 -->
             <article class="services-slider__slide">
               <div class="services-slider__content">
+                <h3 data-es="Diseño responsive" data-en="Responsive design">
+                  Diseño responsive
+                </h3>
 
-                <h3>Diseño responsive</h3>
-                <p>
-                  Desarrollo interfaces adaptadas a computadoras, tablets y teléfonos, manteniendo
-                  una experiencia visual limpia, cómoda y funcional.
+                <p data-es="Desarrollo interfaces adaptadas a computadoras, tablets y teléfonos, manteniendo una experiencia visual limpia, cómoda y funcional."
+                  data-en="I develop interfaces adapted to computers, tablets and phones while maintaining a clean, comfortable and functional visual experience.">
+                  Desarrollo interfaces adaptadas a computadoras, tablets y
+                  teléfonos, manteniendo una experiencia visual limpia,
+                  cómoda y funcional.
                 </p>
 
                 <ul>
-                  <li>Adaptación a móvil</li>
-                  <li>Navegación clara</li>
-                  <li>Diseño flexible</li>
+                  <li data-es="Adaptación a móvil" data-en="Mobile adaptation">
+                    Adaptación a móvil
+                  </li>
+
+                  <li data-es="Navegación clara" data-en="Clear navigation">
+                    Navegación clara
+                  </li>
+
+                  <li data-es="Diseño flexible" data-en="Flexible design">
+                    Diseño flexible
+                  </li>
                 </ul>
 
-                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">Solicitar este
-                  servicio</a>
+                <a class="services-slider__link" href="#contacto" title="Solicitar este servicio">
+                  <span data-es="Solicitar este servicio" data-en="Request this service">
+                    Solicitar este servicio
+                  </span>
+                </a>
               </div>
 
-              <div class="services-slider__summary">
-                <span>Ideal para</span>
-                <strong>Experiencias multiplataforma</strong>
-                <p>Tu sitio se verá bien en cualquier pantalla.</p>
+              <div class="services-slider__visual">
+                <picture>
+                  <source srcset="images/servicio-responsive.webp" type="image/webp">
+
+                  <img class="services-slider__image" src="images/servicio-responsive.png"
+                    alt="Diseño responsive adaptado a computadora, tableta y teléfono" loading="lazy">
+                </picture>
               </div>
             </article>
 
@@ -404,7 +608,8 @@
           ›
         </button>
 
-        <div class="services-slider__dots" id="servicesSliderDots"></div>
+        <div class="services-slider__dots" id="servicesSliderDots" aria-label="Navegación de servicios"></div>
+
       </div>
     </section>
 
@@ -501,8 +706,8 @@
           </p>
 
           <div class="contact__info">
-            <a class="contact__link" href="mailto:lucena.lis14@gmail.com" title="Enviar correo a Marianne Lucena">
-              ✉ lucena.lis14@gmail.com
+            <a class="contact__link" href="mailto:lucena.lis@gmail.com" title="Enviar correo a Marianne Lucena">
+              ✉ lucena.lis@gmail.com
             </a>
 
             <a class="contact__link" href="tel:+34691296388" title="Llamar a Marianne Lucena">

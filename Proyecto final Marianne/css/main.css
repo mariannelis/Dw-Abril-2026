@@ -248,6 +248,34 @@ button {
     padding: 0.5rem;
 }
 
+.header__language {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.24);
+    border-radius: 999rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 800;
+    height: 2.5rem;
+    justify-content: center;
+    letter-spacing: 0.08rem;
+    min-width: 2.8rem;
+    padding: 0 0.7rem;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.header__language:hover {
+    background-color: rgba(125, 211, 252, 0.16);
+    border-color: #7dd3fc;
+    transform: translateY(-0.1rem);
+}
+
 .nav__list {
     align-items: center;
     display: flex;
@@ -624,6 +652,24 @@ button {
     overflow: hidden;
 }
 
+.portfolio-slide__link {
+    appearance: none;
+
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.02rem;
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
 .portfolio-slide picture {
     background-color: #eef4ff;
     display: block;
@@ -725,43 +771,71 @@ button {
 
 .portfolio-slide__link {
     align-items: center;
-    color: var(--color-primary);
+    appearance: none;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: 0;
+    border-radius: 999rem;
+    box-shadow:
+        0 0.75rem 1.6rem rgba(37, 99, 235, 0.22),
+        inset 0 0.0625rem 0 rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    cursor: pointer;
     display: inline-flex;
-    font-size: 0.92rem;
+    font-family: inherit;
+    font-size: 0.88rem;
     font-weight: 800;
     gap: 0.55rem;
-    padding-bottom: 0.25rem;
+    justify-content: center;
+    letter-spacing: 0.02rem;
+    margin-left: auto;
+    min-height: 3.15rem;
+    overflow: hidden;
+    padding: 0.75rem 1.25rem;
     position: relative;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+    white-space: nowrap;
 }
 
-.portfolio-slide__link::after {
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
-    bottom: 0;
+.portfolio-slide__link::before {
+    background: linear-gradient(110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.28) 50%,
+            transparent 80%);
     content: "";
-    height: 0.1rem;
-    left: 0;
+    height: 100%;
+    left: -120%;
     position: absolute;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-    width: 100%;
+    top: 0;
+    transform: skewX(-20deg);
+    transition: left 0.55s ease;
+    width: 55%;
 }
 
 .portfolio-slide__link:hover {
-    color: var(--color-secondary);
+    box-shadow:
+        0 1rem 2rem rgba(124, 58, 237, 0.3),
+        inset 0 0.0625rem 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-0.2rem);
 }
 
-.portfolio-slide__link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.portfolio-slide__link:hover::before {
+    left: 140%;
+}
+
+.portfolio-slide__link:active {
+    transform: translateY(0);
+}
+
+.portfolio-slide__link:focus-visible {
+    outline: 0.18rem solid rgba(37, 99, 235, 0.35);
+    outline-offset: 0.25rem;
 }
 
 .portfolio-slide__link span {
-    transition: transform 0.25s ease;
-}
-
-.portfolio-slide__link:hover span {
-    transform: translate(0.15rem, -0.15rem);
+    position: relative;
+    z-index: 1;
 }
 
 .portfolio-slider__navigation {
@@ -816,14 +890,351 @@ button {
     width: 4.5rem;
 }
 
+.portfolio-slide__footer {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Lightbox de proyectos
+   ========================================================================== */
+
+.project-modal {
+    background: transparent;
+    border: 0;
+    height: 100%;
+    margin: auto;
+    max-height: none;
+    max-width: none;
+    overflow-y: auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+.project-modal::backdrop {
+    backdrop-filter: blur(0.8rem);
+    background:
+        radial-gradient(circle at 20% 20%,
+            rgba(37, 99, 235, 0.22),
+            transparent 30%),
+        rgba(5, 11, 24, 0.82);
+}
+
+.project-modal[open] {
+    animation: projectModalFade 0.3s ease;
+}
+
+.project-modal__container {
+    background: #ffffff;
+    border: 0.0625rem solid rgba(148, 163, 184, 0.22);
+    border-radius: 1.8rem;
+    box-shadow: 0 2rem 6rem rgba(2, 8, 23, 0.38);
+    margin: auto;
+    max-width: 70rem;
+    overflow: hidden;
+    position: relative;
+    transform-origin: center;
+    width: 100%;
+}
+
+.project-modal[open] .project-modal__container {
+    animation: projectModalEnter 0.4s ease;
+}
+
+.project-modal__close {
+    align-items: center;
+    backdrop-filter: blur(0.8rem);
+    background: rgba(5, 11, 24, 0.72);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 1.7rem;
+    height: 3rem;
+    justify-content: center;
+    line-height: 1;
+    position: absolute;
+    right: 1.4rem;
+    top: 1.4rem;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+    width: 3rem;
+    z-index: 5;
+}
+
+.project-modal__close:hover {
+    background-color: #7c3aed;
+    transform: rotate(8deg) scale(1.05);
+}
+
+.project-modal__media {
+    background-color: #071a3b;
+    min-height: 22rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-modal__image {
+    display: block;
+    height: auto;
+    max-height: 34rem;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.project-modal__media::after {
+    background: linear-gradient(180deg,
+            transparent 55%,
+            rgba(5, 11, 24, 0.7) 100%);
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.project-modal__category {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 999rem;
+    bottom: 1.5rem;
+    color: #2563eb;
+    font-size: 0.73rem;
+    font-weight: 800;
+    left: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding: 0.55rem 0.85rem;
+    position: absolute;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.project-modal__content {
+    padding: 3rem;
+}
+
+.project-modal__header {
+    max-width: 52rem;
+}
+
+.project-modal__eyebrow {
+    color: #7c3aed;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.project-modal__title {
+    color: #0a1f44;
+    font-family: var(--font-title);
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+}
+
+.project-modal__description {
+    color: #64748b;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    max-width: 47rem;
+    text-align: justify;
+}
+
+.project-modal__details {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2.8rem;
+}
+
+.project-modal__detail {
+    background:
+        linear-gradient(145deg,
+            rgba(174, 198, 243, 0.85),
+            rgba(241, 241, 245, 0.95));
+    border: 0.0625rem solid rgba(37, 99, 235, 0.12);
+    border-radius: 1.2rem;
+    min-height: 14rem;
+    padding: 1.4rem;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-modal__detail:hover {
+    border-color: rgba(124, 58, 237, 0.32);
+    box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.08);
+    transform: translateY(-0.25rem);
+}
+
+.project-modal__detail-number {
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    font-size: 0.7rem;
+    font-weight: 800;
+    height: 2.3rem;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+    width: 2.3rem;
+}
+
+.project-modal__detail h3 {
+    color: #0a1f44;
+    font-family: var(--font-title);
+    font-size: 1.09rem;
+    margin-bottom: 0.55rem;
+}
+
+.project-modal__detail p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.project-modal__meta {
+    border-bottom: 0.0625rem solid rgba(148, 163, 184, 0.2);
+    border-top: 0.0625rem solid rgba(148, 163, 184, 0.2);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 2.5rem;
+    padding: 1.8rem 0;
+}
+
+.project-modal__meta-label {
+    color: #0a1f44;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.project-modal__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.project-modal__technology {
+    background-color: #eef4ff;
+    border: 0.0625rem solid rgba(37, 99, 235, 0.16);
+    border-radius: 999rem;
+    color: #2684bb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.45rem 0.75rem;
+
+}
+
+.project-modal__status {
+    color: #475569;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.project-modal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2rem;
+}
+
+.project-modal__button {
+    align-items: center;
+    border-radius: 999rem;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 800;
+    gap: 0.6rem;
+    justify-content: center;
+    min-height: 3.2rem;
+    padding: 0.75rem 1.3rem;
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-modal__button:hover {
+    transform: translateY(-0.15rem);
+}
+
+.project-modal__button--primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: 0;
+    box-shadow: 0 0.8rem 1.8rem rgba(37, 99, 235, 0.2);
+    color: #ffffff;
+}
+
+.project-modal__button--secondary {
+    background-color: #ffffff;
+    border: 0.0625rem solid rgba(15, 23, 42, 0.18);
+    color: #0a1f44;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.project-modal__button.is-disabled {
+    background: #e2e8f0;
+    box-shadow: none;
+    color: #64748b;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@keyframes projectModalFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes projectModalEnter {
+    from {
+        opacity: 0;
+        transform: translateY(2rem) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* ==========================================================================
    8. Servicios - Slider premium
    ========================================================================== */
 
 .services {
     background:
-        radial-gradient(circle at 50% 10%, rgba(124, 58, 237, 0.08), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        radial-gradient(circle at 50% 10%, rgba(29, 3, 73, 0.08), transparent 28%),
+        linear-gradient(180deg, #bcc8f0 0%, #e3dee7 100%);
 }
 
 .services-slider {
@@ -855,7 +1266,7 @@ button {
     border-radius: 2rem;
     box-shadow:
         0 1.6rem 3.4rem rgba(15, 23, 42, 0.09),
-        0 0 0 0.35rem rgba(124, 58, 237, 0.05);
+        0 0 0 0.35rem rgba(192, 175, 219, 0.05);
     display: grid;
     flex: 0 0 100%;
     gap: 1.2rem;
@@ -1025,6 +1436,69 @@ button {
     width: 1.6rem;
 }
 
+.services-slider__visual {
+    border: 0.0625rem solid rgba(124, 58, 237, 0.14);
+    border-radius: 1.5rem;
+    box-shadow:
+        0 1.4rem 3rem rgba(15, 23, 42, 0.14),
+        0 0 0 0.25rem rgba(124, 58, 237, 0.035);
+    height: 21rem;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.services-slider__visual picture {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.services-slider__image {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition:
+        filter 0.5s ease,
+        transform 0.7s ease;
+    width: 100%;
+}
+
+.services-slider__visual:hover .services-slider__image {
+    filter: saturate(1.05);
+    transform: scale(1.035);
+}
+
+.services-slider__visual-overlay {
+    bottom: 0;
+    color: #ffffff;
+    left: 0;
+    padding: 1.6rem;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+
+.services-slider__visual-label {
+    color: #7dd3fc;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+}
+
+.services-slider__visual-title {
+    display: block;
+    font-family: var(--font-title);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.15;
+    max-width: 18rem;
+}
+
 /* ==========================================================================
    9. Sobre Marianne
    ========================================================================== */
@@ -1088,6 +1562,8 @@ button {
 .about__content .section__title {
     margin-bottom: 1.4rem;
     max-width: 760px;
+    text-align: left;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
 }
 
 .about__text {
@@ -1095,6 +1571,7 @@ button {
     line-height: 1.8;
     margin-bottom: 1rem;
     max-width: 720px;
+    text-align: justify;
 }
 
 .about__link {
@@ -1129,12 +1606,8 @@ button {
 
 .process {
     background:
-        radial-gradient(circle at 50% 8%,
-            rgba(124, 58, 237, 0.1),
-            transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
-    overflow: hidden;
-    padding: 7rem 1.5rem;
+        radial-gradient(circle at 50% 10%, rgba(29, 3, 73, 0.08), transparent 28%),
+        linear-gradient(180deg, #bcc8f0 0%, #e3dee7 100%);
 }
 
 .process .section__header {
@@ -1259,6 +1732,21 @@ button {
 
     .process-card__image {
         min-height: 170px;
+    }
+
+    .portfolio-slide__footer {
+        align-items: flex-start;
+    }
+
+    .portfolio-slide__link {
+        margin-left: 0;
+    }
+    .services-slider__slide {
+        grid-template-columns: 1fr;
+    }
+
+    .services-slider__visual {
+        height: 25rem;
     }
 }
 
@@ -1870,33 +2358,34 @@ button {
    ========================================================================== */
 .whatsapp-float {
     align-items: center;
-    background-color: #25d366;
-    border: 0.12rem solid rgba(255, 255, 255, 0.7);
-    border-radius: 999rem;
-    bottom: 1.5rem;
+    background: #25d366;
+    border: 0.12rem solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    bottom: 6.2rem;
     box-shadow:
-        0 1rem 2rem rgba(15, 23, 42, 0.18),
-        0 0 0 0.3rem rgba(37, 211, 102, 0.12);
+        0 0.9rem 2rem rgba(15, 23, 42, 0.25),
+        0 0 0 0.3rem rgba(37, 211, 102, 0.14);
     color: #ffffff;
-    display: inline-flex;
-    gap: 0.65rem;
-    left: 1.5rem;
-    min-height: 3.8rem;
-    padding: 0.65rem 1rem;
+    display: flex;
+    height: 3.8rem;
+    justify-content: center;
+    padding: 0;
     position: fixed;
+    right: 1.5rem;
     transition:
         background-color 0.25s ease,
         box-shadow 0.25s ease,
         transform 0.25s ease;
-    z-index: 115;
+    width: 3.8rem;
+    z-index: 95;
 }
 
 .whatsapp-float:hover {
     background-color: #1ebe5d;
     box-shadow:
-        0 1.3rem 2.5rem rgba(15, 23, 42, 0.22),
-        0 0 0 0.4rem rgba(37, 211, 102, 0.16);
-    transform: translateY(-0.18rem);
+        0 1.2rem 2.5rem rgba(15, 23, 42, 0.3),
+        0 0 0 0.4rem rgba(37, 211, 102, 0.18);
+    transform: translateY(-0.2rem) scale(1.04);
 }
 
 .whatsapp-float__icon {
@@ -1906,8 +2395,27 @@ button {
 }
 
 .whatsapp-float__label {
-    font-size: 0.9rem;
+    background-color: #ffffff;
+    border-radius: 0.55rem;
+    box-shadow: 0 0.6rem 1.5rem rgba(15, 23, 42, 0.16);
+    color: #0a1f44;
+    font-size: 0.78rem;
     font-weight: 800;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    pointer-events: none;
+    position: absolute;
+    right: 4.5rem;
+    transform: translateX(0.5rem);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    white-space: nowrap;
+}
+
+.whatsapp-float:hover .whatsapp-float__label {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Animaciones activadas solamente en elementos con la clase reveal */
@@ -1986,7 +2494,20 @@ button {
     }
 
     .header__actions {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+        margin-left: auto;
+        order: 2;
+    }
+
+    .header__actions .header__icon {
         display: none;
+    }
+
+    .header__menu-button {
+        margin-left: 0.5rem;
+        order: 3;
     }
 
     .header__menu-button {
@@ -2250,6 +2771,11 @@ button {
         padding: 4.5rem 1rem;
     }
 
+    .services-slider__visual {
+        border-radius: 1.1rem;
+        height: 18rem;
+    }
+
     .projects-showcase .section__header {
         margin-bottom: 2rem;
     }
@@ -2290,7 +2816,22 @@ button {
     .footer__container {
         grid-template-columns: 1fr;
     }
+
+    .portfolio-slide__link {
+        width: 100%;
+    }
+
+    .services-slider__visual,
+    .services-slider__image {
+        min-height: 16rem;
+    }
+
+    .services-slider__visual-overlay {
+        padding: 1.25rem;
+    }
+
 }
+
 
 /* ==========================================================================
    18. Responsive móvil pequeño
@@ -2353,19 +2894,17 @@ button {
         padding: 0.55rem;
         width: 4rem;
     }
-    .whatsapp-float {
-    border-radius: 50%;
-    bottom: 1rem;
-    height: 4rem;
-    justify-content: center;
-    left: 1rem;
-    padding: 0.65rem;
-    width: 4rem;
-}
 
-.whatsapp-float__label {
-    display: none;
-}
+    .whatsapp-float {
+        bottom: 5.8rem;
+        height: 3.7rem;
+        right: 1rem;
+        width: 3.7rem;
+    }
+
+    .whatsapp-float__label {
+        display: none;
+    }
 }
 
 /* ==========================================================================

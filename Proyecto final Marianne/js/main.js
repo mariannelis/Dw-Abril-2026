@@ -31,6 +31,65 @@
     languageToggle?.addEventListener("click", () => {
         languageToggle.textContent = languageToggle.textContent.trim() === "ES" ? "EN" : "ES";
     });
+
+    /* ==========================================================================
+    Cambio de idioma ES / EN
+    ========================================================================== */
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const languageToggle = document.querySelector("#languageToggle");
+
+        if (!languageToggle) {
+            console.warn("No se encontró el botón #languageToggle");
+            return;
+        }
+
+        const applyLanguage = (language) => {
+            const selectedLanguage = language === "en" ? "en" : "es";
+
+            document.querySelectorAll("[data-es][data-en]").forEach((element) => {
+                element.textContent = element.dataset[selectedLanguage];
+            });
+
+            document
+                .querySelectorAll("[data-placeholder-es][data-placeholder-en]")
+                .forEach((element) => {
+                    element.placeholder =
+                        element.dataset[
+                        selectedLanguage === "es"
+                            ? "placeholderEs"
+                            : "placeholderEn"
+                        ];
+                });
+
+            document.documentElement.lang = selectedLanguage;
+
+            const pageIsSpanish = selectedLanguage === "es";
+
+            languageToggle.textContent = pageIsSpanish ? "EN" : "ES";
+
+            languageToggle.setAttribute(
+                "aria-label",
+                pageIsSpanish
+                    ? "Cambiar el sitio al idioma inglés"
+                    : "Cambiar el sitio al idioma español"
+            );
+
+            localStorage.setItem("portfolioLanguage", selectedLanguage);
+        };
+
+        const savedLanguage =
+            localStorage.getItem("portfolioLanguage") || "es";
+
+        applyLanguage(savedLanguage);
+
+        languageToggle.addEventListener("click", () => {
+            const currentLanguage = document.documentElement.lang;
+            const nextLanguage = currentLanguage === "es" ? "en" : "es";
+
+            applyLanguage(nextLanguage);
+        });
+    });
     /* ==========================================================================
        Efecto 3D en tarjetas del hero
        ========================================================================== */
@@ -284,6 +343,329 @@
         updateSlider();
         startAutoplay();
     }
+    /* ==========================================================================
+   Lightbox de proyectos
+   ========================================================================== */
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.querySelector("#projectModal");
+        const openButtons = document.querySelectorAll(".project-open");
+
+        const closeButton = document.querySelector("#projectModalClose");
+        const secondaryCloseButton = document.querySelector(
+            "#projectModalSecondaryClose"
+        );
+
+        const modalSource = document.querySelector("#projectModalSource");
+        const modalImage = document.querySelector("#projectModalImage");
+        const modalCategory = document.querySelector("#projectModalCategory");
+        const modalTitle = document.querySelector("#projectModalTitle");
+        const modalDescription = document.querySelector(
+            "#projectModalDescription"
+        );
+
+        const modalChallenge = document.querySelector(
+            "#projectModalChallenge"
+        );
+
+        const modalSolution = document.querySelector(
+            "#projectModalSolution"
+        );
+
+        const modalRole = document.querySelector("#projectModalRole");
+        const modalTechnologies = document.querySelector(
+            "#projectModalTechnologies"
+        );
+
+        const modalStatus = document.querySelector("#projectModalStatus");
+        const modalLink = document.querySelector("#projectModalLink");
+
+        if (!modal || openButtons.length === 0) {
+            return;
+        }
+
+        const projects = {
+            saray: {
+                title: {
+                    es: "Saray App",
+                    en: "Saray App"
+                },
+
+                category: {
+                    es: "Aplicación móvil",
+                    en: "Mobile application"
+                },
+
+                description: {
+                    es: "Saray es una aplicación móvil orientada a acercar la cultura, la gastronomía, el cine, el deporte y las noticias de Turquía a usuarios hispanohablantes.",
+                    en: "Saray is a mobile application created to bring Turkish culture, gastronomy, cinema, sports and news closer to Spanish-speaking users."
+                },
+
+                challenge: {
+                    es: "Crear una experiencia accesible en español que organizara diferentes contenidos culturales de Turquía dentro de una sola plataforma móvil.",
+                    en: "Create an accessible Spanish-language experience that organizes different types of Turkish cultural content within one mobile platform."
+                },
+
+                solution: {
+                    es: "Se diseñó una aplicación con navegación clara, categorías temáticas y una identidad visual inspirada en la unión cultural entre Turquía y Latinoamérica.",
+                    en: "A mobile application was designed with clear navigation, thematic categories and a visual identity inspired by the cultural connection between Turkey and Latin America."
+                },
+
+                role: {
+                    es: "Investigación, definición del concepto, arquitectura de contenido, diseño de interfaces y desarrollo de la aplicación con React Native y Python.",
+                    en: "Research, concept definition, content architecture, interface design and application development using React Native and Python."
+                },
+
+                technologies: [
+                    "React Native",
+                    "Python",
+                    "MongoDB"
+                ],
+
+                status: {
+                    es: "Proyecto académico y MVP en evolución",
+                    en: "Academic project and evolving MVP"
+                },
+
+                imageWebp: "images/proyecto-saray-nuevo.webp",
+                imagePng: "images/proyecto-saray-nuevo.png",
+                imageAlt: {
+                    es: "Presentación de la aplicación móvil Saray",
+                    en: "Presentation of the Saray mobile application"
+                },
+
+                link: "https://saray-app-native.vercel.app/welcome"
+            },
+
+            pasha: {
+                title: {
+                    es: "Pasha Delight",
+                    en: "Pasha Delight"
+                },
+
+                category: {
+                    es: "Comercio digital",
+                    en: "Digital commerce"
+                },
+
+                description: {
+                    es: "Pasha Delight es una propuesta de comercio digital orientada a presentar y exportar dulces tradicionales turcos al mercado latinoamericano.",
+                    en: "Pasha Delight is a digital commerce concept created to introduce and export traditional Turkish sweets to the Latin American market."
+                },
+
+                challenge: {
+                    es: "Comunicar la autenticidad y calidad de los dulces turcos mientras se presentaba una propuesta comercial comprensible para compradores latinoamericanos.",
+                    en: "Communicate the authenticity and quality of Turkish sweets while presenting a clear commercial proposal for Latin American buyers."
+                },
+
+                solution: {
+                    es: "Se creó una plataforma visualmente cálida y elegante, con información de productos, enfoque mayorista y una identidad inspirada en la tradición turca.",
+                    en: "A warm and elegant platform was created with product information, a wholesale focus and a visual identity inspired by Turkish tradition."
+                },
+
+                role: {
+                    es: "Desarrollo del concepto de negocio, identidad visual, estructura de contenidos, diseño de experiencia y construcción de la plataforma web.",
+                    en: "Business concept development, visual identity, content structure, experience design and web platform construction."
+                },
+
+                technologies: [
+                    "Next.js",
+                    "Diseño web",
+                    "Comercio exterior"
+                ],
+
+                status: {
+                    es: "Prototipo web y propuesta comercial",
+                    en: "Web prototype and commercial proposal"
+                },
+
+                imageWebp: "images/proyecto-pasha-nuevo.webp",
+                imagePng: "images/proyecto-pasha-nuevo.png",
+                imageAlt: {
+                    es: "Presentación del proyecto Pasha Delight",
+                    en: "Presentation of the Pasha Delight project"
+                },
+
+                link: "https://pasha-delights.vercel.app/"
+            },
+
+            venezuela: {
+                title: {
+                    es: "Venezuela Levántate",
+                    en: "Venezuela Levántate"
+                },
+
+                category: {
+                    es: "Plataforma social",
+                    en: "Social platform"
+                },
+
+                description: {
+                    es: "Venezuela Levántate es una propuesta digital destinada a ofrecer información, orientación y recursos de apoyo para familias venezolanas.",
+                    en: "Venezuela Levántate is a digital concept designed to provide information, guidance and support resources for Venezuelan families."
+                },
+
+                challenge: {
+                    es: "Diseñar una plataforma capaz de transmitir confianza, solidaridad y esperanza sin perder claridad ni facilidad de navegación.",
+                    en: "Design a platform capable of communicating trust, solidarity and hope while maintaining clarity and ease of navigation."
+                },
+
+                solution: {
+                    es: "Se desarrolló una experiencia visual accesible con áreas de ayuda humanitaria, orientación, comunidad y noticias relevantes.",
+                    en: "An accessible visual experience was developed with sections for humanitarian aid, guidance, community and relevant news."
+                },
+
+                role: {
+                    es: "Definición conceptual, organización de contenidos, diseño visual, experiencia de usuario y desarrollo de la interfaz.",
+                    en: "Concept definition, content organization, visual design, user experience and interface development."
+                },
+
+                technologies: [
+                    "HTML5",
+                    "CSS3",
+                    "JavaScript"
+                ],
+
+                status: {
+                    es: "Concepto digital y prototipo visual",
+                    en: "Digital concept and visual prototype"
+                },
+
+                imageWebp: "images/proyecto-venezuela-nuevo.webp",
+                imagePng: "images/proyecto-venezuela-nuevo.png",
+                imageAlt: {
+                    es: "Presentación del proyecto Venezuela Levántate",
+                    en: "Presentation of the Venezuela Levántate project"
+                },
+
+                link: ""
+            }
+        };
+
+        let activeProject = null;
+
+        const getCurrentLanguage = () => {
+            return document.documentElement.lang === "en"
+                ? "en"
+                : "es";
+        };
+
+        const renderTechnologies = (technologies) => {
+            modalTechnologies.innerHTML = "";
+
+            technologies.forEach((technology) => {
+                const technologyElement = document.createElement("span");
+
+                technologyElement.classList.add(
+                    "project-modal__technology"
+                );
+
+                technologyElement.textContent = technology;
+
+                modalTechnologies.appendChild(technologyElement);
+            });
+        };
+
+        const renderProject = (projectName) => {
+            const project = projects[projectName];
+
+            if (!project) {
+                return;
+            }
+
+            const language = getCurrentLanguage();
+
+            activeProject = projectName;
+
+            modalSource.srcset = project.imageWebp;
+            modalImage.src = project.imagePng;
+            modalImage.alt = project.imageAlt[language];
+
+            modalCategory.textContent = project.category[language];
+            modalTitle.textContent = project.title[language];
+            modalDescription.textContent =
+                project.description[language];
+
+            modalChallenge.textContent = project.challenge[language];
+            modalSolution.textContent = project.solution[language];
+            modalRole.textContent = project.role[language];
+            modalStatus.textContent = project.status[language];
+
+            renderTechnologies(project.technologies);
+
+            if (project.link) {
+                modalLink.hidden = false;
+                modalLink.href = project.link;
+                modalLink.classList.remove("is-disabled");
+
+                modalLink.innerHTML = `
+        <span>
+            ${language === "en"
+                        ? "Visit project"
+                        : "Visitar proyecto"}
+        </span>
+    `;
+            } else {
+                modalLink.hidden = false;
+                modalLink.removeAttribute("href");
+                modalLink.classList.add("is-disabled");
+
+                modalLink.innerHTML = `
+        <span>
+            ${language === "en"
+                        ? "Coming soon"
+                        : "Próximamente"}
+        </span>
+    `;
+            }
+        };
+
+        const openProject = (projectName) => {
+            renderProject(projectName);
+
+            modal.showModal();
+            document.body.classList.add("modal-open");
+        };
+
+        const closeProject = () => {
+            modal.close();
+            document.body.classList.remove("modal-open");
+        };
+
+        openButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                openProject(button.dataset.project);
+            });
+        });
+
+        closeButton?.addEventListener("click", closeProject);
+
+        secondaryCloseButton?.addEventListener(
+            "click",
+            closeProject
+        );
+
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                closeProject();
+            }
+        });
+
+        modal.addEventListener("close", () => {
+            document.body.classList.remove("modal-open");
+        });
+
+        const languageObserver = new MutationObserver(() => {
+            if (modal.open && activeProject) {
+                renderProject(activeProject);
+            }
+        });
+
+        languageObserver.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["lang"]
+        });
+    });
     /* ==========================================================================
    Slider premium de servicios
    ========================================================================== */
