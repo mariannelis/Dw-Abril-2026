@@ -122,175 +122,7 @@
         });
     });
 
-    /* ==========================================================================
-   Scroll progresivo: Hero hacia Proyectos
-   ========================================================================== */
 
-    const initHeroProjectsScroll = () => {
-        const hero = document.querySelector("#inicio");
-        const heroContent = document.querySelector("#inicio .hero__container");
-
-        const projects = document.querySelector("#proyectos");
-        const projectsHeader = document.querySelector(
-            "#proyectos .section__header"
-        );
-
-        const projectsSlider = document.querySelector("#portfolioSlider");
-
-        if (
-            !hero ||
-            !heroContent ||
-            !projects ||
-            !projectsHeader ||
-            !projectsSlider
-        ) {
-            console.warn(
-                "Faltan elementos para el efecto Hero → Proyectos."
-            );
-
-            return;
-        }
-
-        let ticking = false;
-
-        const clamp = (value, minimum, maximum) => {
-            return Math.min(
-                Math.max(value, minimum),
-                maximum
-            );
-        };
-
-        const resetEffect = () => {
-            heroContent.style.transform = "";
-            heroContent.style.opacity = "";
-            heroContent.style.filter = "";
-
-            projectsHeader.style.transform = "";
-            projectsHeader.style.opacity = "";
-
-            projectsSlider.style.transform = "";
-            projectsSlider.style.opacity = "";
-        };
-
-        const updateEffect = () => {
-            ticking = false;
-
-            if (window.innerWidth <= 520) {
-                resetEffect();
-                return;
-            }
-
-            const projectsRect = projects.getBoundingClientRect();
-
-            /*
-             * Empieza cuando Proyectos entra por la parte
-             * inferior de la pantalla.
-             */
-            const startPoint = window.innerHeight * 0.98;
-
-            /*
-             * Termina cuando Proyectos llega aproximadamente
-             * al 22 % superior de la pantalla.
-             */
-            const endPoint = window.innerHeight * 0.22;
-
-            const progress = clamp(
-                (startPoint - projectsRect.top) /
-                (startPoint - endPoint),
-                0,
-                1
-            );
-
-            /* Salida progresiva del Hero */
-
-            const heroY = -75 * progress;
-            const heroScale = 1 - 0.055 * progress;
-            const heroOpacity = 1 - 0.55 * progress;
-            const heroBlur = 1.8 * progress;
-
-            heroContent.style.transform = `
-            translate3d(0, ${heroY.toFixed(2)}px, 0)
-            scale(${heroScale.toFixed(3)})
-        `;
-
-            heroContent.style.opacity =
-                heroOpacity.toFixed(3);
-
-            heroContent.style.filter =
-                `blur(${heroBlur.toFixed(2)}px)`;
-
-            /* Entrada del título de Proyectos */
-
-            const headerY = 80 * (1 - progress);
-            const headerScale = 0.96 + 0.04 * progress;
-            const headerOpacity = 0.15 + 0.85 * progress;
-
-            projectsHeader.style.transform = `
-            translate3d(0, ${headerY.toFixed(2)}px, 0)
-            scale(${headerScale.toFixed(3)})
-        `;
-
-            projectsHeader.style.opacity =
-                headerOpacity.toFixed(3);
-
-            /* Entrada del slider de Proyectos */
-
-            const sliderProgress = clamp(
-                (progress - 0.12) / 0.88,
-                0,
-                1
-            );
-
-            const sliderY = 110 * (1 - sliderProgress);
-            const sliderScale =
-                0.95 + 0.05 * sliderProgress;
-
-            const sliderOpacity =
-                0.08 + 0.92 * sliderProgress;
-
-            projectsSlider.style.transform = `
-            translate3d(0, ${sliderY.toFixed(2)}px, 0)
-            scale(${sliderScale.toFixed(3)})
-        `;
-
-            projectsSlider.style.opacity =
-                sliderOpacity.toFixed(3);
-        };
-
-        const requestUpdate = () => {
-            if (ticking) {
-                return;
-            }
-
-            ticking = true;
-            window.requestAnimationFrame(updateEffect);
-        };
-
-        window.addEventListener(
-            "scroll",
-            requestUpdate,
-            { passive: true }
-        );
-
-        window.addEventListener(
-            "resize",
-            requestUpdate
-        );
-
-        updateEffect();
-
-        console.info("Scroll Hero → Proyectos activo");
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            initHeroProjectsScroll,
-            { once: true }
-        );
-    } else {
-        initHeroProjectsScroll();
-    }
     /* ==========================================================================
        2. Indicador fijo: desplazarse para explorar
        ========================================================================== */
@@ -483,6 +315,7 @@
         updateSlider();
         startAutoplay();
     }
+
     /* ==========================================================================
    Lightbox de proyectos
    ========================================================================== */
@@ -806,6 +639,7 @@
             attributeFilter: ["lang"]
         });
     });
+
     /* ==========================================================================
    Slider premium de servicios
    ========================================================================== */
@@ -1065,7 +899,7 @@
     }
 
     /* ==========================================================================
-       6. Preguntas frecuentes tipo acordeón
+       Preguntas frecuentes tipo acordeón
        ========================================================================== */
 
     faqItems.forEach((item) => {
@@ -1075,25 +909,6 @@
             item.classList.toggle("is-open");
         });
     });
-
-    /* ==========================================================================
-       7. Botón volver arriba
-       ========================================================================== */
-
-    const handleBackTopVisibility = () => {
-        const shouldShowButton = window.scrollY > 600;
-        backTopButton?.classList.toggle("is-visible", shouldShowButton);
-    };
-
-    const handleBackTopClick = () => {
-        heroSection?.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    };
-
-    window.addEventListener("scroll", handleBackTopVisibility);
-    backTopButton?.addEventListener("click", handleBackTopClick);
 
     /* ==========================================================================
        8. Validación visual del formulario
@@ -1134,117 +949,6 @@
     };
 
     form?.addEventListener("submit", handleFormSubmit);
-
-    /* ==========================================================================
-   Carrusel interno de páginas de proyecto
-   ========================================================================== */
-
-    const projectSlider = document.querySelector(".project-slider");
-
-    if (projectSlider) {
-        const sliderTrack = projectSlider.querySelector(".project-slider__track");
-        const sliderItems = projectSlider.querySelectorAll(".project-slider__item");
-        const sliderPrev = projectSlider.querySelector(".project-slider__button--prev");
-        const sliderNext = projectSlider.querySelector(".project-slider__button--next");
-        const sliderDotsContainer = projectSlider.querySelector(".project-slider__dots");
-
-        let sliderIndex = 0;
-        let sliderAutoplay = null;
-
-        sliderItems.forEach((_, index) => {
-            const dot = document.createElement("button");
-            dot.className = "project-slider__dot";
-            dot.type = "button";
-            dot.setAttribute("aria-label", `Ver imagen ${index + 1}`);
-
-            dot.addEventListener("click", () => {
-                sliderIndex = index;
-                updateProjectSlider();
-                restartProjectSliderAutoplay();
-            });
-
-            sliderDotsContainer.appendChild(dot);
-        });
-
-        const sliderDots = projectSlider.querySelectorAll(".project-slider__dot");
-
-        const updateProjectSlider = () => {
-            sliderTrack.style.transform = `translateX(-${sliderIndex * 100}%)`;
-
-            sliderDots.forEach((dot, index) => {
-                dot.classList.toggle("is-active", index === sliderIndex);
-            });
-        };
-
-        const showNextProjectSlide = () => {
-            sliderIndex = (sliderIndex + 1) % sliderItems.length;
-            updateProjectSlider();
-        };
-
-        const showPrevProjectSlide = () => {
-            sliderIndex = (sliderIndex - 1 + sliderItems.length) % sliderItems.length;
-            updateProjectSlider();
-        };
-
-        const startProjectSliderAutoplay = () => {
-            sliderAutoplay = setInterval(showNextProjectSlide, 4500);
-        };
-
-        const stopProjectSliderAutoplay = () => {
-            clearInterval(sliderAutoplay);
-        };
-
-        const restartProjectSliderAutoplay = () => {
-            stopProjectSliderAutoplay();
-            startProjectSliderAutoplay();
-        };
-
-        sliderNext?.addEventListener("click", () => {
-            showNextProjectSlide();
-            restartProjectSliderAutoplay();
-        });
-
-        sliderPrev?.addEventListener("click", () => {
-            showPrevProjectSlide();
-            restartProjectSliderAutoplay();
-        });
-
-        projectSlider.addEventListener("mouseenter", stopProjectSliderAutoplay);
-        projectSlider.addEventListener("mouseleave", startProjectSliderAutoplay);
-
-        updateProjectSlider();
-        startProjectSliderAutoplay();
-    }
-
-    /* ==========================================================================
-       Estado activo del menú según la sección visible
-       ========================================================================== */
-
-    const menuSectionLinks = document.querySelectorAll(".nav__link");
-
-    const menuSections = document.querySelectorAll(
-        "#inicio, #proyectos, #servicios, #sobre-mi, #proceso, #contacto"
-    );
-
-    const activateMenuLink = () => {
-        let currentSection = "inicio";
-
-        menuSections.forEach((section) => {
-            const sectionTop = section.offsetTop - 180;
-
-            if (window.scrollY >= sectionTop) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        menuSectionLinks.forEach((link) => {
-            const linkTarget = link.getAttribute("href");
-            link.classList.toggle("is-active", linkTarget === `#${currentSection}`);
-        });
-    };
-
-    window.addEventListener("scroll", activateMenuLink);
-    window.addEventListener("load", activateMenuLink);
 
     /* ==========================================================================
        Movimiento interactivo de la imagen del hero
@@ -1404,6 +1108,24 @@
         messageInput.classList.remove("is-valid");
     });
 
+    /* ==========================================================================
+       Botón volver arriba
+       ========================================================================== */
+
+    const handleBackTopVisibility = () => {
+        const shouldShowButton = window.scrollY > 600;
+        backTopButton?.classList.toggle("is-visible", shouldShowButton);
+    };
+
+    const handleBackTopClick = () => {
+        heroSection?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
+
+    window.addEventListener("scroll", handleBackTopVisibility);
+    backTopButton?.addEventListener("click", handleBackTopClick);
     /* ==========================================================================
        Chatbot Eva
        ========================================================================== */

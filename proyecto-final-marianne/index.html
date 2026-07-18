@@ -688,6 +688,41 @@
       </div>
     </section>
 
+    <!-- ==========================================================================
+     Video de presentación CodevaML
+     ========================================================================== -->
+
+    <section class="video-showcase section" id="video">
+      <div class="section__header">
+        <p class="section__eyebrow" data-es="Presentación profesional" data-en="Professional presentation">
+          Presentación profesional
+        </p>
+
+        <h2 class="section__title" data-es="Conoce CodevaML" data-en="Discover CodevaML">
+          Conoce CodevaML
+        </h2>
+
+        <p class="section__description"
+          data-es="Descubre cómo transformo ideas en soluciones digitales modernas, funcionales y adaptadas a cada proyecto."
+          data-en="Discover how I transform ideas into modern, functional digital solutions tailored to each project.">
+          Descubre cómo transformo ideas en soluciones digitales modernas,
+          funcionales y adaptadas a cada proyecto.
+        </p>
+      </div>
+
+      <div class="video-showcase__container">
+        <video class="video-showcase__video" controls preload="none" poster="images/video-codevaml-poster.webp"
+          playsinline aria-label="Video de presentación profesional de CodevaML">
+          <source src="videos/video-codevaml.webm" type="video/webm">
+
+          <source src="videos/video-codevaml.mp4" type="video/mp4">
+
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+      </div>
+    </section>
+
     <!-- Sección de contacto -->
     <section class="contact section" id="contacto">
       <div class="contact__container">
@@ -714,36 +749,37 @@
             </a>
           </div>
         </div>
-
-        <form class="form" id="contactForm" action="mailto:lucena.lis@gmail.com" method="post" enctype="text/plain"
-          novalidate>
-          <div class="form__group">
-            <label class="form__label" for="name">Nombre</label>
-            <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
-            <small class="form__error" id="nameError"></small>
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="email">Correo</label>
-            <input class="form__input" type="email" id="email" name="email"
-              placeholder="Tu dirección de correo electrónico">
-            <small class="form__error" id="emailError"></small>
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="phone">Teléfono</label>
-            <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono">
-            <small class="form__error" id="phoneError"></small>
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="message">Mensaje</label>
-            <textarea class="form__textarea" id="message" name="message"
-              placeholder="Cuéntame sobre tu proyecto"></textarea>
-            <small class="form__error" id="messageError"></small>
-          </div>
-          <button class="form__button" type="submit" title="Enviar mensaje">
-            Enviar mensaje
-          </button>
-          <p class="form__success" id="formSuccess"></p>
-        </form>
+      </div>
+      </div>
+      <form class="form" id="contactForm" action="mailto:lucena.lis@gmail.com" method="post" enctype="text/plain"
+        novalidate>
+        <div class="form__group">
+          <label class="form__label" for="name">Nombre</label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Tu nombre">
+          <small class="form__error" id="nameError"></small>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Correo</label>
+          <input class="form__input" type="email" id="email" name="email"
+            placeholder="Tu dirección de correo electrónico">
+          <small class="form__error" id="emailError"></small>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="phone">Teléfono</label>
+          <input class="form__input" type="tel" id="phone" name="phone" placeholder="Tu teléfono">
+          <small class="form__error" id="phoneError"></small>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="message">Mensaje</label>
+          <textarea class="form__textarea" id="message" name="message"
+            placeholder="Cuéntame sobre tu proyecto"></textarea>
+          <small class="form__error" id="messageError"></small>
+        </div>
+        <button class="form__button" type="submit" title="Enviar mensaje">
+          Enviar mensaje
+        </button>
+        <p class="form__success" id="formSuccess"></p>
+      </form>
       </div>
     </section>
 
@@ -817,7 +853,22 @@
         <a class="footer__link" href="#proyectos" title="Ver CodeVaml">CodeVaml</a>
         <a class="footer__link" href="#proyectos" title="Ver Venezuela Levántate">Venezuela Levántate</a>
       </div>
+      <div class="footer__column footer__map-column">
+        <h3 class="footer__title">Ubicación</h3>
 
+        <div class="footer__map">
+          <iframe class="footer__map-frame"
+            src="https://www.google.com/maps?q=Calle+Portobelo+2,+41006+Sevilla,+España&output=embed"
+            title="Ubicación de CodevaML en Sevilla, España" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <a class="footer__map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Calle+Portobelo+2,+41006+Sevilla,+España"
+          target="_blank" rel="noopener noreferrer" title="Abrir ubicación en Google Maps">
+          Abrir en Google Maps
+        </a>
+      </div>
       <div class="footer__column">
         <h3 class="footer__title">Contacto</h3>
         <a class="footer__link" href="mailto:marianne.lucena.dev@gmail.com" title="Enviar correo">Email</a>
@@ -884,7 +935,7 @@
         </div>
       </div>
 
-      <form class="chatbot__form" id="chatbotForm">
+      <form class="chatbot__form" id="chatbotForm" enctype="multipart/form-data" novalidate>
         <input class="chatbot__input" id="chatbotInput" type="text" placeholder="Escribe tu pregunta..."
           autocomplete="off">
         <button class="chatbot__send" type="submit" aria-label="Enviar mensaje" title="Enviar mensaje">
@@ -893,6 +944,7 @@
       </form>
     </div>
   </div>
+
 </body>
 
 </html>
