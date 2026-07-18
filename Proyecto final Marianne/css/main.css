@@ -902,7 +902,6 @@ button {
 /* ==========================================================================
    Lightbox de proyectos
    ========================================================================== */
-
 .project-modal {
     background: transparent;
     border: 0;
@@ -1226,6 +1225,7 @@ body.modal-open {
         transform: translateY(0) scale(1);
     }
 }
+
 
 /* ==========================================================================
    8. Servicios - Slider premium
@@ -2007,35 +2007,75 @@ body.modal-open {
 }
 
 /* ==========================================================================
-   13. Botón volver arriba
+   Botón volver arriba — lado izquierdo
    ========================================================================== */
 
 .back-top {
     align-items: center;
-    background-color: var(--color-primary);
-    border: 0;
-    border-radius: 50%;
-    bottom: 1.4rem;
-    box-shadow: var(--shadow-card);
-    color: var(--color-white);
-    display: none;
-    font-size: 1.2rem;
-    height: 3rem;
-    justify-content: center;
+    background: rgba(10, 31, 68, 0.94);
+    border: 0.0625rem solid rgba(125, 211, 252, 0.3);
+    border-radius: 999rem;
+    bottom: 1.5rem;
+    box-shadow:
+        0 1rem 2rem rgba(15, 23, 42, 0.22),
+        0 0 0 0.25rem rgba(124, 58, 237, 0.08);
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    gap: 0.65rem;
+    left: 1.5rem;
+    min-height: 3.5rem;
+    opacity: 0;
+    padding: 0.55rem 1.05rem 0.55rem 0.6rem;
+    pointer-events: none;
     position: fixed;
-    right: 1.4rem;
-    transition: background-color var(--transition-fast), transform var(--transition-fast);
-    width: 3rem;
-    z-index: 70;
-}
-
-.back-top:hover {
-    background-color: var(--color-secondary);
-    transform: translateY(-0.15rem);
+    transform: translateY(1rem);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    visibility: hidden;
+    z-index: 95;
 }
 
 .back-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.back-top:hover {
+    background-color: #132f62;
+    box-shadow:
+        0 1.2rem 2.5rem rgba(15, 23, 42, 0.28),
+        0 0 0 0.3rem rgba(45, 212, 191, 0.12);
+    transform: translateY(-0.2rem);
+}
+
+.back-top__icon {
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-radius: 50%;
     display: flex;
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    justify-content: center;
+    width: 2.4rem;
+}
+
+.back-top__label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.back-top:focus-visible {
+    outline: 0.18rem solid rgba(45, 212, 191, 0.45);
+    outline-offset: 0.25rem;
 }
 
 /* ==========================================================================
@@ -2220,14 +2260,9 @@ body.modal-open {
 
 .chatbot__header strong {
     display: block;
-    font-size: 1rem;
-    font-weight: 900;
-}
-
-.chatbot__header span {
-    color: rgba(255, 255, 255, 0.68);
-    display: block;
-    font-size: 0.8rem;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 0.55rem;
 }
 
 .chatbot__close {
@@ -2707,6 +2742,7 @@ body.modal-open {
    ========================================================================== */
 
 @media (max-width: 768px) {
+
     .section {
         padding: 5rem 1rem;
     }
@@ -2848,6 +2884,26 @@ body.modal-open {
         padding: 1.25rem;
     }
 
+    .back-top {
+        border-radius: 50%;
+        bottom: 1rem;
+        height: 3.7rem;
+        left: 1rem;
+        min-height: 0;
+        padding: 0.55rem;
+        width: 3.7rem;
+    }
+
+    .back-top__icon {
+        background: transparent;
+        height: auto;
+        width: auto;
+    }
+
+    .back-top__label {
+        display: none;
+    }
+
 }
 
 
@@ -2922,5 +2978,12 @@ body.modal-open {
 
     .whatsapp-float__label {
         display: none;
+    }
+
+    .back-top {
+        bottom: 10.8rem;
+        height: 3.5rem;
+        right: 1rem;
+        width: 3.5rem;
     }
 }
