@@ -3433,3 +3433,48 @@ body.modal-open {
         width: calc(100vw - 1.6rem);
     }
 }
+
+/* ==========================================================================
+   Corrección definitiva del modal en móvil
+   ========================================================================== */
+
+@media (max-width: 520px) {
+    .project-modal[open] .project-modal__details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .project-modal[open] .project-modal__detail {
+        display: block;
+        flex: 0 0 auto;
+        min-height: 0;
+        min-width: 0;
+        padding: 1.3rem;
+        width: 100%;
+    }
+
+    .project-modal[open] .project-modal__description,
+    .project-modal[open] .project-modal__detail p {
+        hyphens: none;
+        letter-spacing: normal;
+        overflow-wrap: break-word;
+        text-align: left;
+        white-space: normal;
+        word-spacing: normal;
+    }
+
+    .project-modal[open] .project-modal__content {
+        min-width: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .project-modal[open] .project-modal__title,
+    .project-modal[open] .project-modal__detail h3 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+}
